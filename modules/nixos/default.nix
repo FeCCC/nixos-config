@@ -5,5 +5,6 @@
   # my-module = import ./my-module.nix;
   imports = [
     ./yggdrasil.nix
+    ./docker.nix
   ];
 }
