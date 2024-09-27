@@ -52,7 +52,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [ helix ];
+  home.packages = with pkgs; [helix];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
@@ -75,7 +75,13 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -l";
+      la = "ls -a";
+    };
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

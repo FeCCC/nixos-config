@@ -83,6 +83,8 @@
     };
   };
 
+  programs.zsh.enable = true;
+
   users.users = {
     miku = {
       isNormalUser = true;
@@ -92,6 +94,7 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel" "docker"];
       hashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
+      shell = pkgs.zsh;
     };
   };
 
@@ -110,8 +113,6 @@
       PasswordAuthentication = true;
     };
   };
-
-  networking.nameservers = ["192.168.0.10"];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
