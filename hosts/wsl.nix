@@ -1,9 +1,19 @@
 {
+  inputs,
+  outputs,
   config,
   pkgs,
   lib,
   ...
 }: {
-  isWsl = true;
+  imports = [
+    inputs.nixos-wsl.nixosModules.wsl
+  ];
+
+  wsl = {
+    enable = true;
+    defaultUser = "miku";
+  };
+
   networking.hostName = "nixos-wsl";
 }
