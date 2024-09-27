@@ -4,6 +4,7 @@
   # List your module files here
   # my-module = import ./my-module.nix;
   imports = [
+    ./simple.nix
     ./yggdrasil.nix
     ./docker.nix
   ];

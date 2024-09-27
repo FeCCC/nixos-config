@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -68,5 +68,12 @@
         }
       ];
     };
+    extraPackages = with pkgs; [
+      clang-tools
+      rust-analyzer
+      taplo
+      python312Packages.python-lsp-server
+      black
+    ];
   };
 }
