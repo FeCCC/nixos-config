@@ -64,17 +64,18 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-          ./nixos/common.nix
+          ./hosts/common.nix
         ];
       };
 
       nixos-wsl = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+          inherit inputs outputs;
+        };
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
-          nixos-wsl.nixosModules.wsl
-          ./nixos/wsl.nix
+          ./hosts/wsl.nix
         ];
       };
     };

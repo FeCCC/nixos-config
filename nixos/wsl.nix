@@ -6,10 +6,17 @@
   pkgs,
   ...
 }: {
-  wsl = {
-    enable = true;
-    defaultUser = "miku";
+  imports = [
+    inputs.nixos-wsl.nixosModules.wsl
+  ];
+  options = {
+    isWsl = lib.mkEnableOption "open wsl";
   };
 
-  networking.hostName = "nixos-wsl";
+  config = lib.mkIf config.isWsl {
+    wsl = {
+      enable = true;
+      defaultUser = "miku";
+    };
+  };
 }
