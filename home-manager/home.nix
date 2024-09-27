@@ -54,6 +54,8 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [helix];
 
+  xdg.enable = true;
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
@@ -81,6 +83,20 @@
       ll = "ls -l";
       la = "ls -a";
     };
+    initExtra = ''
+      source ~/.p10k.zsh
+
+      bindkey "^A" vi-beginning-of-line
+      bindkey "^E" vi-end-of-line
+    '';
+    dotDir = ".config/zsh";
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
   };
 
   # Nicely reload system units when changing configs

@@ -93,7 +93,7 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel" "docker"];
-      hashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
+      initialHashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
       shell = pkgs.zsh;
     };
   };
