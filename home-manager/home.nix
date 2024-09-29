@@ -63,6 +63,7 @@
     userName = "FeCCC";
     userEmail = "railgun.long@foxmail.com";
   };
+  programs.lazygit.enable = true;
 
   programs.bash = {
     enable = true;
