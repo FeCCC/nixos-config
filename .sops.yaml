@@ -3,9 +3,9 @@
 # Also see https://github.com/Mic92/dotfiles/blob/master/nixos/.sops.yaml
 # for a more complex example.
 keys:
-  - &age age1t3xq5c29pw5wt8dchy80nypshak5yfsklvej6uhfudq3epw7ze5qh4cufs
+  - &age-key age1l04jnrzzz3dcngtdg5esf3uhg96jx6t82f6973zpucnp9x8pmg9sczpwkh
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
     - age:
-      - *age
+      - *age-key
