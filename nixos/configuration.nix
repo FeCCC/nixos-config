@@ -16,6 +16,7 @@
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
     # inputs.hardware.nixosModules.common-ssd
+    ./sops.nix
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
@@ -84,16 +85,22 @@
   };
 
   programs.zsh.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+  };
 
+  users.mutableUsers = false;
   users.users = {
     miku = {
       isNormalUser = true;
+
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["wheel" "docker"];
-      initialHashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
+      # initialHashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
+      hashedPasswordFile = config.sops.secrets.miku_password.path;
       shell = pkgs.zsh;
     };
   };

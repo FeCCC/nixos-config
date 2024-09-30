@@ -1,5 +1,3 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
   outputs,
@@ -8,18 +6,6 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
-  imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
-    outputs.homeManagerModules
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
-  ];
-
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -43,11 +29,6 @@
       # Disable if you don't want unfree packages
       allowUnfree = true;
     };
-  };
-
-  home = {
-    username = "miku";
-    homeDirectory = "/home/miku";
   };
 
   # Add stuff for your user as you see fit:
@@ -76,32 +57,6 @@
       ll = "ls -l";
       la = "ls -a";
     };
-  };
-
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      la = "ls -a";
-    };
-    initExtra = ''
-      bindkey "^A" vi-beginning-of-line
-      bindkey "^E" vi-end-of-line
-    '';
-    dotDir = ".config/zsh";
-    autosuggestion.enable = true;
-    plugins = [
-      {
-        name = "powerlevel10k";
-        src = pkgs.zsh-powerlevel10k;
-        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-      }
-      {
-        name = "powerlevel10k-config";
-        src = ./p10k-config;
-        file = "p10k.zsh";
-      }
-    ];
   };
 
   # Nicely reload system units when changing configs

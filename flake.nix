@@ -18,6 +18,12 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # sops-nix
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -25,6 +31,7 @@
     nixpkgs,
     home-manager,
     nixos-wsl,
+    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -86,7 +93,7 @@
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          ./home-manager/miku.nix
         ];
       };
     };

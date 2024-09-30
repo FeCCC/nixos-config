@@ -12,7 +12,8 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      miku = import ../home-manager/home.nix;
+      root = import ../home-manager/root.nix;
+      miku = import ../home-manager/miku.nix;
     };
   };
 }
