@@ -9,6 +9,7 @@
   ];
 
   home-manager = {
+    sharedModules = [inputs.sops-nix.homeManagerModules.sops];
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration

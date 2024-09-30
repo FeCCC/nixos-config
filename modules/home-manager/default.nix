@@ -5,7 +5,9 @@
   # my-module = import ./my-module.nix;
   imports = [
     ./common.nix
+    ./sops.nix
     ./helix.nix
     ./zsh.nix
+    ./ssh.nix
   ];
 }
