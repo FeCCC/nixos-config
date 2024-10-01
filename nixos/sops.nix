@@ -10,8 +10,8 @@
   sops.age.keyFile = "/var/lib/sops-keys";
 
   sops.secrets.miku_password.neededForUsers = true;
-  sops.secrets.sops_keys = {
-    path = "/var/lib/sops-keys";
-    owner = "root";
-  };
+  # sops.secrets.sops_keys = {
+  #   path = "/var/lib/sops-keys";
+  #   owner = "root";
+  # };
 }
