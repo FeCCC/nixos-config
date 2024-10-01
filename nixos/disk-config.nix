@@ -2,61 +2,99 @@
 {
   inputs,
   lib,
+  config,
   ...
 }: {
   imports = [
     inputs.disko.nixosModules.disko
   ];
-  disko.devices = {
-    disk.disk1 = {
-      device = lib.mkDefault "/dev/sda";
-      type = "disk";
-      content = {
-        type = "gpt";
-        partitions = {
-          boot = {
-            name = "boot";
-            size = "1M";
-            type = "EF02";
-          };
-          esp = {
-            name = "ESP";
-            size = "500M";
-            type = "EF00";
-            content = {
-              type = "filesystem";
-              format = "vfat";
-              mountpoint = "/boot";
-            };
-          };
-          root = {
-            name = "root";
-            size = "100%";
-            content = {
-              type = "lvm_pv";
-              vg = "pool";
+  options.new_install = lib.mkEnableOption "install on new machine";
+
+  config = lib.mkIf config.new_install {
+    disko.devices = {
+      disk = {
+        main = {
+          type = "disk";
+          device = "/dev/sda";
+          content = {
+            type = "gpt";
+            partitions = {
+              boot = {
+                name = "boot";
+                size = "1M";
+                type = "EF02";
+              };
+              ESP = {
+                size = "500M";
+                type = "EF00";
+                content = {
+                  type = "filesystem";
+                  format = "vfat";
+                  mountpoint = "/boot";
+                };
+              };
+              zfs = {
+                size = "100%";
+                content = {
+                  type = "zfs";
+                  pool = "zroot";
+                };
+              };
             };
           };
         };
       };
-    };
-    lvm_vg = {
-      pool = {
-        type = "lvm_vg";
-        lvs = {
-          root = {
-            size = "100%FREE";
-            content = {
-              type = "filesystem";
-              format = "ext4";
+      zpool = {
+        zroot = {
+          type = "zpool";
+          mode = "";
+          # Workaround: cannot import 'zroot': I/O error in disko tests
+          options.cachefile = "none";
+          rootFsOptions = {
+            compression = "lz4";
+            "com.sun:auto-snapshot" = "false";
+          };
+          # mountpoint = "/";
+          postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+
+          datasets = {
+            "local" = {
+              type = "zfs_fs";
+              options.mountpoint = "none";
+            };
+            "local/home" = {
+              type = "zfs_fs";
+              mountpoint = "/home";
+              # Used by services.zfs.autoSnapshot options.
+              options."com.sun:auto-snapshot" = "true";
+            };
+            "local/nix" = {
+              type = "zfs_fs";
+              mountpoint = "/nix";
+              options."com.sun:auto-snapshot" = "false";
+            };
+            "local/root" = {
+              type = "zfs_fs";
               mountpoint = "/";
-              mountOptions = [
-                "defaults"
-              ];
+              options."com.sun:auto-snapshot" = "false";
             };
           };
         };
       };
     };
+
+    networking.hostId = "b575b675";
+
+    fileSystems."/" = {
+      device = "zroot/local/root";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
+    boot.initrd.supportedFilesystems = ["zfs"];
+    boot.supportedFilesystems = ["zfs"];
+    boot.zfs.devNodes = "/dev/disk/by-partlabel/disk-main-zfs";
   };
 }

@@ -79,7 +79,7 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           ./hosts/common.nix
-         ];
+        ];
       };
 
       nixos-wsl = nixpkgs.lib.nixosSystem {
