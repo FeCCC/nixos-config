@@ -10,5 +10,8 @@
     age
     ssh-to-pgp
     ssh-to-age
+    htop
+    iftop
+    neofetch
   ];
 }
