@@ -9,21 +9,21 @@
     programs.ssh = {
       enable = true;
       extraConfig = ''
-        Host github.com
-            HostName github.com
-            User git
-            PreferredAuthentications publickey
-            IdentityFile ~/.ssh/id_github
+        # Host github.com
+        #     HostName github.com
+        #     User git
+        #     PreferredAuthentications publickey
+        #     IdentityFile ~/.ssh/id_github
 
 
         # Host ssh.github.com
         # 无法使用ssh连接时，使用通过https的ssh连接
-        # Host github.com
-        #     HostName ssh.github.com
-        #     User git
-        #     Port 443
-        #     PreferredAuthentications publickey
-        #     IdentityFile ~/.ssh/id_github
+        Host github.com
+            HostName ssh.github.com
+            User git
+            Port 443
+            PreferredAuthentications publickey
+            IdentityFile ~/.ssh/id_github
 
         Host git.feccc.site
             HostName git.feccc.site
@@ -34,6 +34,12 @@
       '';
     };
 
+    sops.secrets.id_rsa_pub = {
+      path = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
+    };
+    sops.secrets.id_rsa = {
+      path = "${config.home.homeDirectory}/.ssh/id_rsa";
+    };
     sops.secrets.id_github_pub = {
       path = "${config.home.homeDirectory}/.ssh/id_github.pub";
     };
