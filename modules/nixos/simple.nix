@@ -13,5 +13,6 @@
     htop
     iftop
     neofetch
+    zellij
   ];
 }

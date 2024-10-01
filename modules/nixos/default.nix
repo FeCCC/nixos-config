@@ -7,5 +7,6 @@
     ./simple.nix
     ./yggdrasil.nix
     ./docker.nix
+    ./desktop.nix
   ];
 }

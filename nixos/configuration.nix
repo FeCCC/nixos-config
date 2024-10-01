@@ -29,7 +29,7 @@
   ];
 
   new_install = false;
-  
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
