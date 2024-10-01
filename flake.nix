@@ -24,6 +24,12 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixos-anywhere
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -32,6 +38,7 @@
     home-manager,
     nixos-wsl,
     sops-nix,
+    disko,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -72,7 +79,7 @@
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
           ./hosts/common.nix
-        ];
+         ];
       };
 
       nixos-wsl = nixpkgs.lib.nixosSystem {
