@@ -9,4 +9,9 @@
     ./docker.nix
     ./desktop.nix
   ];
+
+  environment.shellAliases = {
+    ll = "ls -l";
+    la = "ls -a";
+  };
 }

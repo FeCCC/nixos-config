@@ -8,10 +8,6 @@
 }: {
   programs.zsh = {
     enable = true;
-    shellAliases = {
-      ll = "ls -l";
-      la = "ls -a";
-    };
     initExtra = ''
       bindkey "^A" vi-beginning-of-line
       bindkey "^E" vi-end-of-line

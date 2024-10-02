@@ -51,13 +51,9 @@
     enableCompletion = true;
     bashrcExtra = ''
     '';
-
-    # TODO 设置一些别名方便使用，你可以根据自己的需要进行增删
-    shellAliases = {
-      ll = "ls -l";
-      la = "ls -a";
-    };
   };
+
+  home.preferXdgDirectories = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

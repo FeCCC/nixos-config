@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
