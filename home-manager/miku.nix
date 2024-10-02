@@ -25,7 +25,7 @@
     homeDirectory = "/home/miku";
   };
 
-  my_ssh = true;
+  my_config.ssh.enable = true;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;

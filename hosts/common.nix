@@ -10,5 +10,5 @@
 
   boot.loader.grub.device = "nodev";
 
-  usedocker = true;
+  my_config.docker.enable = true;
 }
