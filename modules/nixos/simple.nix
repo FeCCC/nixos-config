@@ -15,5 +15,8 @@
     neofetch
     zellij
     iperf3
+    wget
+    file
+    which
   ];
 }

@@ -53,6 +53,10 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+    pkgsForSystem = system:
+      import nixpkgs {
+        inherit system;
+      };
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -60,6 +64,8 @@
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    devShells = forAllSystems (system: import ./shell.nix {pkgs = pkgsForSystem system;});
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
@@ -100,6 +106,5 @@
         ];
       };
     };
-
   };
 }
