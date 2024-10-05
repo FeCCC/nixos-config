@@ -14,5 +14,6 @@
     iftop
     neofetch
     zellij
+    iperf3
   ];
 }

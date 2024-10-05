@@ -90,6 +90,15 @@
           ./hosts/wsl.nix
         ];
       };
+
+      nixos-server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/configuration.nix
+          ./hosts/server.nix
+        ];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
