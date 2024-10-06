@@ -18,5 +18,6 @@
     wget
     file
     which
+    unzip
   ];
 }

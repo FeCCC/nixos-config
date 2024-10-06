@@ -11,10 +11,11 @@
       binutils
       ncurses
       zlib
+      elfutils
     ];
 
     shellHook = ''
-      export LD_LIBRARY_PATH="${pkgs.ncurses}/lib:$LD_LIBRARY_PATH"
+      export LD_LIBRARY_PATH="${pkgs.ncurses.out}/lib:${pkgs.elfutils.out}/lib:$LD_LIBRARY_PATH"
       exec zsh
     '';
   };
