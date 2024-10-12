@@ -66,6 +66,8 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
 
+      substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
+
       # Optimise storage
       # you can also optimise the store manually via:
       #    nix-store --optimise
