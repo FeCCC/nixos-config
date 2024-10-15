@@ -10,6 +10,8 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    rime-data = ./rime;
+    fcitx5-rime = prev.fcitx5-rime.override {rimeDataPkgs = [./rime];};
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
