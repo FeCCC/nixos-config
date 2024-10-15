@@ -43,6 +43,7 @@
     enable = true;
     userName = "FeCCC";
     userEmail = "railgun.long@foxmail.com";
+    lfs.enable = true;
   };
   programs.lazygit.enable = true;
 
