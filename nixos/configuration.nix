@@ -66,7 +66,7 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
 
-      substituters = [ "https://mirrors.cernet.edu.cn/nix-channels/store" ];
+      substituters = ["https://mirrors.cernet.edu.cn/nix-channels/store"];
 
       # Optimise storage
       # you can also optimise the store manually via:
@@ -98,7 +98,6 @@
 
   time.timeZone = "Asia/Shanghai";
   i18n.defaultLocale = "zh_CN.UTF-8";
-
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
   services.openssh = {
