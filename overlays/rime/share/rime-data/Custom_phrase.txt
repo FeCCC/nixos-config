@@ -1,0 +1,30 @@
+# Rime table
+# coding: utf-8
+#@/db_name custom_phrase.txt
+#@/db_type tabledb
+#
+# 用於【朙月拼音】系列輸入方案
+# 【小狼毫】0.9.21 以上
+#
+# 請將該文件以UTF-8編碼保存爲
+# Rime用戶文件夾/custom_phrase.txt
+#
+# 碼表各字段以製表符（Tab）分隔
+# 順序爲：文字、編碼、權重（決定重碼的次序、可選）
+#
+# 雖然文本碼表編輯較爲方便，但不適合導入大量條目
+#	
+# no comment
+964575805@qq.com	qqyx	1
+wei.long0311@qq.com	qqywyx	1
+railgun.long@foxmail.com	foxyx	1
+猫又	maoyou	1
+猫又小粥	maoyouxiaozhou	1
+莫裸	moluo	1
+哦戳	oco	1
+🐮🍺	niupi	1
+彳亍口巴	xingba	1
+docker	docker	100
+エロ	ero	1
+燚龘	yida	1
+Tableau	tableau	1

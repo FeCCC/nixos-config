@@ -1,0 +1,53 @@
+patch:
+  style:
+    horizontal: false #竖排为false
+
+  translator:
+    enable_completion: true # 编码提示开关
+
+  custom_phraseVD:
+    dictionary: ""
+    user_dict: flypy_top
+    db_class: stabledb
+    enable_sentence: false
+    enable_completion: true
+    initial_quality: 0 #用户词和系统词重码 置顶
+    
+  custom_phraseXT:
+    dictionary: ""
+    user_dict: flypy_sys
+    db_class: stabledb
+    enable_sentence: false
+    enable_completion: true
+    initial_quality: -1 #本表词和系统词重码居后
+
+  custom_phraseYH:
+    dictionary: ""
+    user_dict: flypy_user
+    db_class: stabledb
+    enable_sentence: false
+    enable_completion: true
+    initial_quality: -1 #用户词和系统词重码居后
+    
+  custom_phraseQMZ:
+    dictionary: ""
+    user_dict: flypy_full
+    db_class: stabledb
+    enable_sentence: false
+    enable_completion: true
+    initial_quality: -1 #和系统词重码时居后
+
+  key_binder:
+    import_preset: default #方案切换相关
+    bindings:
+      - {accept: comma, send: Page_Up, when: paging} # 逗号上翻页
+      - {accept: period, send: Page_Down, when: has_menu} # 句号下翻页
+      - {accept: semicolon, send: 2, when: has_menu} #分号次选
+    #  - {accept: Release+semicolon, send: semicolon, when: has_menu} #如启用此行，则分号引导符号功能无效
+      # - {accept: Release+period, send: period, when: composing} #句号顶屏
+      # - {accept: Release+comma, send: comma, when: composing} #逗号顶屏
+      - {accept: "Tab", send: Escape, when: composing}
+      - {accept: "Shift_R", send: Escape, when: composing}
+      - {accept: "Shift+space", toggle: full_shape, when: always} #切换全半角
+      - {accept: "Control+period", toggle: ascii_punct, when: always} #切换中英标点
+      - {accept: "Control+j", toggle: simplification, when: always} #切换简繁

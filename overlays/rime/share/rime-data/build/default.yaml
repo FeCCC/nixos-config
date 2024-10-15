@@ -1,0 +1,66 @@
+__build_info:
+  rime_version: 1.11.2
+  timestamps:
+    default: 1728048115
+    default.custom: 1727421612
+    key_bindings: 1728048116
+    key_bindings.custom: 0
+    punctuation: 1728048115
+    punctuation.custom: 0
+ascii_composer:
+  good_old_caps_lock: true
+  switch_key:
+    Caps_Lock: commit_code
+    Control_L: noop
+    Control_R: noop
+    Eisu_toggle: clear
+    Shift_L: commit_code
+    Shift_R: commit_code
+config_version: 0.40
+key_binder:
+  bindings:
+    - {accept: "Shift+space", toggle: full_shape, when: always}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: paging}
+    - {accept: period, send: Page_Down, when: has_menu}
+menu:
+  page_size: 5
+punctuator:
+  half_shape:
+    "!": "！"
+    "\"": {pair: ["“", "”"]}
+    "$": "￥"
+    "'": {pair: ["‘", "’"]}
+    ",": "，"
+    .: "。"
+    "/": "/"
+    ":": "："
+    ";": "；"
+    "<": "《"
+    ">": "》"
+    "?": "？"
+    "[": "【"
+    "\\": "、"
+    "]": "】"
+    "^": "……"
+    _: "——"
+    "|": "·"
+recognizer:
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+schema_list:
+  - schema: luna_pinyin_simp
+  - schema: luna_pinyin_fluency
+  - schema: double_pinyin_flypy
+  - schema: flypy
+  - schema: tiger
+  - schema: tigress
+  - schema: luna_pinyin_tw
+  - schema: japanese
+switcher:
+  caption: "〔方案选单〕"
+  hotkeys:
+    - "Control+F8"
