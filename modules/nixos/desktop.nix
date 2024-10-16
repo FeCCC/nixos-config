@@ -46,18 +46,18 @@
         noto-fonts-emoji # 彩色的表情符号字体
 
         # 思源系列字体是 Adobe 主导的。其中汉字部分被称为「思源黑体」和「思源宋体」，是由 Adobe + Google 共同开发的
-        source-sans # 无衬线字体，不含汉字。字族名叫 Source Sans 3 和 Source Sans Pro，以及带字重的变体，加上 Source Sans 3 VF
-        source-serif # 衬线字体，不含汉字。字族名叫 Source Code Pro，以及带字重的变体
-        source-han-sans # 思源黑体
-        source-han-serif # 思源宋体
+        # source-sans # 无衬线字体，不含汉字。字族名叫 Source Sans 3 和 Source Sans Pro，以及带字重的变体，加上 Source Sans 3 VF
+        # source-serif # 衬线字体，不含汉字。字族名叫 Source Code Pro，以及带字重的变体
+        # source-han-sans # 思源黑体
+        # source-han-serif # 思源宋体
 
         # nerdfonts
         dejavu_fonts
       ];
 
       fontconfig.defaultFonts = {
-        serif = ["Source Han Serif SC" "Source Han Serif TC" "Noto Color Emoji"];
-        sansSerif = ["Source Han Sans SC" "Source Han Sans TC" "Noto Color Emoji"];
+        serif = ["Noto Serif CJK SC" "Noto Serif CJK TC" "Noto Color Emoji"];
+        sansSerif = ["Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Color Emoji"];
         monospace = ["DejaVu Sans Mono" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
