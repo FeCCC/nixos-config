@@ -7,6 +7,7 @@
     ./simple.nix
     ./yggdrasil.nix
     ./docker.nix
+    ./syncthing.nix
     ./desktop
   ];
 
