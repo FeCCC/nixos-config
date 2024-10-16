@@ -17,6 +17,8 @@
       steam
       osu-lazer
       yesplaymusic
+      rustdesk
+      siyuan
     ];
   };
 }
