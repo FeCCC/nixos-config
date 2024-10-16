@@ -4,32 +4,7 @@
   pkgs,
   ...
 }: {
-  options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
-
   config = lib.mkIf config.my_config.desktop.enable {
-    services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.displayManager.sddm.wayland.enable = true;
-    services.desktopManager.plasma6.enable = true;
-    environment.systemPackages = with pkgs; [
-      google-chrome
-      # citrix_workspace
-      keepassxc
-      unstable.zed-editor
-    ];
-
-    i18n = {
-      inputMethod = {
-        enabled = "fcitx5";
-        fcitx5 = {
-          addons = with pkgs; [
-            fcitx5-rime
-          ];
-          waylandFrontend = true;
-        };
-      };
-    };
-
     fonts = {
       # use fonts specified by user rather than default ones
       enableDefaultPackages = false;
