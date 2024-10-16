@@ -15,7 +15,7 @@
       disk = {
         main = {
           type = "disk";
-          device = "/dev/vda";
+          device = "/dev/sda";
           content = {
             type = "gpt";
             partitions = {
@@ -91,6 +91,9 @@
       fsType = "zfs";
       neededForBoot = true;
     };
+
+    services.zfs.autoSnapshot.enable = true;
+    services.zfs.autoScrub.enable = true;
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
