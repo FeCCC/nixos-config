@@ -14,6 +14,8 @@
     environment.systemPackages = with pkgs; [
       google-chrome
       # citrix_workspace
+      keepassxc
+      unstable.zed-editor
     ];
 
     i18n = {
