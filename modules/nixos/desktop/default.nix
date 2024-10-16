@@ -9,5 +9,5 @@
     ./fonts.nix
   ];
 
-  options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
+  options.my_os_config.desktop.enable = lib.mkEnableOption "use desktop";
 }

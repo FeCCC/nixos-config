@@ -9,5 +9,6 @@
     ./helix.nix
     ./zsh.nix
     ./ssh.nix
+    ./desktop.nix
   ];
 }

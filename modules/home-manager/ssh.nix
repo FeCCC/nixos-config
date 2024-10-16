@@ -3,9 +3,9 @@
   lib,
   ...
 }: {
-  options.my_config.ssh.enable = lib.mkEnableOption "my ssh";
+  options.my_hm_config.ssh.enable = lib.mkEnableOption "my ssh";
 
-  config = lib.mkIf config.my_config.ssh.enable {
+  config = lib.mkIf config.my_hm_config.ssh.enable {
     programs.ssh = {
       enable = true;
       extraConfig = ''

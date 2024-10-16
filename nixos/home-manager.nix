@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  config,
   pkgs,
   ...
 }: {
@@ -13,7 +14,10 @@
 
   home-manager = {
     sharedModules = [inputs.sops-nix.homeManagerModules.sops];
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {
+      inherit inputs outputs;
+      os_config = config;
+    };
     users = {
       # Import your home-manager configuration
       root = import ../home-manager/root.nix;
