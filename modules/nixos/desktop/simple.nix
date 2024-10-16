@@ -11,6 +11,11 @@
       keepassxc
       unstable.zed-editor
       qq
+      vscode
+      libreoffice
+      telegram-desktop
+      steam
+      osu-lazer
     ];
   };
 }
