@@ -20,5 +20,6 @@
     file
     which
     unzip
+    fzf
   ];
 }
