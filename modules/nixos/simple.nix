@@ -21,5 +21,6 @@
     which
     unzip
     fzf
+    alejandra
   ];
 }
