@@ -5,6 +5,7 @@
       gcc
       python3
       conda
+      jupyter
       perl
       util-linux
       pkg-config
