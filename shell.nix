@@ -4,6 +4,7 @@
       gnumake
       gcc
       python3
+      conda
       perl
       util-linux
       pkg-config
