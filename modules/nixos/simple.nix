@@ -22,5 +22,6 @@
     unzip
     fzf
     alejandra
+    aria2
   ];
 }
