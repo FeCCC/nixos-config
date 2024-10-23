@@ -24,5 +24,6 @@
     fzf
     alejandra
     aria2
+    mosh
   ];
 }
