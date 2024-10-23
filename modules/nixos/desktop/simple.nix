@@ -18,6 +18,7 @@
       yesplaymusic
       rustdesk
       siyuan
+      motrix
     ];
   };
 }
