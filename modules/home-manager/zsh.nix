@@ -14,6 +14,7 @@
     '';
     dotDir = ".config/zsh";
     autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     plugins = [
       {
         name = "powerlevel10k";
@@ -25,6 +26,14 @@
         src = ./p10k-config;
         file = "p10k.zsh";
       }
+      {
+        name = "zsh-z";
+        src = "${pkgs.zsh-z}/share/zsh-z";
+      }
     ];
+  };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
