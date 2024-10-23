@@ -14,6 +14,7 @@
     htop
     iftop
     neofetch
+    fastfetch
     zellij
     iperf3
     wget
