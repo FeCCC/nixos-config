@@ -20,6 +20,7 @@
       siyuan
       motrix
       veracrypt
+      gnucash
     ];
   };
 }
