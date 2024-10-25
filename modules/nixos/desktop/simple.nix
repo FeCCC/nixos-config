@@ -19,6 +19,7 @@
       rustdesk
       siyuan
       motrix
+      veracrypt
     ];
   };
 }
