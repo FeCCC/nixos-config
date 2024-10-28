@@ -18,9 +18,9 @@
       yesplaymusic
       rustdesk
       siyuan
-      motrix
       veracrypt
       gnucash
+      uget
     ];
   };
 }
