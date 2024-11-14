@@ -21,6 +21,7 @@
       veracrypt
       gnucash
       uget
+      sigil
     ];
   };
 }
