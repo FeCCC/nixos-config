@@ -27,5 +27,6 @@
     aria2
     mosh
     ncdu
+    acme-sh
   ];
 }
