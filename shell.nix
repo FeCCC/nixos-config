@@ -3,6 +3,8 @@
     packages = with pkgs; [
       gnumake
       gcc
+      gdb
+      lldb
       python3
       conda
       jupyter
