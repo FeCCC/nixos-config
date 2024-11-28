@@ -23,4 +23,13 @@
       exec zsh
     '';
   };
+  node = pkgs.mkShell {
+    packages = with pkgs; [
+      nodejs
+    ];
+
+    shellHook = ''
+      exec zsh
+    '';
+  };
 }
