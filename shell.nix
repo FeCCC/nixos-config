@@ -2,6 +2,9 @@
   default = pkgs.mkShell {
     packages = with pkgs; [
       gnumake
+      automake
+      autoconf
+      autogen
       gcc
       gdb
       lldb
