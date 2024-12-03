@@ -19,7 +19,7 @@
         # Noto 系列字族名只支持英文，命名规则是 Noto + Sans 或 Serif + 文字名称。
         # 其中汉字部分叫 Noto Sans/Serif CJK SC/TC/HK/JP/KR，最后一个词是地区变种。
         noto-fonts # 大部分文字的常见样式，不包含汉字
-        noto-fonts-cjk # 汉字部分
+        noto-fonts-cjk-sans # 汉字部分
         noto-fonts-emoji # 彩色的表情符号字体
 
         # 思源系列字体是 Adobe 主导的。其中汉字部分被称为「思源黑体」和「思源宋体」，是由 Adobe + Google 共同开发的
