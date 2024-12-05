@@ -28,5 +28,6 @@
     mosh
     ncdu
     acme-sh
+    ffmpeg-headless
   ];
 }
