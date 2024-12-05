@@ -62,6 +62,19 @@
           };
         }
         {
+          name = "yaml";
+          auto-format = true;
+          language-servers = ["yaml-language-server"];
+        }
+        {
+          name = "nix";
+          auto-format = true;
+          language-servers = ["nil"];
+          formatter = {
+            command = "alejandra";
+          };
+        }
+        {
           name = "python";
           auto-format = true;
           language-servers = ["pylsp"];
@@ -74,6 +87,10 @@
       taplo
       python312Packages.python-lsp-server
       black
+      yaml-language-server
+      docker-compose-language-service
+      nil
+      vscode-langservers-extracted
     ];
   };
 }
