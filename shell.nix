@@ -19,6 +19,7 @@
       ncurses
       zlib
       elfutils
+      bear
     ];
 
     shellHook = ''
