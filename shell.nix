@@ -27,9 +27,24 @@
       exec zsh
     '';
   };
+
   node = pkgs.mkShell {
     packages = with pkgs; [
       nodejs
+    ];
+
+    shellHook = ''
+      exec zsh
+    '';
+  };
+
+  rust = pkgs.mkShell {
+    packages = with pkgs; [
+      cargo
+      rustc
+      rustfmt
+      rust-analyzer
+      lldb
     ];
 
     shellHook = ''
