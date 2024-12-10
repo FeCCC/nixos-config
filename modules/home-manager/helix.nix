@@ -42,12 +42,14 @@
       language = [
         {
           name = "c";
+          auto-format = true;
           language-id = "c";
           scope = "source.c";
           language-servers = ["clangd"];
         }
         {
           name = "rust";
+          auto-format = true;
           scope = "source.rust";
           roots = ["Cargo.lock"];
           language-servers = ["rust-analyzer"];
