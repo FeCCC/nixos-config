@@ -22,6 +22,7 @@
       gnucash
       uget
       sigil
+      onlyoffice-desktopeditors
     ];
   };
 }
