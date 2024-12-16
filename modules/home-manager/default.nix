@@ -10,6 +10,6 @@
     ./zsh.nix
     ./ssh.nix
     ./desktop.nix
-    ./neovim.nix
+    ./neovim
   ];
 }
