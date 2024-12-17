@@ -3,6 +3,7 @@
     enable = true;
     settings = {
       options = {
+        close_command = "Bdelete! %d";
         always_show_bufferline = true;
         show_buffer_icons = true;
         show_buffer_close_icons = true;

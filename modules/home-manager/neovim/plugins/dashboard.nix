@@ -41,6 +41,38 @@
           ""
           ""
         ];
+        center = [
+          {
+            icon = "  ";
+            icon_hl = "Title";
+            desc = "Telescope sessions";
+            desc_hl = "String";
+            key = "s";
+            keymap = "<leader> f s";
+            key_hl = "Number";
+            action.__raw = "require(\"auto-session.session-lens\").search_session";
+          }
+          {
+            icon = "  ";
+            icon_hl = "Title";
+            desc = "Telescope projects";
+            desc_hl = "String";
+            key = "p";
+            keymap = "<leader> f p";
+            key_hl = "Number";
+            action.__raw = "require(\"telescope\").extensions.projects.projects";
+          }
+          {
+            icon = "󰍉  ";
+            desc = "Find File";
+            desc_hl = "String";
+            key = "f";
+            keymap = "<leader> f f";
+            key_hl = "Number";
+            action.__raw = "require(\"telescope.builtin\").find_files";
+          }
+        ];
+        footer = [];
       };
     };
   };
