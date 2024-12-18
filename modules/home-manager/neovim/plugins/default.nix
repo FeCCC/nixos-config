@@ -6,6 +6,7 @@
     ./telescope.nix
     ./auto-session.nix
     ./project.nix
+    ./toggleterm.nix
   ];
 
   programs.nixvim.plugins = {

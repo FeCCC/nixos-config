@@ -11,4 +11,18 @@
     ];
     nested = true;
   }
+  {
+    #保存时自动格式化
+    event = [
+      "BufWritePre"
+    ];
+    pattern = [
+      "*"
+    ];
+    callback.__raw = ''
+      function()
+        vim.cmd('lua vim.lsp.buf.format()')
+      end
+    '';
+  }
 ]

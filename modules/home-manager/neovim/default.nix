@@ -7,6 +7,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins
     ./keymap
+    ./lsp
     ./dependency.nix
   ];
 
