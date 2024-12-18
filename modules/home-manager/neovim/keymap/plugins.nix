@@ -5,6 +5,90 @@
       key = "<A-m>";
       mode = ["n"];
     }
+    {
+      action = "<C-w>h";
+      key = "<A-h>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<C-w>j";
+      key = "<A-j>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<C-w>k";
+      key = "<A-k>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<C-w>l";
+      key = "<A-l>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    # 左右比例控制
+    {
+      action = ":vertical resize -2<CR>";
+      key = "<C-Left>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":vertical resize +2<CR>";
+      key = "<C-Right>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    # 上下比例
+    {
+      action = ":resize +2<CR>";
+      key = "<C-Down>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":resize -2<CR>";
+      key = "<C-Up>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    # 相等比例
+    {
+      action = "<C-w>=";
+      key = "s=";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
     #bufferline相关
     {
       action = ":BufferLineCyclePrev<CR>";
@@ -90,6 +174,98 @@
       action = ":lua require('auto-session.session-lens').search_session()<CR>";
       key = "<leader>fs";
       mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    # toggleterm相关
+    {
+      action = ":ToggleTerm direction=vertical<CR>";
+      key = "\\<C-\\>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":ToggleTerm direction=float<CR>";
+      key = "f<C-\\>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":ToggleTerm direction=tab<CR>";
+      key = "t<C-\\>";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<C-\\><C-n>";
+      key = "<A-q>";
+      mode = ["t"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    # Terminal相关
+    {
+      action = ":set splitbelow<CR>:sp | terminal<CR>";
+      key = "st";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":set splitright<CR>:vsp | terminal<CR>";
+      key = "stv";
+      mode = ["n"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<Cmd> wincmd l<CR>";
+      key = "<A-l>";
+      mode = ["t"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<Cmd> wincmd h<CR>";
+      key = "<A-h>";
+      mode = ["t"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<Cmd> wincmd j<CR>";
+      key = "<A-j>";
+      mode = ["t"];
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = "<Cmd> wincmd k<CR>";
+      key = "<A-k>";
+      mode = ["t"];
       options = {
         noremap = true;
         silent = true;
