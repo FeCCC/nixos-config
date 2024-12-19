@@ -2,7 +2,7 @@
   imports = [
     ./lspsaga.nix
     ./cmp.nix
-    ./none-ls.nix
+    ./conform.nix
   ];
 
   programs.nixvim.plugins.lsp = {
