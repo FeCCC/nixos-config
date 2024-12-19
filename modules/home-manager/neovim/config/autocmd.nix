@@ -21,7 +21,7 @@
     ];
     callback.__raw = ''
       function()
-        vim.cmd('lua vim.lsp.buf.format()')
+        require('conform').format()
       end
     '';
   }

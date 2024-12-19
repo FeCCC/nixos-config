@@ -91,9 +91,9 @@
       };
     }
     {
-      action = ":lua vim.lsp.buf.format({ async = true })<CR>";
+      action = ":lua require('conform').format()<CR>";
       key = "<A-S-f>";
-      mode = ["n"];
+      mode = ["n" "v"];
       options = {
         buffer = true;
         desc = "Format";
