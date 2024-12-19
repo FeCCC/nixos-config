@@ -11,18 +11,18 @@
     ];
     nested = true;
   }
-  {
-    #保存时自动格式化
-    event = [
-      "BufWritePre"
-    ];
-    pattern = [
-      "*"
-    ];
-    callback.__raw = ''
-      function()
-        require('conform').format()
-      end
-    '';
-  }
+  # {
+  #   #保存时自动格式化
+  #   event = [
+  #     "BufWritePre"
+  #   ];
+  #   pattern = [
+  #     "*"
+  #   ];
+  #   callback.__raw = ''
+  #     function()
+  #       require('conform').format()
+  #     end
+  #   '';
+  # }
 ]

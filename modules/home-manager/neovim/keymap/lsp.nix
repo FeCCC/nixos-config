@@ -91,7 +91,33 @@
       };
     }
     {
-      action = ":lua require('conform').format()<CR>";
+      action.__raw = ''
+        function()
+            if vim.fn.mode() == "v" then
+                local _, v_row, _ = unpack(vim.fn.getpos('v'))
+                local _, c_row, _ = unpack(vim.fn.getpos('.'))
+                local start_row, end_row
+                if v_row < c_row then
+                    start_row = v_row
+                    end_row = c_row
+                elseif v_row > c_row then
+                    start_row = c_row
+                    end_row = v_row
+                elseif v_row == c_row then
+                    start_row = v_row
+                    end_row = v_row
+                end
+                require('conform').format({
+                    range = {
+                        ["start"] = { start_row, 0 },
+                        ["end"] = { end_row, 0 },
+                    }
+                })
+            else
+                require('conform').format()
+            end
+        end
+      '';
       key = "<A-S-f>";
       mode = ["n" "v"];
       options = {
