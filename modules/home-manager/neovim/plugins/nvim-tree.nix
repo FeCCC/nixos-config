@@ -4,5 +4,6 @@
     hijackCursor = true;
     hijackNetrw = true;
     hijackUnnamedBufferWhenOpening = true;
+    updateFocusedFile.enable = true;
   };
 }
