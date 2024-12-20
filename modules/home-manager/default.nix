@@ -11,5 +11,6 @@
     ./ssh.nix
     ./desktop.nix
     ./neovim
+    ./yazi.nix
   ];
 }
