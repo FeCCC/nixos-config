@@ -38,6 +38,7 @@
             text_align = "left";
           }
         ];
+        hover.enable = true;
       };
     };
   };

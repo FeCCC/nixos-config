@@ -210,5 +210,71 @@
       mode = ["t"];
       options = silents;
     }
+    # gitsigns 相关
+    {
+      action = ":Gitsigns next_hunk<CR>";
+      key = "<leader>gj";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns prev_hunk<CR>";
+      key = "<leader>gk";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns stage_hunk<CR>";
+      key = "<leader>gsh";
+      mode = ["n" "v"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns undo_stage_hunk<CR>";
+      key = "<leader>guh";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns reset_hunk<CR>";
+      key = "<leader>grh";
+      mode = ["n" "v"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns stage_buffer<CR>";
+      key = "<leader>gsb";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns reset_buffer<CR>";
+      key = "<leader>grb";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns preview_hunk<CR>";
+      key = "<leader>gp";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":Gitsigns blame_line<CR>";
+      key = "<leader>gbl";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":lua require'gitsigns'.diffthis('~')<CR>";
+      key = "<leader>gdf";
+      mode = ["n"];
+      options = silents;
+    }{
+      action = ":Gitsigns toggle_deleted<CR>";
+      key = "<leader>gdl";
+      mode = ["n"];
+      options = silents;
+    }
   ];
 }
