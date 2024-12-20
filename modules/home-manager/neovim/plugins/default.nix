@@ -14,5 +14,6 @@
     bufdelete.enable = true;
     lz-n.enable = true;
     which-key.enable = true;
+    notify.enable = true;
   };
 }
