@@ -6,7 +6,7 @@
     };
   in [
     {
-      action = ":NvimTreeToggle<CR>";
+      action = ":Yazi toggle<CR>";
       key = "<A-m>";
       mode = ["n"];
     }
