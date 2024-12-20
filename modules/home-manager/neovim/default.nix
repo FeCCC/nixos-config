@@ -8,6 +8,7 @@
     ./plugins
     ./keymap
     ./lsp
+    ./dap
     ./dependency.nix
   ];
 
