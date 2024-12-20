@@ -6,7 +6,7 @@
     };
   in [
     {
-      action = ":Yazi toggle<CR>";
+      action = ":Yazi<CR>";
       key = "<A-m>";
       mode = ["n"];
     }
@@ -270,7 +270,8 @@
       key = "<leader>gdf";
       mode = ["n"];
       options = silents;
-    }{
+    }
+    {
       action = ":Gitsigns toggle_deleted<CR>";
       key = "<leader>gdl";
       mode = ["n"];
