@@ -8,6 +8,7 @@
     ./project.nix
     ./toggleterm.nix
     ./gitsigns.nix
+    ./yazi.nix
   ];
 
   programs.nixvim.plugins = {

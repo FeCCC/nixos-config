@@ -1,6 +1,6 @@
 {
   programs.nixvim.plugins.nvim-tree = {
-    enable = true;
+    enable = false;
     hijackCursor = true;
     hijackNetrw = true;
     hijackUnnamedBufferWhenOpening = true;
