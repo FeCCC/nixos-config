@@ -29,5 +29,6 @@
       };
     };
     fidget.enable = true;
+    lsp-lines.enable = true;
   };
 }
