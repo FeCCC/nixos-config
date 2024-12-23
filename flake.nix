@@ -84,13 +84,13 @@
     }:
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system}; # Home-manager requires 'pkgs' instance
-        sharedModules = [inputs.sops-nix.homeManagerModules.sops];
         extraSpecialArgs = {
           inherit inputs outputs;
           os_config = {my_os_config.desktop.enable = false;};
         };
         modules =
           [
+            sops-nix.homeManagerModules.sops
           ]
           ++ modules;
       };
