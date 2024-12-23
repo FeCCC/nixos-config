@@ -63,7 +63,7 @@
     # 相等比例
     {
       action = "<C-w>=";
-      key = "s=";
+      key = "<leader>s=";
       mode = ["n"];
       options = silents;
     }
