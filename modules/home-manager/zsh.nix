@@ -32,4 +32,5 @@
       plugins = ["z" "fzf" "extract"];
     };
   };
+  programs.fzf.enable = true;
 }
