@@ -66,6 +66,34 @@
       import nixpkgs {
         inherit system;
       };
+
+    mkNixOSConfiguration = {modules ? []}:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules =
+          [
+            # > Our main nixos configuration file <
+            ./nixos/configuration.nix
+          ]
+          ++ modules;
+      };
+
+    mkHomeConfiguration = {
+      system,
+      modules ? [],
+    }:
+      home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system}; # Home-manager requires 'pkgs' instance
+        sharedModules = [inputs.sops-nix.homeManagerModules.sops];
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          os_config = {my_os_config.desktop.enable = false;};
+        };
+        modules =
+          [
+          ]
+          ++ modules;
+      };
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -88,31 +116,19 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
-          ./hosts/common.nix
-        ];
-      };
+      nixos = mkNixOSConfiguration {modules = [./hosts/common.nix];};
+      nixos-wsl = mkNixOSConfiguration {modules = [./hosts/wsl.nix];};
+      nixos-server = mkNixOSConfiguration {modules = [./hosts/server.nix];};
+    };
 
-      nixos-wsl = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
-          ./hosts/wsl.nix
-        ];
+    homeConfigurations = {
+      miku = mkHomeConfiguration {
+        system = "x86_64-linux";
+        modules = [./home-manager/miku.nix];
       };
-
-      nixos-server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
-          ./hosts/server.nix
-        ];
+      root = mkHomeConfiguration {
+        system = "x86_64-linux";
+        modules = [./home-manager/root.nix];
       };
     };
   };
