@@ -9,6 +9,7 @@
       action = ":Yazi<CR>";
       key = "<A-m>";
       mode = ["n"];
+      options = silents;
     }
     {
       action = "<C-w>h";
@@ -72,62 +73,74 @@
       action = ":BufferLineCyclePrev<CR>";
       key = "<leader>h";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineCycleNext<CR>";
       key = "<leader>l";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLinePick<CR>";
       key = "<leader>p";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineMovePrev<CR>";
       key = "<leader>mh";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineMoveNext<CR>";
       key = "<leader>ml";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineCloseLeft<CR>";
       key = "<leader>ch";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineCloseRight<CR>";
       key = "<leader>cl";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>";
       key = "<leader>ca";
       mode = ["n"];
+      options = silents;
     }
     #telescope相关
     {
       action = ":lua require('telescope.builtin').find_files()<CR>";
       key = "<leader>ff";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":lua require('telescope.builtin').buffers()<CR>";
       key = "<leader>fb";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":lua require('telescope.builtin').help_tags()<CR>";
       key = "<leader>fh";
       mode = ["n"];
+      options = silents;
     }
     {
       action = ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>";
       key = "<leader>fg";
       mode = ["n"];
+      options = silents;
     }
     {
       action = "<cmd>GrepInDirectory<CR>";
