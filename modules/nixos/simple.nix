@@ -1,33 +1,14 @@
 {
   inputs,
+  lib,
   pkgs,
   ...
-}: {
-  programs.nix-ld.enable = true;
-  environment.systemPackages = with pkgs; [
-    busybox
-    ripgrep
-    tree
-    sops
-    age
-    ssh-to-pgp
-    ssh-to-age
-    htop
-    iftop
-    neofetch
-    fastfetch
-    zellij
-    iperf3
-    wget
-    file
-    which
-    unzip
-    fzf
-    alejandra
-    aria2
-    mosh
-    ncdu
-    acme-sh
-    ffmpeg-headless
-  ];
+}: let
+  apps = import ../common/apps.nix;
+in {
+  programs = lib.genAttrs apps.nixos (app: {
+    enable = true;
+  });
+
+  environment.systemPackages = map (app: pkgs.${app}) apps.pkgs;
 }
