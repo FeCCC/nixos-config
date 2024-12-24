@@ -20,27 +20,24 @@ let
       "aria2"
     ]
     ++ common_programs;
-  pkgs =
-    [
-      "busybox"
-      "tree"
-      "sops"
-      "age"
-      "ssh-to-pgp"
-      "ssh-to-age"
-      "neofetch"
-      "iperf"
-      "wget"
-      "file"
-      "which"
-      "unzip"
-      "alejandra"
-      "ncdu"
-      "acme-sh"
-      "ffmpeg-headless"
-    ]
-    ++ nixos_programs
-    ++ home_programs;
+  pkgs = [
+    "busybox"
+    "tree"
+    "sops"
+    "age"
+    "ssh-to-pgp"
+    "ssh-to-age"
+    "neofetch"
+    "iperf"
+    "wget"
+    "file"
+    "which"
+    "unzip"
+    "alejandra"
+    "ncdu"
+    "acme-sh"
+    "ffmpeg-headless"
+  ];
 in {
   inherit pkgs;
   nixos = nixos_programs;
