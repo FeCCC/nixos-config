@@ -12,5 +12,6 @@
     ./desktop.nix
     ./neovim
     ./yazi.nix
+    ./simple.nix
   ];
 }
