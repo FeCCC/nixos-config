@@ -6,6 +6,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Go to Declaration";
       };
     }
@@ -15,6 +16,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Go to Definition";
       };
     }
@@ -24,6 +26,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Go to References";
       };
     }
@@ -33,6 +36,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Go to Type Implementation";
       };
     }
@@ -42,6 +46,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Go to Type Definition";
       };
     }
@@ -51,6 +56,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "LSP Hover";
       };
     }
@@ -60,6 +66,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Signature HHelp";
       };
     }
@@ -69,6 +76,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Rename";
       };
     }
@@ -78,6 +86,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Symbols Outline";
       };
     }
@@ -87,6 +96,7 @@
       mode = ["n"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Code Actions";
       };
     }
@@ -122,6 +132,7 @@
       mode = ["n" "v"];
       options = {
         buffer = true;
+        silent = true;
         desc = "Format";
       };
     }

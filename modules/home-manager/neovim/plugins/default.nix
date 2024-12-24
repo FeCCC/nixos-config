@@ -18,6 +18,7 @@
     lz-n.enable = true;
     which-key.enable = true;
     notify.enable = true;
+    noice.enable = true;
     treesitter.enable = true;
     illuminate.enable = true;
     scrollview.enable = true;
