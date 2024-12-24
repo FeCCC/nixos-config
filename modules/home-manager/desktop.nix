@@ -28,5 +28,6 @@
         };
       };
     };
+    programs.wezterm.enable = true;
   };
 }

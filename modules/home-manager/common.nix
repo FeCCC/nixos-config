@@ -1,8 +1,5 @@
 {
-  inputs,
   outputs,
-  lib,
-  config,
   pkgs,
   ...
 }: {
@@ -31,21 +28,15 @@
     };
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  home.packages = with pkgs; [];
-
   xdg.enable = true;
 
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
   programs.git = {
     enable = true;
     userName = "FeCCC";
     userEmail = "railgun.long@foxmail.com";
     lfs.enable = true;
   };
-  programs.lazygit.enable = true;
+  # programs.lazygit.enable = true;
 
   programs.bash = {
     enable = true;
