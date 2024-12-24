@@ -28,7 +28,6 @@
         nginx_language_server.enable = true;
       };
     };
-    fidget.enable = true;
     lsp-lines.enable = true;
   };
 }
