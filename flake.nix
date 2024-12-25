@@ -9,6 +9,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +45,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-2305,
     home-manager,
     nixos-wsl,
     sops-nix,
@@ -102,7 +105,13 @@
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
-    devShells = forAllSystems (system: import ./shell.nix {pkgs = pkgsForSystem system;});
+    devShells = forAllSystems (system:
+      import ./shell.nix {
+        pkgs = pkgsForSystem system;
+        pkgs-2305 = import nixpkgs-2305 {
+          inherit system;
+        };
+      });
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
