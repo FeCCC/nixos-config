@@ -25,5 +25,6 @@
     image.enable = true;
     lazygit.enable = true;
     diffview.enable = true;
+    git-conflict.enable = true;
   };
 }
