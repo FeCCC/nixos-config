@@ -24,5 +24,6 @@
     scrollview.enable = true;
     gitblame.enable = true;
     image.enable = true;
+    lazygit.enable = true;
   };
 }
