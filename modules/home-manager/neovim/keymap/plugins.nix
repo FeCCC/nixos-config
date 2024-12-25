@@ -88,6 +88,24 @@
       options = silents;
     }
     {
+      action = ":tabprevious<CR>";
+      key = "<leader>th";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":tabnext<CR>";
+      key = "<leader>tl";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":tabclose<CR>";
+      key = "<leader>tc";
+      mode = ["n"];
+      options = silents;
+    }
+    {
       action = ":BufferLineMovePrev<CR>";
       key = "<leader>mh";
       mode = ["n"];
@@ -273,14 +291,20 @@
       options = silents;
     }
     {
-      action = ":Gitsigns blame_line<CR>";
+      action = ":Gitsigns blame<CR>";
       key = "<leader>gbl";
       mode = ["n"];
       options = silents;
     }
     {
-      action = ":lua require'gitsigns'.diffthis('~')<CR>";
+      action = ":GitBlameCopySHA<CR>:DiffviewOpen <C-R>+<CR>";
       key = "<leader>gdf";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":DiffviewClose<CR>";
+      key = "<leader>gdc";
       mode = ["n"];
       options = silents;
     }
@@ -293,6 +317,12 @@
     {
       action = ":LazyGit<CR>";
       key = "<leader>lg";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":DiffviewFileHistory %<CR>";
+      key = "<leader>gfh";
       mode = ["n"];
       options = silents;
     }
