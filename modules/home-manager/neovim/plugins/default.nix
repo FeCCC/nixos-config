@@ -14,7 +14,6 @@
   programs.nixvim.plugins = {
     indent-blankline.enable = true;
     lualine.enable = true;
-    bufdelete.enable = true;
     lz-n.enable = true;
     which-key.enable = true;
     notify.enable = true;
