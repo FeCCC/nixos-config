@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-2305,
+  ...
+}: {
   default = pkgs.mkShell {
     packages = with pkgs; [
       gnumake
@@ -58,6 +62,36 @@
       ];
 
     shellHook = ''
+      exec zsh
+    '';
+  };
+
+  gcc48 = pkgs.mkShell {
+    packages = with pkgs;
+      [
+        gnumake
+        automake
+        autoconf
+        autogen
+        gdb
+        lldb
+        python3
+        conda
+        jupyter
+        perl
+        util-linux
+        pkg-config
+        openssl
+        binutils
+        ncurses
+        zlib
+        elfutils
+        bear
+      ]
+      ++ [pkgs-2305.gcc48];
+
+    shellHook = ''
+      export LD_LIBRARY_PATH="${pkgs.ncurses.out}/lib:${pkgs.elfutils.out}/lib:$LD_LIBRARY_PATH"
       exec zsh
     '';
   };
