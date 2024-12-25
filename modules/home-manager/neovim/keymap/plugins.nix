@@ -290,5 +290,11 @@
       mode = ["n"];
       options = silents;
     }
+    {
+      action = ":LazyGit<CR>";
+      key = "<leader>lg";
+      mode = ["n"];
+      options = silents;
+    }
   ];
 }
