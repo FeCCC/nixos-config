@@ -29,5 +29,6 @@
     git-conflict.enable = true;
     leap.enable = true;
     rainbow-delimiters.enable = true;
+    treesitter-context.enable = true;
   };
 }
