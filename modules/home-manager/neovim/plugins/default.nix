@@ -10,6 +10,7 @@
     ./gitsigns.nix
     ./yazi.nix
     ./image.nix
+    ./autopairs.nix
   ];
 
   programs.nixvim.plugins = {
