@@ -135,6 +135,12 @@
       mode = ["n"];
       options = silents;
     }
+    {
+      action = ":BufferLinePickClose<CR>";
+      key = "<leader>cp";
+      mode = ["n"];
+      options = silents;
+    }
     #telescope相关
     {
       action = ":lua require('telescope.builtin').find_files()<CR>";
