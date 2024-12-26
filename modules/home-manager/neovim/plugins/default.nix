@@ -9,6 +9,7 @@
     ./toggleterm.nix
     ./gitsigns.nix
     ./yazi.nix
+    ./image.nix
   ];
 
   programs.nixvim.plugins = {
@@ -22,7 +23,6 @@
     illuminate.enable = true;
     scrollview.enable = true;
     gitblame.enable = true;
-    image.enable = true;
     lazygit.enable = true;
     diffview.enable = true;
     git-conflict.enable = true;
