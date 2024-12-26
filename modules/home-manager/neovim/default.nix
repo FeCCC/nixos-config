@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   ...
 }: {
   imports = [
@@ -39,8 +38,5 @@
         xsel.enable = true;
       };
     };
-
-    extraLuaPackages = ps: [ps.magick];
-    extraPackages = [pkgs.imagemagick];
   };
 }
