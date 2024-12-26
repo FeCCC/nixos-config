@@ -204,19 +204,25 @@
       mode = ["t"];
       options = silents;
     }
-    # Terminal相关
     {
-      action = ":set splitbelow<CR>:sp | terminal<CR>";
-      key = "st";
-      mode = ["n"];
+      action = "<C-\\><C-n>";
+      key = "<ESC>";
+      mode = ["t"];
       options = silents;
     }
-    {
-      action = ":set splitright<CR>:vsp | terminal<CR>";
-      key = "stv";
-      mode = ["n"];
-      options = silents;
-    }
+    # # Terminal相关
+    # {
+    #   action = ":set splitbelow<CR>:sp | terminal<CR>";
+    #   key = "<leader>st";
+    #   mode = ["n"];
+    #   options = silents;
+    # }
+    # {
+    #   action = ":set splitright<CR>:vsp | terminal<CR>";
+    #   key = "<leader>stv";
+    #   mode = ["n"];
+    #   options = silents;
+    # }
     {
       action = "<Cmd> wincmd l<CR>";
       key = "<A-l>";
