@@ -26,5 +26,6 @@
     lazygit.enable = true;
     diffview.enable = true;
     git-conflict.enable = true;
+    leap.enable = true;
   };
 }
