@@ -1,5 +1,6 @@
 {
   inputs,
+  pkgs,
   ...
 }: {
   imports = [
@@ -38,5 +39,7 @@
         xsel.enable = true;
       };
     };
+
+    extraPlugins = [pkgs.vimPlugins.cellular-automaton-nvim];
   };
 }
