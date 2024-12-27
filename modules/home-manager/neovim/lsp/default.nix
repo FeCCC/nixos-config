@@ -28,6 +28,6 @@
         nginx_language_server.enable = true;
       };
     };
-    lsp-lines.enable = true;
+    trouble.enable = true;
   };
 }

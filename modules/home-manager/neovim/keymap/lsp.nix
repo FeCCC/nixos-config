@@ -136,5 +136,15 @@
         desc = "Format";
       };
     }
+    {
+      action = ":Trouble diagnostics toggle<CR>";
+      key = "<leader>xx";
+      mode = ["n"];
+      options = {
+        buffer = true;
+        silent = true;
+        desc = "Diagnostics (Trouble)";
+      };
+    }
   ];
 }
