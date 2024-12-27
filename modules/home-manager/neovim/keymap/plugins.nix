@@ -37,27 +37,27 @@
     }
     # 左右比例控制
     {
-      action = ":vertical resize -2<CR>";
-      key = "<C-Left>";
+      action = ":SmartResizeLeft<CR>";
+      key = "<C-h>";
       mode = ["n"];
       options = silents;
     }
     {
-      action = ":vertical resize +2<CR>";
-      key = "<C-Right>";
+      action = ":SmartResizeRight<CR>";
+      key = "<C-l>";
       mode = ["n"];
       options = silents;
     }
     # 上下比例
     {
-      action = ":resize +2<CR>";
-      key = "<C-Down>";
+      action = ":SmartResizeDown<CR>";
+      key = "<C-j>";
       mode = ["n"];
       options = silents;
     }
     {
-      action = ":resize -2<CR>";
-      key = "<C-Up>";
+      action = ":SmartResizeUp<CR>";
+      key = "<C-k>";
       mode = ["n"];
       options = silents;
     }
@@ -65,6 +65,31 @@
     {
       action = "<C-w>=";
       key = "<leader>s=";
+      mode = ["n"];
+      options = silents;
+    }
+    # 交换窗口
+    {
+      action = ":SmartSwapRight<CR>";
+      key = "<leader><leader>l";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":SmartSwapLeft<CR>";
+      key = "<leader><leader>h";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":SmartSwapUp<CR>";
+      key = "<leader><leader>k";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":SmartSwapDown<CR>";
+      key = "<leader><leader>j";
       mode = ["n"];
       options = silents;
     }

@@ -30,5 +30,6 @@
     leap.enable = true;
     rainbow-delimiters.enable = true;
     treesitter-context.enable = true;
+    smart-splits.enable = true;
   };
 }
