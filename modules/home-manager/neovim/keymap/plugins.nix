@@ -93,25 +93,56 @@
       mode = ["n"];
       options = silents;
     }
-    #bufferline相关
+    # barbar相关
     {
-      action = ":BufferLineCyclePrev<CR>";
+      action = ":BufferPrevious<CR>";
       key = "<leader>h";
       mode = ["n"];
       options = silents;
     }
     {
-      action = ":BufferLineCycleNext<CR>";
+      action = ":BufferNext<CR>";
       key = "<leader>l";
       mode = ["n"];
       options = silents;
     }
     {
-      action = ":BufferLinePick<CR>";
+      action = ":BufferPick<CR>";
       key = "<leader>p";
       mode = ["n"];
       options = silents;
     }
+    {
+      action = ":BufferMovePrevious<CR>";
+      key = "<leader>mh";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":BufferMoveNext<CR>";
+      key = "<leader>ml";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":BufferClose<CR>";
+      key = "<leader>cl";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":BufferCloseAllButCurrent<CR>";
+      key = "<leader>ca";
+      mode = ["n"];
+      options = silents;
+    }
+    {
+      action = ":BufferPickDelete<CR>";
+      key = "<leader>cp";
+      mode = ["n"];
+      options = silents;
+    }
+    # tab 相关
     {
       action = ":tabprevious<CR>";
       key = "<leader>th";
@@ -127,42 +158,6 @@
     {
       action = ":tabclose<CR>";
       key = "<leader>tc";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLineMovePrev<CR>";
-      key = "<leader>mh";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLineMoveNext<CR>";
-      key = "<leader>ml";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLineCloseLeft<CR>";
-      key = "<leader>ch";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLineCloseRight<CR>";
-      key = "<leader>cl";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>";
-      key = "<leader>ca";
-      mode = ["n"];
-      options = silents;
-    }
-    {
-      action = ":BufferLinePickClose<CR>";
-      key = "<leader>cp";
       mode = ["n"];
       options = silents;
     }

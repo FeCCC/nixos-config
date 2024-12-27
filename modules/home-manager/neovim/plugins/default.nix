@@ -2,7 +2,7 @@
   imports = [
     ./dashboard.nix
     ./nvim-tree.nix
-    ./bufferline.nix
+    ./barbar.nix
     ./telescope.nix
     ./auto-session.nix
     ./project.nix
