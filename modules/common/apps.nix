@@ -18,6 +18,7 @@ let
       "zellij"
       "fzf"
       "aria2"
+      "zoxide" # for zsh
     ]
     ++ common_programs;
   pkgs = [
