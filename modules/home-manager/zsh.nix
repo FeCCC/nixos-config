@@ -29,7 +29,7 @@
     ];
     oh-my-zsh = {
       enable = true;
-      plugins = ["z" "fzf" "extract"];
+      plugins = ["zoxide" "fzf" "extract"];
     };
   };
 }
