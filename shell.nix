@@ -13,6 +13,7 @@
       gdb
       lldb
       python3
+      uv
       conda
       jupyter
       perl
