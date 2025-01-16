@@ -3,7 +3,7 @@
   pkgs-2305,
   ...
 }: {
-  default = pkgs.mkShell {
+  default = pkgs.mkShellNoCC {
     packages = with pkgs; [
       gnumake
       automake
@@ -33,7 +33,7 @@
     '';
   };
 
-  node = pkgs.mkShell {
+  node = pkgs.mkShellNoCC {
     packages = with pkgs; [
       nodejs
     ];
@@ -43,7 +43,7 @@
     '';
   };
 
-  rust = pkgs.mkShell {
+  rust = pkgs.mkShellNoCC {
     packages = with pkgs; [
       cargo
       rustc
@@ -67,7 +67,7 @@
     '';
   };
 
-  gcc48 = pkgs.mkShell {
+  gcc48 = pkgs.mkShellNoCC {
     packages = with pkgs;
       [
         gnumake
