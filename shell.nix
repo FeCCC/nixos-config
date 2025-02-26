@@ -90,16 +90,18 @@
         pkg-config
         openssl
         binutils
-        ncurses
         zlib
-        elfutils
         bear
       ]
       ++ [pkgs-2305.gcc48];
 
+    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      pkgs.ncurses
+      pkgs.elfutils
+      pkgs-2305.gcc48.cc.lib
+    ];
+
     shellHook = ''
-      export LD_LIBRARY_PATH="${pkgs.ncurses.out}/lib:${pkgs.elfutils.out}/lib:$LD_LIBRARY_PATH"
-      exec zsh
     '';
   };
 }
