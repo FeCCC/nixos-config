@@ -1,10 +1,13 @@
 let
   nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-24.11";
-  pkgs = import nixpkgs { config = {}; overlays = []; };
+  pkgs = import nixpkgs {
+    config = {};
+    overlays = [];
+  };
 in
-
-pkgs.mkShellNoCC {
-  packages = with pkgs; [
+  pkgs.mkShellNoCC {
+    hardeningDisable = ["all"];
+    packages = with pkgs; [
       gnumake
       automake
       autoconf
@@ -27,9 +30,15 @@ pkgs.mkShellNoCC {
       bear
     ];
 
+    LD_LIBRARY_PATH = with pkgs;
+      lib.makeLibraryPath [
+        ncurses
+        elfutils
+        libgcc
+      ];
+
     shellHook = ''
-      export LD_LIBRARY_PATH="${pkgs.libgcc.lib}/lib:${pkgs.ncurses.out}/lib:${pkgs.elfutils.out}/lib:$LD_LIBRARY_PATH"
       # for wsl
       # export LD_LIBRARY_PATH="/usr/lib/wsl/lib:$LD_LIBRARY_PATH"
     '';
-}
+  }
