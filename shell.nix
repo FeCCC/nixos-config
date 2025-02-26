@@ -4,6 +4,7 @@
   ...
 }: {
   default = pkgs.mkShellNoCC {
+    hardeningDisable = ["all"];
     packages = with pkgs; [
       gnumake
       automake
@@ -21,14 +22,18 @@
       pkg-config
       openssl
       binutils
-      ncurses
       zlib
-      elfutils
       bear
     ];
 
+    LD_LIBRARY_PATH = with pkgs;
+      lib.makeLibraryPath [
+        ncurses
+        elfutils
+        libgcc
+      ];
+
     shellHook = ''
-      export LD_LIBRARY_PATH="${pkgs.libgcc.lib}/lib:${pkgs.ncurses.out}/lib:${pkgs.elfutils.out}/lib:$LD_LIBRARY_PATH"
       exec zsh
     '';
   };
@@ -68,6 +73,7 @@
   };
 
   gcc48 = pkgs.mkShellNoCC {
+    hardeningDisable = ["all"];
     packages = with pkgs;
       [
         gnumake
