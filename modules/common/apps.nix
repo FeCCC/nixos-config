@@ -14,6 +14,7 @@ let
       "home-manager"
       "ripgrep"
       "htop"
+      "btop"
       "fastfetch"
       "zellij"
       "fzf"
