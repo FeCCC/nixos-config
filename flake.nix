@@ -68,6 +68,9 @@
     pkgsForSystem = system:
       import nixpkgs {
         inherit system;
+        config.permittedInsecurePackages = [
+          "openssl-1.1.1w"
+        ];
       };
 
     mkNixOSConfiguration = {modules ? []}:
@@ -110,6 +113,9 @@
         pkgs = pkgsForSystem system;
         pkgs-2305 = import nixpkgs-2305 {
           inherit system;
+          config.permittedInsecurePackages = [
+            "openssl-1.1.1w"
+          ];
         };
       });
 
@@ -134,6 +140,10 @@
       miku = mkHomeConfiguration {
         system = "x86_64-linux";
         modules = [./home-manager/miku.nix];
+      };
+      wl = mkHomeConfiguration {
+        system = "x86_64-linux";
+        modules = [./home-manager/wl.nix];
       };
       root = mkHomeConfiguration {
         system = "x86_64-linux";

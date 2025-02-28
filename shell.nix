@@ -21,9 +21,15 @@
       util-linux
       pkg-config
       openssl
+      openssl_1_1
       binutils
       zlib
       bear
+      elfutils
+      ncurses
+      zstd
+      krb5
+      e2fsprogs
     ];
 
     LD_LIBRARY_PATH = with pkgs;
@@ -31,6 +37,8 @@
         ncurses
         elfutils
         libgcc
+        krb5
+        e2fsprogs
       ];
 
     shellHook = ''
@@ -72,36 +80,46 @@
     '';
   };
 
-  gcc48 = pkgs.mkShellNoCC {
+  gcc48 = pkgs-2305.mkShellNoCC {
     hardeningDisable = ["all"];
-    packages = with pkgs;
-      [
-        gnumake
-        automake
-        autoconf
-        autogen
-        gdb
-        lldb
-        python3
-        conda
-        jupyter
-        perl
-        util-linux
-        pkg-config
-        openssl
-        binutils
-        zlib
-        bear
-      ]
-      ++ [pkgs-2305.gcc48];
 
-    LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-      pkgs.ncurses
-      pkgs.elfutils
-      pkgs-2305.gcc48.cc.lib
+    packages = with pkgs-2305; [
+      gnumake
+      automake
+      autoconf
+      autogen
+      gdb
+      lldb
+      python3
+      conda
+      jupyter
+      perl
+      util-linux
+      pkg-config
+      openssl
+      openssl_1_1
+      binutils
+      zlib
+      bear
+      gcc48
+      elfutils
+      ncurses
+      zstd
+      krb5
+      e2fsprogs
     ];
 
+    LD_LIBRARY_PATH = with pkgs-2305;
+      lib.makeLibraryPath [
+        ncurses
+        elfutils
+        krb5
+        e2fsprogs
+        # pkgs-2305.gcc48.cc.lib
+      ];
+
     shellHook = ''
+      exec zsh
     '';
   };
 }
