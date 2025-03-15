@@ -39,6 +39,7 @@ let
     "ncdu"
     "acme-sh"
     "ffmpeg-headless"
+    "lrzsz"
   ];
 in {
   inherit pkgs;
