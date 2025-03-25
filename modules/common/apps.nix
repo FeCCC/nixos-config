@@ -40,6 +40,7 @@ let
     "acme-sh"
     "ffmpeg-headless"
     "lrzsz"
+    "rsync"
   ];
 in {
   inherit pkgs;
