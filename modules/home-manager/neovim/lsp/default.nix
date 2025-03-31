@@ -2,6 +2,7 @@
   imports = [
     ./lspsaga.nix
     ./cmp.nix
+    ./blink.nix
     ./conform.nix
   ];
 
