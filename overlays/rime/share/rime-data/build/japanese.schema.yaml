@@ -4,10 +4,10 @@ __build_info:
     default: 1728048116
     default.custom: 1727421612
     japanese.custom: 0
-    japanese.schema: 1691005073
+    japanese.schema: 1691005072
     key_bindings: 1728048116
     key_bindings.custom: 0
-    punctuation: 1728048116
+    punctuation: 1728048115
     punctuation.custom: 0
 engine:
   filters:

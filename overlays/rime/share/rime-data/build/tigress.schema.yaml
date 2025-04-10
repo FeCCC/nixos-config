@@ -9,7 +9,7 @@ __build_info:
     punctuation.custom: 0
     symbols: 1705540228
     symbols.custom: 0
-    tigress.custom: 1711977454
+    tigress.custom: 1744271600
     tigress.schema: 1722887416
 chaifen:
   comment_format:
@@ -502,6 +502,8 @@ speller:
   auto_select: true
   auto_select_pattern: "^;\\w+"
   max_code_length: 4
+style:
+  vertical_auto_reverse: false
 switches:
   - name: ascii_mode
     reset: 0

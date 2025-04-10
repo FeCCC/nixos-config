@@ -3,11 +3,11 @@ __build_info:
   timestamps:
     core2022.custom: 0
     core2022.schema: 1661153760
-    default: 1728048116
+    default: 1728048115
     default.custom: 1727421612
     key_bindings: 1728048116
     key_bindings.custom: 0
-    punctuation: 1728048115
+    punctuation: 1728048116
     punctuation.custom: 0
 menu:
   page_size: 5

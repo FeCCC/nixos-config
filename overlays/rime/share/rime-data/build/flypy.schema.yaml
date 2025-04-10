@@ -5,9 +5,9 @@ __build_info:
     default.custom: 1727421612
     flypy.custom: 1697181706
     flypy.schema: 1673580653
-    key_bindings: 1728048115
+    key_bindings: 1728048116
     key_bindings.custom: 0
-    punctuation: 1728048115
+    punctuation: 1728048116
     punctuation.custom: 0
 custom_phraseQMZ:
   db_class: stabledb
