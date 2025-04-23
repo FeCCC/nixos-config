@@ -41,6 +41,7 @@ let
     "ffmpeg-headless"
     "lrzsz"
     "rsync"
+    "devenv"
   ];
 in {
   inherit pkgs;
