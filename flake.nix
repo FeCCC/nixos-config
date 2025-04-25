@@ -47,6 +47,7 @@
       self,
       nixpkgs,
       nixpkgs-2305,
+      nixpkgs-unstable,
       home-manager,
       nixos-wsl,
       sops-nix,
@@ -112,7 +113,7 @@
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       # Formatter for your nix files, available through 'nix fmt'
       # Other options beside 'nixfmt-rfc-style' include 'alejandra'
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: nixpkgs-unstable.legacyPackages.${system}.nixfmt-tree);
 
       devShells = forAllSystems (
         system:
