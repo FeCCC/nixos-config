@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
     plugins.image = {
       enable = true;
     };
-    extraPackages = with pkgs; [imagemagick];
+    extraPackages = with pkgs; [ imagemagick ];
   };
 }

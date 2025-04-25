@@ -4,7 +4,7 @@
     {
       action = "\"+P";
       key = "<C-v>";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         silent = true;
       };
@@ -12,7 +12,7 @@
     {
       action = "<Esc>\"+P";
       key = "<C-v>";
-      mode = ["i"];
+      mode = [ "i" ];
       options = {
         silent = true;
       };
@@ -21,7 +21,7 @@
     {
       action = "\"+y";
       key = "<C-c>";
-      mode = ["v"];
+      mode = [ "v" ];
       options = {
         silent = true;
       };
@@ -30,7 +30,7 @@
     {
       action = "<Esc>";
       key = "<C-c>";
-      mode = ["i"];
+      mode = [ "i" ];
       options = {
         silent = true;
       };
@@ -39,7 +39,7 @@
       # 退出
       action = ":q<CR>";
       key = "<leader>q";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         silent = true;
       };
@@ -48,7 +48,7 @@
       # 保存退出
       action = ":wq<CR>";
       key = "<leader>wq";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         silent = true;
       };
@@ -57,7 +57,7 @@
       # 全部退出
       action = "::quitall<CR>";
       key = "<leader><leader><leader><leader>q";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         silent = true;
       };

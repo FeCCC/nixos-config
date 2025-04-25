@@ -4,10 +4,10 @@
     autoEnableSources = true;
     settings = {
       sources = [
-        {name = "nvim_lsp";}
-        {name = "nvim_lua";}
-        {name = "path";}
-        {name = "buffer";}
+        { name = "nvim_lsp"; }
+        { name = "nvim_lua"; }
+        { name = "path"; }
+        { name = "buffer"; }
       ];
       mapping = {
         "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";

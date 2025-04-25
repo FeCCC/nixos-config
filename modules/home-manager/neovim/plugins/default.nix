@@ -16,7 +16,7 @@
   programs.nixvim.plugins = {
     indent-blankline = {
       enable = true;
-      settings.exclude.filetypes = ["dashboard"];
+      settings.exclude.filetypes = [ "dashboard" ];
     };
     lualine.enable = true;
     lz-n.enable = true;

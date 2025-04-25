@@ -72,7 +72,7 @@
             action.__raw = "require(\"telescope.builtin\").find_files";
           }
         ];
-        footer = [];
+        footer = [ ];
       };
     };
   };

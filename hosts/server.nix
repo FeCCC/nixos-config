@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   networking.hostName = "nixos-server";
 
   boot.loader.grub.device = "nodev";

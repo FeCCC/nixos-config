@@ -2,7 +2,8 @@
   outputs,
   pkgs,
   ...
-}: {
+}:
+{
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -41,8 +42,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    bashrcExtra = ''
-    '';
+    bashrcExtra = '''';
   };
 
   home.preferXdgDirectories = true;

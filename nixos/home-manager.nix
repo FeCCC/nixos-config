@@ -4,7 +4,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # Import home-manager's NixOS module
     inputs.home-manager.nixosModules.home-manager
@@ -14,7 +15,7 @@
   # environment.systemPackages = [inputs.home-manager.packages.${pkgs.system}.default];
 
   home-manager = {
-    sharedModules = [inputs.sops-nix.homeManagerModules.sops];
+    sharedModules = [ inputs.sops-nix.homeManagerModules.sops ];
     extraSpecialArgs = {
       inherit inputs outputs;
       os_config = config;

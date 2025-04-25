@@ -3,7 +3,7 @@
     {
       action = ":lua vim.lsp.buf.declaration()<CR>";
       key = "gD";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -13,7 +13,7 @@
     {
       action = ":Lspsaga goto_definition<CR>";
       key = "gd";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -23,7 +23,7 @@
     {
       action = ":Lspsaga finder<CR>";
       key = "gr";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -33,7 +33,7 @@
     {
       action = ":lua vim.lsp.buf.implementation()<CR>";
       key = "gi";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -43,7 +43,7 @@
     {
       action = ":lua vim.lsp.buf.type_definition()<CR>";
       key = "gt";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -53,7 +53,7 @@
     {
       action = ":Lspsaga hover_doc<CR>";
       key = "K";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -63,7 +63,7 @@
     {
       action = ":lua vim.lsp.buf.signature_help()<CR>";
       key = "<C-k>";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -73,7 +73,7 @@
     {
       action = ":Lspsaga rename<CR>A";
       key = "<leader>rn";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -83,7 +83,7 @@
     {
       action = ":Lspsaga outline<CR>";
       key = "<A-o>";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -93,7 +93,7 @@
     {
       action = ":Lspsaga code_action<CR>";
       key = "<leader>ac";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;
@@ -129,7 +129,10 @@
         end
       '';
       key = "<A-S-f>";
-      mode = ["n" "v"];
+      mode = [
+        "n"
+        "v"
+      ];
       options = {
         buffer = true;
         silent = true;
@@ -139,7 +142,7 @@
     {
       action = ":Trouble diagnostics toggle<CR>";
       key = "<leader>xx";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         buffer = true;
         silent = true;

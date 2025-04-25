@@ -4,7 +4,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   imports = [
     inputs.disko.nixosModules.disko
   ];
@@ -97,8 +98,8 @@
 
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.initrd.supportedFilesystems = ["zfs"];
-    boot.supportedFilesystems = ["zfs"];
+    boot.initrd.supportedFilesystems = [ "zfs" ];
+    boot.supportedFilesystems = [ "zfs" ];
     boot.zfs.devNodes = lib.mkDefault "/dev/disk/by-partlabel/disk-main-zfs";
   };
 }

@@ -2,9 +2,10 @@
   pkgs,
   pkgs-2305,
   ...
-}: {
+}:
+{
   default = pkgs.mkShellNoCC {
-    hardeningDisable = ["all"];
+    hardeningDisable = [ "all" ];
     packages = with pkgs; [
       gnumake
       automake
@@ -32,7 +33,8 @@
       e2fsprogs
     ];
 
-    LD_LIBRARY_PATH = with pkgs;
+    LD_LIBRARY_PATH =
+      with pkgs;
       lib.makeLibraryPath [
         ncurses
         elfutils
@@ -67,7 +69,8 @@
     ];
 
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-    LD_LIBRARY_PATH = with pkgs;
+    LD_LIBRARY_PATH =
+      with pkgs;
       lib.makeLibraryPath [
         libGL
         libxkbcommon
@@ -81,7 +84,7 @@
   };
 
   gcc48 = pkgs-2305.mkShellNoCC {
-    hardeningDisable = ["all"];
+    hardeningDisable = [ "all" ];
 
     packages = with pkgs-2305; [
       gnumake
@@ -109,7 +112,8 @@
       e2fsprogs
     ];
 
-    LD_LIBRARY_PATH = with pkgs-2305;
+    LD_LIBRARY_PATH =
+      with pkgs-2305;
       lib.makeLibraryPath [
         ncurses
         elfutils

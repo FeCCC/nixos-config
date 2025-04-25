@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = lib.mkIf config.my_os_config.desktop.enable {
     services.xserver.enable = true;
     services.displayManager.sddm.enable = true;

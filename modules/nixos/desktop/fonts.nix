@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = lib.mkIf config.my_os_config.desktop.enable {
     fonts = {
       # use fonts specified by user rather than default ones
@@ -33,10 +34,21 @@
       ];
 
       fontconfig.defaultFonts = {
-        serif = ["Noto Serif CJK SC" "Noto Serif CJK TC" "Noto Color Emoji"];
-        sansSerif = ["Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Color Emoji"];
-        monospace = ["DejaVu Sans Mono" "Noto Color Emoji"];
-        emoji = ["Noto Color Emoji"];
+        serif = [
+          "Noto Serif CJK SC"
+          "Noto Serif CJK TC"
+          "Noto Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans CJK SC"
+          "Noto Sans CJK TC"
+          "Noto Color Emoji"
+        ];
+        monospace = [
+          "DejaVu Sans Mono"
+          "Noto Color Emoji"
+        ];
+        emoji = [ "Noto Color Emoji" ];
       };
     };
   };

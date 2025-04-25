@@ -3,9 +3,11 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   apps = import ../common/apps.nix;
-in {
+in
+{
   programs = lib.genAttrs apps.nixos (app: {
     enable = true;
   });

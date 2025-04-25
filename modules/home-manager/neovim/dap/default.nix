@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.nixvim = {
     plugins = {
       dap = {
@@ -12,7 +13,10 @@
             port = "$\{port\}";
             executable = {
               command = "${lib.getBin pkgs.lldb}/bin/lldb-dap";
-              args = ["--port" "$\{port\}"];
+              args = [
+                "--port"
+                "$\{port\}"
+              ];
             };
           };
         };

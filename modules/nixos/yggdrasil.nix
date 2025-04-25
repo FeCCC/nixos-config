@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   services.yggdrasil = {
     enable = true;
     persistentKeys = true;
@@ -14,7 +15,6 @@
       # will obey the operating system routing table, therefore you should
       # use this section when you may connect via different interfaces.
       Peers = [
-        "quic://49.234.16.29:7777"
         "quic://47.243.180.98:7777"
         "tls://44.234.134.124:443"
         "quic://185.103.109.63:65535"
@@ -27,14 +27,14 @@
       # arranged by source interface, e.g. { "eth0": [ "tls://a.b.c.d:e" ] }.
       # Note that SOCKS peerings will NOT be affected by this option and should
       # go in the "Peers" section instead.
-      InterfacePeers = {};
+      InterfacePeers = { };
 
       # Listen addresses for incoming connections. You will need to add
       # listeners in order to accept incoming peerings from non-local nodes.
       # Multicast peer discovery will work regardless of any listeners set
       # here. Each listener should be specified in URI format as above, e.g.
       # tls://0.0.0.0:0 or tls://[::]:0 to listen on all interfaces.
-      Listen = [];
+      Listen = [ ];
 
       # Configuration for which interfaces multicast peer discovery should be
       # enabled on. Each entry in the list should be a json object which may
@@ -60,7 +60,7 @@
       # from. If left empty/undefined then all connections will be allowed
       # by default. This does not affect outgoing peerings, nor does it
       # affect link-local peers discovered via multicast.
-      AllowedPublicKeys = [];
+      AllowedPublicKeys = [ ];
 
       # Local network interface name for TUN adapter, or "auto" to select
       # an interface automatically, or "none" to run without TUN.
@@ -81,7 +81,7 @@
       # Optional node info. This must be a { "key": "value", ... } map
       # or set as null. This is entirely optional but, if set, is visible
       # to the whole network on request.
-      NodeInfo = {};
+      NodeInfo = { };
     };
   };
 }
