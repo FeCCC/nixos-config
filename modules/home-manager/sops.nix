@@ -3,7 +3,8 @@
   outputs,
   config,
   ...
-}: {
+}:
+{
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
 

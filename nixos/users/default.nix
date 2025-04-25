@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./root.nix
     ./miku.nix

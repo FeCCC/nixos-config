@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   options.my_os_config.docker = {
     enable = lib.mkEnableOption "use docker";
   };

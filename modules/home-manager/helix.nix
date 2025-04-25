@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -45,41 +46,44 @@
           auto-format = true;
           language-id = "c";
           scope = "source.c";
-          language-servers = ["clangd"];
+          language-servers = [ "clangd" ];
         }
         {
           name = "rust";
           auto-format = true;
           scope = "source.rust";
-          roots = ["Cargo.lock"];
-          language-servers = ["rust-analyzer"];
+          roots = [ "Cargo.lock" ];
+          language-servers = [ "rust-analyzer" ];
         }
         {
           name = "toml";
           auto-format = true;
-          language-servers = ["taplo"];
+          language-servers = [ "taplo" ];
           formatter = {
             command = "taplo";
-            args = ["fmt" "-"];
+            args = [
+              "fmt"
+              "-"
+            ];
           };
         }
         {
           name = "yaml";
           auto-format = true;
-          language-servers = ["yaml-language-server"];
+          language-servers = [ "yaml-language-server" ];
         }
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nil"];
+          language-servers = [ "nil" ];
           formatter = {
-            command = "alejandra";
+            command = "nixfmt";
           };
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = ["pylsp"];
+          language-servers = [ "pylsp" ];
         }
       ];
     };

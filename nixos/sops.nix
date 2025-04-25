@@ -2,7 +2,8 @@
   inputs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.sops-nix.nixosModules.sops
   ];

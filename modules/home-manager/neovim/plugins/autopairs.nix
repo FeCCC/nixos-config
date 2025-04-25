@@ -3,7 +3,13 @@
     enable = true;
     settings = {
       check_ts = true;
-      fast_wrap.chars = ["{" "[" "(" "\"" "'"];
+      fast_wrap.chars = [
+        "{"
+        "["
+        "("
+        "\""
+        "'"
+      ];
     };
   };
 }

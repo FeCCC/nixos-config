@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins
@@ -40,6 +41,6 @@
       };
     };
 
-    extraPlugins = [pkgs.vimPlugins.cellular-automaton-nvim];
+    extraPlugins = [ pkgs.vimPlugins.cellular-automaton-nvim ];
   };
 }

@@ -2,26 +2,22 @@ let
   common_programs = [
     "lazygit"
   ];
-  nixos_programs =
-    [
-      "iftop"
-      "nix-ld"
-      "mosh"
-    ]
-    ++ common_programs;
-  home_programs =
-    [
-      "home-manager"
-      "ripgrep"
-      "htop"
-      "btop"
-      "fastfetch"
-      "zellij"
-      "fzf"
-      "aria2"
-      "zoxide" # for zsh
-    ]
-    ++ common_programs;
+  nixos_programs = [
+    "iftop"
+    "nix-ld"
+    "mosh"
+  ] ++ common_programs;
+  home_programs = [
+    "home-manager"
+    "ripgrep"
+    "htop"
+    "btop"
+    "fastfetch"
+    "zellij"
+    "fzf"
+    "aria2"
+    "zoxide" # for zsh
+  ] ++ common_programs;
   pkgs = [
     "busybox"
     "tree"
@@ -35,7 +31,7 @@ let
     "file"
     "which"
     "unzip"
-    "alejandra"
+    "nixfmt-rfc-style"
     "ncdu"
     "acme-sh"
     "ffmpeg-headless"
@@ -43,7 +39,8 @@ let
     "rsync"
     "devenv"
   ];
-in {
+in
+{
   inherit pkgs;
   nixos = nixos_programs;
   home = home_programs;

@@ -5,7 +5,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   programs.zsh = {
     enable = true;
     initExtra = ''
@@ -29,7 +30,11 @@
     ];
     oh-my-zsh = {
       enable = true;
-      plugins = ["zoxide" "fzf" "extract"];
+      plugins = [
+        "zoxide"
+        "fzf"
+        "extract"
+      ];
     };
   };
 }

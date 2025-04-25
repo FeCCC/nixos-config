@@ -4,7 +4,7 @@
     {
       action = ":lua require'dap'.continue()<CR>";
       key = "<F5>";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         noremap = true;
         silent = true;
@@ -14,7 +14,7 @@
     {
       action = ":lua require'dap'.toggle_breakpoint()<CR>";
       key = "<leader>b";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         noremap = true;
         silent = true;
@@ -24,7 +24,7 @@
     {
       action = ":lua require'dap'.step_into()<CR>";
       key = "<leader>i";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         noremap = true;
         silent = true;
@@ -34,7 +34,7 @@
     {
       action = ":lua require'dap'.step_over()<CR>";
       key = "<leader>o";
-      mode = ["n"];
+      mode = [ "n" ];
       options = {
         noremap = true;
         silent = true;

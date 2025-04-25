@@ -1,5 +1,6 @@
 # This file defines overlays
-{inputs, ...}: {
+{ inputs, ... }:
+{
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs final.pkgs;
 
@@ -11,7 +12,7 @@
     # ...
     # });
     rime-data = ./rime;
-    fcitx5-rime = prev.fcitx5-rime.override {rimeDataPkgs = [./rime];};
+    fcitx5-rime = prev.fcitx5-rime.override { rimeDataPkgs = [ ./rime ]; };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

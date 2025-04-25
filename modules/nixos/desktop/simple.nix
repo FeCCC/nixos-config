@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   config = lib.mkIf config.my_os_config.desktop.enable {
     environment.systemPackages = with pkgs; [
       # citrix_workspace
