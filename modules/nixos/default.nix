@@ -10,6 +10,7 @@
     ./syncthing.nix
     ./desktop
     ./i2pd.nix
+    ./tor.nix
   ];
 
   environment.shellAliases = {
