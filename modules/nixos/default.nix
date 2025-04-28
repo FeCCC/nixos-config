@@ -9,6 +9,7 @@
     ./docker.nix
     ./syncthing.nix
     ./desktop
+    ./i2pd.nix
   ];
 
   environment.shellAliases = {
