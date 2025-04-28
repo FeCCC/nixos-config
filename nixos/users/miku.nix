@@ -17,6 +17,7 @@
       extraGroups = [
         "wheel"
         "docker"
+        "i2pd"
       ];
       # initialHashedPassword = "$y$j9T$0qp58xTtzVJ6Z6N7zSDgZ1$zd36bLicL2LFYCiNRuacDMpJTPPQ.l.CR8JpgB.rBnA";
       hashedPasswordFile = config.sops.secrets.miku_password.path;
