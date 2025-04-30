@@ -37,7 +37,16 @@
     userEmail = "railgun.long@foxmail.com";
     lfs.enable = true;
   };
-  # programs.lazygit.enable = true;
+
+  services.home-manager.autoExpire = {
+    enable = true;
+    frequency = "weekly";
+    timestamp = "-7 days";
+    store = {
+      cleanup = true;
+      options = "--delete-older-than 7d";
+    };
+  };
 
   programs.bash = {
     enable = true;
