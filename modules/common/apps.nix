@@ -38,6 +38,7 @@ let
     "lrzsz"
     "rsync"
     "devenv"
+    "dysk"
   ];
 in
 {
