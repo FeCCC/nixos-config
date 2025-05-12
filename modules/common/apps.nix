@@ -39,6 +39,7 @@ let
     "rsync"
     "devenv"
     "dysk"
+    "inxi"
   ];
 in
 {
