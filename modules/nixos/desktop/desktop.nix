@@ -11,6 +11,15 @@
     services.displayManager.sddm.wayland.enable = true;
     services.desktopManager.plasma6.enable = true;
 
+    services.xrdp = {
+      enable = true;
+      port = 3390;
+      # defaultWindowManager = "plasmashell";
+      defaultWindowManager = "${pkgs.plasma-workspace}/bin/startplasma-x11";
+      audio.enable = true;
+      openFirewall = true;
+    };
+
     i18n = {
       inputMethod = {
         enable = true;
