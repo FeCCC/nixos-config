@@ -40,6 +40,7 @@ let
     "devenv"
     "dysk"
     "inxi"
+    "dust"
   ];
 in
 {
