@@ -14,7 +14,7 @@
       vscode
       libreoffice
       telegram-desktop
-      osu-lazer
+      osu-lazer-bin
       yesplaymusic
       rustdesk
       siyuan
