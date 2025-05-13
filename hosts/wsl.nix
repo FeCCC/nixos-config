@@ -17,6 +17,7 @@
   };
 
   networking.hostName = "nixos-wsl";
+  my_os_config.desktop.enable = true;
 
   # BEGIN: Docker Desktop WSL Integration
   wsl.extraBin = with pkgs; [

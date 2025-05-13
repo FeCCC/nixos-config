@@ -7,6 +7,9 @@
     fsType = "ext4";
   };
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+
   # Set your system kind (needed for flakes)
   nixpkgs.hostPlatform = "x86_64-linux";
 }

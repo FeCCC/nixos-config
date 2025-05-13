@@ -14,7 +14,6 @@
       vscode
       libreoffice
       telegram-desktop
-      steam
       osu-lazer
       yesplaymusic
       rustdesk
@@ -24,5 +23,7 @@
       uget
       sigil
     ];
+
+    programs.steam.enable = true;
   };
 }
