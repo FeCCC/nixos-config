@@ -20,13 +20,14 @@
     };
     programs.firefox = {
       enable = true;
-      # languagePacks = ["zh-CN"];
+      languagePacks = [ "zh-CN" ];
       profiles = {
         "default" = {
           isDefault = true;
           settings = {
             "sidebar.revamp" = true;
             "sidebar.verticalTabs" = true;
+            "intl.locale.requested" = "zh-CN,en-US";
           };
         };
       };
