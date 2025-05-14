@@ -34,6 +34,8 @@
     programs.wezterm = {
       enable = true;
       extraConfig = ''return { front_end = "WebGpu" }'';
+      enableZshIntegration = false;
+      enableBashIntegration = false;
     };
   };
 }
