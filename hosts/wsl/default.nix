@@ -1,14 +1,12 @@
 {
   inputs,
-  outputs,
-  config,
   pkgs,
-  lib,
   ...
 }:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
+    ./hardware-configuration.nix
   ];
 
   wsl = {
