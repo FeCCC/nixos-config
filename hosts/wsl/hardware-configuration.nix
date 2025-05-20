@@ -1,15 +1,17 @@
 # This is just an example, you should generate yours with nixos-generate-config and put it in here.
 {
-lib,
-...
-}:{
   # boot.loader.systemd-boot.enable = true;
 
-  fileSystems."/" = lib.mkDefault {
+  fileSystems."/" = {
     device = "/dev/sda1";
     fsType = "ext4";
   };
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.graphics.enable = true;
+  hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
+
   # Set your system kind (needed for flakes)
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.hostPlatform = "x86_64-linux";
 }

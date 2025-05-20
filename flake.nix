@@ -141,7 +141,7 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         nixos = mkNixOSConfiguration { modules = [ ./hosts/common.nix ]; };
-        nixos-wsl = mkNixOSConfiguration { modules = [ ./hosts/wsl.nix ]; };
+        nixos-wsl = mkNixOSConfiguration { modules = [ ./hosts/wsl ]; };
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
       };
 
