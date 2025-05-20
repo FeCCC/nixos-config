@@ -19,6 +19,8 @@
       openFirewall = true;
     };
 
+    services.flatpak.enable = true;
+
     i18n = {
       inputMethod = {
         enable = true;
