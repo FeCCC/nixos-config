@@ -22,6 +22,10 @@
       gnucash
       uget
       sigil
+      discord
+      unstable.simplex-chat-desktop
+      lutris
+      signal-desktop
     ];
 
     programs.steam.enable = true;
