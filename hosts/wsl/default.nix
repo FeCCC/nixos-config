@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -16,6 +17,8 @@
 
   networking.hostName = "nixos-wsl";
   my_os_config.desktop.enable = true;
+
+  services.openssh.ports = lib.mkForce [ 8822 ];
 
   # BEGIN: Docker Desktop WSL Integration
   wsl.extraBin = with pkgs; [
