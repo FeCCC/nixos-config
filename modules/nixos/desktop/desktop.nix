@@ -13,7 +13,6 @@
 
     services.xrdp = {
       enable = true;
-      port = 3390;
       defaultWindowManager = "${pkgs.plasma-workspace}/bin/startplasma-x11";
       audio.enable = true;
       openFirewall = true;
