@@ -15,7 +15,6 @@
       libreoffice
       telegram-desktop
       osu-lazer-bin
-      yesplaymusic
       rustdesk
       siyuan
       veracrypt
