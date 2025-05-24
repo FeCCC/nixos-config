@@ -9,7 +9,7 @@
 {
   programs.zsh = {
     enable = true;
-    initExtra = ''
+    initContent = ''
       bindkey "^A" vi-beginning-of-line
       bindkey "^E" vi-end-of-line
     '';

@@ -13,23 +13,21 @@
 
     services.xrdp = {
       enable = true;
-      defaultWindowManager = "${pkgs.plasma-workspace}/bin/startplasma-x11";
+      defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
       audio.enable = true;
       openFirewall = true;
     };
 
     services.flatpak.enable = true;
 
-    i18n = {
-      inputMethod = {
-        enable = true;
-        type = "fcitx5";
-        fcitx5 = {
-          addons = with pkgs; [
-            fcitx5-rime
-          ];
-          waylandFrontend = true;
-        };
+    i18n.inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5 = {
+        addons = with pkgs; [
+          fcitx5-rime
+        ];
+        waylandFrontend = true;
       };
     };
   };
