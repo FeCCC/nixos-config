@@ -18,6 +18,7 @@ let
     "aria2"
     "zoxide" # for zsh
     "fd"
+    "bottom"
   ] ++ common_programs;
   pkgs = [
     "busybox"
