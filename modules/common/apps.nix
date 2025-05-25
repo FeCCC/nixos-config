@@ -1,6 +1,7 @@
 let
   common_programs = [
     "lazygit"
+    "bat"
   ];
   nixos_programs = [
     "iftop"
