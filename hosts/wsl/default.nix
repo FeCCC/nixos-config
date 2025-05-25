@@ -18,7 +18,7 @@
   networking.hostName = "nixos-wsl";
   my_os_config.desktop.enable = true;
 
-  services.openssh.ports = lib.mkForce [ 8822 ];
+  services.openssh.ports = [ 8822 ];
   services.syncthing.guiAddress = "127.0.0.1:8385";
   services.xrdp.port = 3390;
 
