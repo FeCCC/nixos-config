@@ -16,7 +16,7 @@
   };
 
   networking.hostName = "nixos-wsl";
-  my_os_config.desktop.enable = true;
+  my_os_config.desktop.enable = false;
 
   services.openssh.ports = [ 8822 ];
   services.syncthing.guiAddress = "127.0.0.1:8385";
