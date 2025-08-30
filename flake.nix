@@ -40,6 +40,11 @@
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>`
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -53,6 +58,7 @@
       sops-nix,
       disko,
       nixvim,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -86,7 +92,8 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
-          ] ++ modules;
+          ]
+          ++ modules;
         };
 
       mkHomeConfiguration =
@@ -104,7 +111,8 @@
           };
           modules = [
             sops-nix.homeManagerModules.sops
-          ] ++ modules;
+          ]
+          ++ modules;
         };
     in
     {
@@ -143,6 +151,7 @@
         nixos = mkNixOSConfiguration { modules = [ ./hosts/common.nix ]; };
         nixos-wsl = mkNixOSConfiguration { modules = [ ./hosts/wsl ]; };
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
+        nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
       };
 
       homeConfigurations = {
