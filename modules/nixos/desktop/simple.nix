@@ -7,7 +7,6 @@
 {
   config = lib.mkIf config.my_os_config.desktop.enable {
     environment.systemPackages = with pkgs; [
-      # citrix_workspace
       keepassxc
       unstable.zed-editor
       qq
@@ -19,12 +18,12 @@
       siyuan
       veracrypt
       gnucash
-      uget
       sigil
       discord
       unstable.simplex-chat-desktop
       lutris
       signal-desktop
+      hmcl
     ];
 
     programs.steam.enable = true;
