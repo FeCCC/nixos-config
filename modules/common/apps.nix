@@ -7,7 +7,8 @@ let
     "iftop"
     "nix-ld"
     "mosh"
-  ] ++ common_programs;
+  ]
+  ++ common_programs;
   home_programs = [
     "home-manager"
     "ripgrep"
@@ -20,7 +21,8 @@ let
     "zoxide" # for zsh
     "fd"
     "bottom"
-  ] ++ common_programs;
+  ]
+  ++ common_programs;
   pkgs = [
     "busybox"
     "tree"
