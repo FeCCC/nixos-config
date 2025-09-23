@@ -11,11 +11,11 @@
     shell = pkgs.zsh;
   };
 
-  sops.secrets.id_rsa_pub = {
-    path = "/root/.ssh/id_rsa.pub";
+  sops.secrets.id_rsa_default_pub = {
+    path = "/root/.ssh/id_rsa_default.pub";
   };
-  sops.secrets.id_rsa = {
-    path = "/root/.ssh/id_rsa";
+  sops.secrets.id_rsa_default = {
+    path = "/root/.ssh/id_rsa_default";
   };
   sops.secrets.id_github_pub = {
     path = "/root/.ssh/id_github.pub";
