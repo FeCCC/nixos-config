@@ -91,7 +91,8 @@
           modules = [
             # > Our main nixos configuration file <
             ./nixos/configuration.nix
-          ] ++ modules;
+          ]
+          ++ modules;
         };
 
       mkHomeConfiguration =
@@ -109,7 +110,8 @@
           };
           modules = [
             sops-nix.homeManagerModules.sops
-          ] ++ modules;
+          ]
+          ++ modules;
         };
     in
     {
