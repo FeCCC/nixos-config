@@ -13,5 +13,6 @@
     ./neovim
     ./yazi.nix
     ./simple.nix
+    ./codex.nix
   ];
 }
