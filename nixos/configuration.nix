@@ -73,6 +73,11 @@
           "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         ];
 
+        trusted-users = [
+          "root"
+          "miku"
+        ];
+
         # Optimise storage
         # you can also optimise the store manually via:
         #    nix-store --optimise
