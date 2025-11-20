@@ -24,7 +24,6 @@ let
   ]
   ++ common_programs;
   pkgs = [
-    "busybox"
     "tree"
     "sops"
     "age"
