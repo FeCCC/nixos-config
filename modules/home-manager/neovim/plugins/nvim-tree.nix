@@ -1,9 +1,12 @@
 {
   programs.nixvim.plugins.nvim-tree = {
     enable = false;
-    hijackCursor = true;
-    hijackNetrw = true;
-    hijackUnnamedBufferWhenOpening = true;
-    updateFocusedFile.enable = true;
+    settings = {
+      hijackCursor = true;
+      hijackNetrw = true;
+      hijackUnnamedBufferWhenOpening = true;
+      updateFocusedFile.enable = true;
+    };
+
   };
 }

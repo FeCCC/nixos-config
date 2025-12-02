@@ -13,7 +13,7 @@
       bindkey "^A" vi-beginning-of-line
       bindkey "^E" vi-end-of-line
     '';
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     plugins = [

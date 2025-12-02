@@ -9,33 +9,40 @@
   config = lib.mkIf config.my_hm_config.ssh.enable {
     programs.ssh = {
       enable = true;
-      extraConfig = ''
-        # Host github.com
-        #     HostName github.com
-        #     User git
-        #     PreferredAuthentications publickey
-        #     IdentityFile ~/.ssh/id_github
-
-
-        # Host ssh.github.com
+      enableDefaultConfig = false;
+      matchBlocks = {
+        # "github.com" = {
+        #   hostname = "github.com";
+        #   user = "git";
+        #   identityFile = "~/.ssh/id_github";
+        # };
         # 无法使用ssh连接时，使用通过https的ssh连接
-        Host github.com
-            HostName ssh.github.com
-            User git
-            Port 443
-            PreferredAuthentications publickey
-            IdentityFile ~/.ssh/id_github
-
-        Host git.feccc.site
-            HostName git.feccc.site
-            User git
-            Port 222
-            PreferredAuthentications publickey
-            IdentityFile ~/.ssh/id_git_feccc
-
-        Host *
-            IdentityFile ~/.ssh/id_rsa_default
-      '';
+        "github.com" = {
+          hostname = "ssh.github.com";
+          user = "git";
+          port = 443;
+          identityFile = "~/.ssh/id_github";
+        };
+        "git.feccc.site" = {
+          hostname = "git.feccc.site";
+          user = "git";
+          port = 222;
+          identityFile = "~/.ssh/id_git_feccc";
+        };
+        "*" = {
+          forwardAgent = false;
+          addKeysToAgent = "yes";
+          compression = false;
+          serverAliveInterval = 60;
+          serverAliveCountMax = 3;
+          hashKnownHosts = false;
+          userKnownHostsFile = "~/.ssh/known_hosts";
+          controlMaster = "auto";
+          controlPath = "~/.ssh/master-%r@%n:%p";
+          controlPersist = "no";
+          identityFile = "~/.ssh/id_rsa_default";
+        };
+      };
     };
 
     sops.secrets.id_rsa_default_pub = {
