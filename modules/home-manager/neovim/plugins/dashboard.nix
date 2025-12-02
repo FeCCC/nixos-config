@@ -50,7 +50,7 @@
             key = "s";
             keymap = "<leader> f s";
             key_hl = "Number";
-            action.__raw = "require(\"auto-session.session-lens\").search_session";
+            action = "AutoSession search";
           }
           {
             icon = "  ";
