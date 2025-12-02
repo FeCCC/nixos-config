@@ -22,7 +22,7 @@
       util-linux
       pkg-config
       openssl
-      openssl_1_1
+      # openssl_1_1
       binutils
       zlib
       bear
