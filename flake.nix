@@ -72,15 +72,16 @@
       ];
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
-      forAllSystems = nixpkgs.lib.genAttrs systems;
-      pkgsForSystem =
+      pkgsFor = nixpkgs.lib.genAttrs systems (
         system:
         import nixpkgs {
           inherit system;
-          config.permittedInsecurePackages = [
-            "openssl-1.1.1w"
-          ];
-        };
+          # config.permittedInsecurePackages = [
+          #   "openssl-1.1.1w"
+          # ];
+        }
+      );
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f pkgsFor.${system});
 
       mkNixOSConfiguration =
         {
@@ -101,7 +102,7 @@
           modules ? [ ],
         }:
         home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system}; # Home-manager requires 'pkgs' instance
+          pkgs = pkgsFor.${system}; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = {
             inherit inputs outputs;
             os_config = {
@@ -117,17 +118,17 @@
     {
       # Your custom packages
       # Accessible through 'nix build', 'nix shell', etc
-      packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+      packages = forAllSystems (pkgs: import ./pkgs pkgs);
       # Formatter for your nix files, available through 'nix fmt'
       # Other options beside 'nixfmt-rfc-style' include 'alejandra'
-      formatter = forAllSystems (system: nixpkgs-unstable.legacyPackages.${system}.nixfmt-tree);
+      formatter = forAllSystems (pkgs: pkgs.nixfmt-tree);
 
       devShells = forAllSystems (
-        system:
+        pkgs:
         import ./shell.nix {
-          pkgs = pkgsForSystem system;
+          inherit pkgs;
           pkgs-2305 = import nixpkgs-2305 {
-            inherit system;
+            system = pkgs.stdenv.hostPlatform.system;
             config.permittedInsecurePackages = [
               "openssl-1.1.1w"
             ];
