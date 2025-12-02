@@ -33,8 +33,12 @@
 
   programs.git = {
     enable = true;
-    userName = "FeCCC";
-    userEmail = "railgun.long@foxmail.com";
+    settings = {
+      user = {
+        name = "FeCCC";
+        email = "railgun.long@foxmail.com";
+      };
+    };
     lfs.enable = true;
   };
 
