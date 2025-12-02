@@ -202,7 +202,7 @@
       }
       #auto-session
       {
-        action = ":lua require('auto-session.session-lens').search_session()<CR>";
+        action = ":AutoSession search<CR>";
         key = "<leader>fs";
         mode = [ "n" ];
         options = silents;
