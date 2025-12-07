@@ -1,0 +1,42 @@
+name: tigress-custom
+version: "2025.9.21"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - weight
+  - code
+  - stem
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 99]
+      formula: "AaBaCaZa"
+
+...
+综漫	1	iwko
+抓包	278	uynv
+土下座	1	gfxj
+硅基	1	mgzh
+轮询	303	yjsn
+微秒	61	wvxy
+宗门	1	wfam
+秘境	1	xhgx
+淫纹	1	kyiv
+一字马	1	fwnm
+开腿	61	flvi
+内存池	314	mnke
+中出	1	dgsm
+网段	364	mbuf
+平然	60	ehvm
+贞操锁	1	yuzy
+魔法少女	728	zkyb
+寸止	1	kcsi
+御坂	1	wagx
+美琴	1	gmnn
+御坂美琴	1	wggn
+云网关	44	bmhm
+光谷	364	mghg
