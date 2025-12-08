@@ -6,7 +6,8 @@
 {
   home.packages = [ pkgs.codex ];
   home.sessionVariables.CODEX_HOME = "${config.xdg.configHome}/codex";
-  sops.secrets.codex_base_url = { };
+  sops.secrets.new_api_base_url = { };
+  sops.secrets.new_api_key = { };
   sops.templates.codex_config = {
     path = "${config.xdg.configHome}/codex/config.toml";
     content = ''
@@ -21,7 +22,7 @@
       name = "New Api"
       # The path `/chat/completions` will be amended to this URL to make the POST
       # request for the chat completions.
-      base_url = "${config.sops.placeholder.codex_base_url}"
+      base_url = "${config.sops.placeholder.new_api_base_url}"
       # If `env_key` is set, identifies an environment variable that must be set when
       # using Codex with this provider. The value of the environment variable must be
       # non-empty and will be used in the `Bearer TOKEN` HTTP header for the POST request.
@@ -35,9 +36,8 @@
       web_search_request = true
     '';
   };
-  sops.secrets.codex_new_api_key = { };
   sops.templates.codex_api_key = {
     path = "${config.xdg.configHome}/codex/.env";
-    content = "NEWAPI_API_KEY=${config.sops.placeholder.codex_new_api_key}";
+    content = "NEWAPI_API_KEY=${config.sops.placeholder.new_api_key}";
   };
 }
