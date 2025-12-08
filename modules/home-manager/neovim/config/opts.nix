@@ -30,7 +30,5 @@
   updatetime = 300; # 缩短 swap file 的更新时间间隔
   timeoutlen = 500; # 设置快捷键触发的等待时间
 
-  clipboard = "unnamedplus"; # 使用系统剪贴板
-
   sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"; # session
 }
