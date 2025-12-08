@@ -21,6 +21,7 @@
   services.openssh.ports = [ 8822 ];
   services.syncthing.guiAddress = "127.0.0.1:8385";
   services.xrdp.port = 3390;
+  services.yggdrasil.enable = lib.mkForce false;
 
   # BEGIN: Docker Desktop WSL Integration
   wsl.extraBin = with pkgs; [
