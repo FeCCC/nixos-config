@@ -4,7 +4,7 @@
   ...
 }:
 {
-  home.packages = [ pkgs.codex ];
+  programs.codex.enable = true;
   home.sessionVariables.CODEX_HOME = "${config.xdg.configHome}/codex";
   sops.secrets.new_api_base_url = { };
   sops.secrets.new_api_key = { };
