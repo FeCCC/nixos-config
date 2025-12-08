@@ -33,7 +33,7 @@
     };
 
     clipboard = {
-      register = "unnamedplus";
+      register = "unnamedplus"; # 使用系统剪贴板
       providers = {
         wl-copy.enable = true;
         xclip.enable = true;
