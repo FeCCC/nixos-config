@@ -12,8 +12,10 @@
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # wsl
     nixos-wsl = {
@@ -41,9 +43,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
