@@ -5,8 +5,9 @@
 }:
 {
   programs.claude-code.enable = true;
+  home.sessionVariables.CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
   sops.templates.claude_code_settings = {
-    path = "${config.home.homeDirectory}/.claude/settings.json";
+    path = "${config.xdg.configHome}/claude/settings.json";
     content = ''
       {
           "env": {
