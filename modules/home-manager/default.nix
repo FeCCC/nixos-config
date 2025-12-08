@@ -14,5 +14,6 @@
     ./yazi.nix
     ./simple.nix
     ./codex.nix
+    ./nh.nix
   ];
 }
