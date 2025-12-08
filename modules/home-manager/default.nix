@@ -14,6 +14,7 @@
     ./yazi.nix
     ./simple.nix
     ./codex.nix
+    ./claude-code.nix
     ./nh.nix
   ];
 }
