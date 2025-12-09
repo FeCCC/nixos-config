@@ -25,12 +25,12 @@
     opts = import ./config/opts.nix;
     autoCmd = import ./config/autocmd.nix;
 
-    colorschemes.onedark = {
-      enable = true;
-      settings = {
-        style = "dark";
-      };
-    };
+    # colorschemes.onedark = {
+    #   enable = true;
+    #   settings = {
+    #     style = "dark";
+    #   };
+    # };
 
     clipboard = {
       register = "unnamedplus"; # 使用系统剪贴板
@@ -41,6 +41,7 @@
       };
     };
 
-    extraPlugins = [ pkgs.vimPlugins.cellular-automaton-nvim ];
+    extraPlugins = [ pkgs.vimPlugins.onedarkpro-nvim ];
+    extraConfigLua = ''vim.cmd("colorscheme onedark")'';
   };
 }
