@@ -15,10 +15,11 @@
     path = "${config.xdg.configHome}/codex/config.toml";
     content = ''
       # Recall that in TOML, root keys must be listed before tables.
-      model = "google/gemini-2.5-pro"
-      #model = "openai/gpt-5-codex"
+      model = "deepseek/deepseek-v3.2"
+      # model = "google/gemini-3-pro-preview"
       model_provider = "new-api"
-      model_context_window = 1048576
+      model_context_window = 163840
+      # model_context_window = 1048576
 
       [model_providers.new-api]
       # Name of the provider that will be displayed in the Codex UI.
