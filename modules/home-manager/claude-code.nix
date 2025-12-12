@@ -4,7 +4,10 @@
   ...
 }:
 {
-  programs.claude-code.enable = true;
+  programs.claude-code = {
+    enable = true;
+    package = pkgs.unstable.claude-code;
+  };
   home.sessionVariables.CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
   sops.secrets.new_api_base_url_for_anthropic = { };
   sops.templates.claude_code_settings = {
