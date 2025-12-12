@@ -4,7 +4,10 @@
   ...
 }:
 {
-  programs.codex.enable = true;
+  programs.codex = {
+    enable = true;
+    package = pkgs.unstable.codex;
+  };
   home.sessionVariables.CODEX_HOME = "${config.xdg.configHome}/codex";
   sops.secrets.new_api_base_url_for_openai = { };
   sops.secrets.new_api_key = { };
