@@ -11,6 +11,7 @@
         nix = [ "nixfmt" ];
         python = [ "black" ];
         lua = [ "stylua" ];
+        beancount = [ "bean-format" ];
       };
       default_format_opts = {
         async = true;
@@ -28,6 +29,9 @@
         };
         stylua = {
           command = "${lib.getExe pkgs.stylua}";
+        };
+        bean-format = {
+          command = "${lib.getBin pkgs.beancount}/bin/bean-format";
         };
       };
     };
