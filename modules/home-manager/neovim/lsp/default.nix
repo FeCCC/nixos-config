@@ -27,6 +27,7 @@
         ts_ls.enable = true;
         docker_compose_language_service.enable = true;
         nginx_language_server.enable = true;
+        beancount.enable = true;
       };
     };
     trouble.enable = true;
