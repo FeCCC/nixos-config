@@ -12,6 +12,7 @@
         python = [ "black" ];
         lua = [ "stylua" ];
         beancount = [ "bean-format" ];
+        "*" = [ "trim_whitespace" ];
       };
       default_format_opts = {
         async = true;
