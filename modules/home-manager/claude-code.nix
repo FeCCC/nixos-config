@@ -32,6 +32,7 @@
               "deepseek/deepseek-v3.2",
               "google/gemini-3-pro-preview",
               "google/gemini-2.5-pro",
+              "google/gemini-2.5-flash",
               "google/gemini-3-flash-preview",
               "gemini-3-flash-preview",
               "gemini-3-pro-preview"
@@ -42,10 +43,10 @@
           }
         ],
         "Router": {
-          "default": "new_api,gemini-3-flash-preview",
-          "background": "new_api,gemini-3-flash-preview",
-          "think": "new_api,gemini-3-pro-preview",
-          "longContext": "new_api,gemini-3-flash-preview",
+          "default": "new_api,google/gemini-2.5-flash",
+          "background": "new_api,google/gemini-2.5-flash",
+          "think": "new_api,deepseek/deepseek-v3.2",
+          "longContext": "new_api,google/gemini-2.5-flash",
           "longContextThreshold": 60000,
           "webSearch": "",
           "image": ""

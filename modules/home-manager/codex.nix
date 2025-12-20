@@ -16,7 +16,7 @@
     content = ''
       # Recall that in TOML, root keys must be listed before tables.
       model = "deepseek/deepseek-v3.2"
-      # model = "google/gemini-3-pro-preview"
+      # model = "google/gemini-2.5-flash"
       model_provider = "new-api"
       model_context_window = 163840
       # model_context_window = 1048576
