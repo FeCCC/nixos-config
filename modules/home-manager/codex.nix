@@ -37,7 +37,4 @@
     path = "${config.xdg.configHome}/codex/.env";
     content = "NEWAPI_API_KEY=${config.sops.placeholder.new_api_key}";
   };
-
-
-  programs.gemini-cli.enable = true;
 }
