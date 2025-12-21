@@ -16,6 +16,7 @@
     ./codex.nix
     ./claude-code.nix
     ./gemini-cli.nix
+    ./opencode.nix
     ./nh.nix
   ];
 }
