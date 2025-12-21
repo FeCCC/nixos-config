@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   config,
   ...
@@ -15,14 +16,13 @@
   sops.templates.gemini_env = {
     path = "${config.home.homeDirectory}/.gemini/.env";
     content = ''
-      GOOGLE_GEMINI_BASE_URL=${config.sops.placeholder.new_api_base_url_for_openai}
+      GOOGLE_GEMINI_BASE_URL=${config.sops.placeholder.new_api_base_url_for_gemini}
       GEMINI_API_KEY=${config.sops.placeholder.new_api_key}
       GEMINI_MODEL=gemini-3-flash-preview
     '';
   };
-  sops.templates.codex_api_key = {
-    path = "${config.xdg.configHome}/codex/.env";
-    content = "NEWAPI_API_KEY=${config.sops.placeholder.new_api_key}";
-  };
+  programs.zsh.envExtra = lib.mkAfter ''
+    source ${config.home.homeDirectory}/.gemini/.env
+  '';
 
 }
