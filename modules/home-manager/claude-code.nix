@@ -12,7 +12,9 @@
   };
 
   home.sessionVariables.CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
+
   sops.secrets.new_api_base_url_for_ccr = { };
+  sops.secrets.new_api_key = { };
   sops.templates.claude_code_router_settings = {
     path = "${config.home.homeDirectory}/.claude-code-router/config.json";
     content = ''

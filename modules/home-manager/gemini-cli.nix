@@ -8,7 +8,6 @@
   programs.gemini-cli = {
     enable = true;
     package = pkgs.unstable.gemini-cli;
-    # defaultModel = "gemini-3-flash-preview";
   };
 
   sops.secrets.new_api_base_url_for_gemini = { };
