@@ -30,6 +30,7 @@ switches:
 
 engine:
   processors:
+    - lua_processor@smart_shift
     - ascii_composer
     - recognizer
     - key_binder
