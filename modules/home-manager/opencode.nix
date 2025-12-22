@@ -53,6 +53,20 @@
                     "context": 1048576,
                     "output": 1048576
                 }
+              },
+              "z-ai/glm-4.6": {
+                "name": "z-ai/glm-4.6",
+                "limit": {
+                    "context": 204800,
+                    "output": 204800
+                }
+              },
+              "moonshotai/kimi-k2-thinking": {
+                "name": "moonshotai/kimi-k2-thinking",
+                "limit": {
+                    "context": 262144,
+                    "output": 262144
+                }
               }
             }
           }
