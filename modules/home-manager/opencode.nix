@@ -4,14 +4,31 @@
   config,
   ...
 }:
+let
+  # 安全包裹脚本, 用于在运行时注入密钥
+  opencode-wrapped = pkgs.writeShellScriptBin "opencode" ''
+    #!${pkgs.runtimeShell}
+    # 从 sops-nix 管理的文件中读取密钥并导出为环境变量
+    export OPENCODE_API_KEY=$(cat "${config.sops.secrets.new_api_key.path}")
+    export OPENCODE_BASE_URL=$(cat "${config.sops.secrets.new_api_base_url_for_openai.path}")
+
+    # 执行真正的 opencode 程序
+    exec "${pkgs.unstable.opencode}/bin/opencode" "$@"
+  '';
+in
 {
   programs.opencode = {
     enable = true;
-    package = pkgs.unstable.opencode;
+    # 将默认的 opencode 包替换为安全包裹脚本
+    package = opencode-wrapped;
   };
 
+  # 定义包裹脚本需要的密钥
   sops.secrets.new_api_base_url_for_openai = { };
   sops.secrets.new_api_key = { };
+
+  # 配置文件本身不包含任何密钥信息
+  # 依赖包裹脚本在运行时注入的环境变量
   sops.templates.opencode_config = {
     path = "${config.xdg.configHome}/opencode/opencode.json";
     content = ''
@@ -22,8 +39,8 @@
             "npm": "@ai-sdk/openai-compatible",
             "name": "New API",
             "options": {
-              "baseURL": "${config.sops.placeholder.new_api_base_url_for_openai}",
-              "apiKey": "${config.sops.placeholder.new_api_key}"
+              "baseURL": "{env:OPENCODE_BASE_URL}",
+              "apiKey": "{env:OPENCODE_API_KEY}"
             },
             "models": {
               "deepseek/deepseek-v3.2": {
@@ -52,20 +69,6 @@
                 "limit": {
                     "context": 1048576,
                     "output": 1048576
-                }
-              },
-              "z-ai/glm-4.6": {
-                "name": "z-ai/glm-4.6",
-                "limit": {
-                    "context": 204800,
-                    "output": 204800
-                }
-              },
-              "moonshotai/kimi-k2-thinking": {
-                "name": "moonshotai/kimi-k2-thinking",
-                "limit": {
-                    "context": 262144,
-                    "output": 262144
                 }
               }
             }
