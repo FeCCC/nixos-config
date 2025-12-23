@@ -50,6 +50,13 @@ in
                     "output": 163840
                 }
               },
+              "x-ai/grok-4.1-fast": {
+                "name": "x-ai/grok-4.1-fast",
+                "limit": {
+                    "context": 2000000,
+                    "output": 2000000
+                }
+              },
               "google/gemini-3-flash-preview": {
                 "name": "google/gemini-3-flash-preview",
                 "limit": {
