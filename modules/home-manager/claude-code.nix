@@ -11,7 +11,7 @@ let
     # 从 sops-nix 管理的文件中读取密钥并导出为环境变量
     export ANTHROPIC_API_KEY=$(cat "${config.sops.secrets.new_api_key.path}")
     export ANTHROPIC_BASE_URL=$(cat "${config.sops.secrets.new_api_base_url_for_claude.path}")
-    export ANTHROPIC_MODEL="deepseek/deepseek-v3.2"
+    export ANTHROPIC_MODEL="deepseek-reasoner"
     export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1"
 
     # 执行真正的 claude-code 程序, 并传递所有参数
