@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }:
 let
@@ -96,5 +97,11 @@ in
         }
       }
     '';
+  };
+
+  # superpowers skills 集成
+  xdg.configFile."opencode/skill" = {
+    source = inputs.superpowers + "/skills";
+    recursive = true;
   };
 }
