@@ -51,6 +51,13 @@ in
                     "output": 163840
                 }
               },
+              "minimax/minimax-m2.1": {
+                "name": "minimax/minimax-m2.1",
+                "limit": {
+                    "context": 204800,
+                    "output": 204800
+                }
+              },
               "x-ai/grok-4.1-fast": {
                 "name": "x-ai/grok-4.1-fast",
                 "limit": {
@@ -87,6 +94,9 @@ in
           "bash": {
             "ls": "allow",
             "grep": "allow",
+            "head": "allow",
+            "tail": "allow",
+            "wc": "allow",
             "rg": "allow",
             "git status": "allow",
             "git log": "allow",
