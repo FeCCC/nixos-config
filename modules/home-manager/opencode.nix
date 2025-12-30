@@ -51,6 +51,13 @@ in
                     "output": 163840
                 }
               },
+              "Pro/deepseek-ai/DeepSeek-V3.2": {
+                "name": "deepseek-ai/DeepSeek-V3.2",
+                "limit": {
+                    "context": 163840,
+                    "output": 163840
+                }
+              },
               "minimax/minimax-m2.1": {
                 "name": "minimax/minimax-m2.1",
                 "limit": {
