@@ -18,5 +18,6 @@
     ./gemini-cli.nix
     ./opencode.nix
     ./nh.nix
+    ./nodejs.nix
   ];
 }
