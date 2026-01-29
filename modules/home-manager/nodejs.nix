@@ -13,4 +13,9 @@
     export PATH=$PATH:$(yarn global bin)
     export PATH=$PATH:$(pnpm bin -g)
   '';
+  programs.bash.bashrcExtra = ''
+    export PATH=$PATH:$(npm config get prefix)/bin
+    export PATH=$PATH:$(yarn global bin)
+    export PATH=$PATH:$(pnpm bin -g)
+  '';
 }
