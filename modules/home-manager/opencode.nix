@@ -14,7 +14,7 @@ let
     export OPENCODE_BASE_URL=$(cat "${config.sops.secrets.new_api_base_url_for_openai.path}")
 
     # 执行真正的 opencode 程序
-    exec "${pkgs.unstable.opencode}/bin/opencode" "$@"
+     exec "${inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/opencode" "$@"
   '';
 in
 {
@@ -100,10 +100,20 @@ in
           "edit": "ask",
           "bash": {
             "ls": "allow",
+            "nl": "allow",
+            "tr": "allow",
+            "echo": "allow",
             "grep": "allow",
+            "find": "allow",
+            "cut": "allow",
+            "cat": "allow",
             "head": "allow",
             "tail": "allow",
+            "awk": "allow",
+            "awk -i": "ask",
             "wc": "allow",
+            "sort": "allow",
+            "uniq": "allow",
             "rg": "allow",
             "git status": "allow",
             "git log": "allow",
