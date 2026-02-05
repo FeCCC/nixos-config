@@ -53,7 +53,7 @@
 
     # opencode development version
     opencode = {
-      url = "github:sst/opencode";
+      url = "github:anomalyco/opencode";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
