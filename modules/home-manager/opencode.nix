@@ -79,6 +79,20 @@ in
                     "output": 1048576
                 }
               },
+              "google/gemini-3-pro-preview": {
+                "name": "google/gemini-3-pro-preview",
+                "limit": {
+                    "context": 1048576,
+                    "output": 1048576
+                }
+              },
+              "gemini-3-pro-preview": {
+                "name": "gemini-3-pro-preview",
+                "limit": {
+                    "context": 1048576,
+                    "output": 1048576
+                }
+              },
               "google/gemini-2.5-flash": {
                 "name": "google/gemini-2.5-flash",
                 "limit": {
