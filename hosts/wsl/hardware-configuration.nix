@@ -12,7 +12,7 @@ lib.mkMerge [
 
     nixpkgs.hostPlatform = "x86_64-linux";
   }
-  (lib.mkIf config.my_os_config.desktop.enable {
+  (lib.mkIf config.my_config.desktop.enable {
     services.xserver.videoDrivers = [
       "nvidia"
       "modesetting"

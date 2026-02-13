@@ -9,9 +9,9 @@
   imports = [
     inputs.disko.nixosModules.disko
   ];
-  options.my_os_config.install.enable = lib.mkEnableOption "install on new machine";
+  options.my_config.install.enable = lib.mkEnableOption "install on new machine";
 
-  config = lib.mkIf config.my_os_config.install.enable {
+  config = lib.mkIf config.my_config.install.enable {
     disko.devices = {
       disk = {
         main = {

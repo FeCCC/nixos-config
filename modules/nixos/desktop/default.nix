@@ -1,6 +1,4 @@
-# Add your reusable NixOS modules to this directory, on their own file (https://nixos.wiki/wiki/Module).
-# These should be stuff you would like to share with others, not your personal configurations.
-{ lib, ... }:
+{ lib, config, ... }:
 {
   # List your module files here
   # my-module = import ./my-module.nix;
@@ -10,5 +8,13 @@
     ./fonts.nix
   ];
 
-  options.my_os_config.desktop.enable = lib.mkEnableOption "use desktop";
+  options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
+
+  config = lib.mkIf config.my_config.desktop.enable {
+    home-manager.sharedModules = [
+      {
+        my_config.desktop.enable = true;
+      }
+    ];
+  };
 }

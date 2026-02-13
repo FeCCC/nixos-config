@@ -29,7 +29,7 @@
     ./disk-config.nix
   ];
 
-  my_os_config.install.enable = false;
+  my_config.install.enable = false;
 
   nixpkgs = {
     # You can add overlays here

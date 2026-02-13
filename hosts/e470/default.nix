@@ -17,7 +17,7 @@
   networking.hostName = "nixos-ThinkPad-E470";
   networking.firewall.allowedTCPPorts = [ 18789 ];
 
-  my_os_config.docker.enable = true;
-  my_os_config.desktop.enable = true;
+  my_config.docker.enable = true;
+  my_config.desktop.enable = true;
 
 }

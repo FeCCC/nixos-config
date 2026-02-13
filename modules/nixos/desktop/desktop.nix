@@ -5,7 +5,7 @@
   ...
 }:
 {
-  config = lib.mkIf config.my_os_config.desktop.enable {
+  config = lib.mkIf config.my_config.desktop.enable {
     services.xserver.enable = true;
     # services.displayManager.sddm.enable = true;
     # services.displayManager.sddm.wayland.enable = true;

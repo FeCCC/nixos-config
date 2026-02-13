@@ -26,5 +26,5 @@
     homeDirectory = "/home/wl";
   };
 
-  my_hm_config.ssh.enable = true;
+  my_config.ssh.enable = true;
 }
