@@ -22,6 +22,6 @@
     }
   ];
 
-  my_os_config.docker.enable = true;
-  my_os_config.desktop.enable = true;
+  my_config.docker.enable = true;
+  my_config.desktop.enable = true;
 }

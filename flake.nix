@@ -117,9 +117,6 @@
           pkgs = pkgsFor.${system}; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = {
             inherit inputs outputs;
-            os_config = {
-              my_os_config.desktop.enable = false;
-            };
           };
           modules = [
             sops-nix.homeManagerModules.sops

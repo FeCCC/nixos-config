@@ -5,7 +5,7 @@
   ...
 }:
 {
-  config = lib.mkIf config.my_os_config.desktop.enable {
+  config = lib.mkIf config.my_config.desktop.enable {
     fonts = {
       # use fonts specified by user rather than default ones
       enableDefaultPackages = false;
