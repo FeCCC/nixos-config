@@ -55,7 +55,7 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    bashrcExtra = '''';
+    bashrcExtra = "";
   };
 
   home.preferXdgDirectories = true;
