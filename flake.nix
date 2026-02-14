@@ -161,6 +161,7 @@
         nixos-wsl = mkNixOSConfiguration { modules = [ ./hosts/wsl ]; };
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
         nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
+        nixos-docker = mkNixOSConfiguration { modules = [ ./hosts/docker ]; };
       };
 
       homeConfigurations = {
