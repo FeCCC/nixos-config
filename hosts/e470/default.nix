@@ -19,5 +19,5 @@
 
   my_config.docker.enable = true;
   my_config.desktop.enable = true;
-
+  my_config.netdata.enable = true;
 }
