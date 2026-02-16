@@ -21,7 +21,7 @@
     manageHostName = true;
   };
 
-  networking.hostName = "nixos-docker";
+  networking.hostName = "docker";
 
   my_config.docker.enable = true;
   my_config.desktop.enable = false;
