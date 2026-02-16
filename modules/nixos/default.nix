@@ -11,6 +11,7 @@
     ./desktop
     ./i2pd.nix
     ./tor.nix
+    ./netdata.nix
   ];
 
   environment.shellAliases = {
