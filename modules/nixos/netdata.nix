@@ -29,6 +29,15 @@
           "dbengine tier 2 retention size" = "2GiB";
         };
       };
+      configDir."stream.conf" = pkgs.writeText "stream.conf" ''
+        [stream]
+        enabled = no
+        enable compression = yes
+
+        [netdata-api]
+        type = api
+        enabled = yes
+      '';
     };
   };
 }
