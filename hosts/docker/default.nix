@@ -22,6 +22,7 @@
   };
 
   networking.hostName = "docker";
+  networking.firewall.allowedTCPPorts = [ 8096 ];
 
   my_config.docker.enable = true;
   my_config.desktop.enable = false;
