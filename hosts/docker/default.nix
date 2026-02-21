@@ -27,6 +27,8 @@
   my_config.desktop.enable = false;
   my_config.netdata.enable = true;
 
+  services.syncthing.enable = lib.mkForce false;
+
   virtualisation.docker.daemon.settings = {
     bip = "10.254.1.1/24";
     default-address-pools = [
