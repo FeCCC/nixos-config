@@ -106,7 +106,14 @@ in
                     "context": 1048576,
                     "output": 1048576
                 }
-              }
+              },
+              "gemini-3.1-pro-preview": {
+                "name": "gemini-3.1-pro-preview",
+                "limit": {
+                    "context": 1048576,
+                    "output": 1048576
+                }
+              },
             }
           }
         },
