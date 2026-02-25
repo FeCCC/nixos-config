@@ -30,6 +30,10 @@
         };
         stylua = {
           command = "${lib.getExe pkgs.stylua}";
+          append_args = [
+            "--indent-type"
+            "Spaces"
+          ];
         };
         bean-format = {
           command = "${lib.getBin pkgs.beancount}/bin/bean-format";

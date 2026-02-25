@@ -25,13 +25,12 @@ local function processor(key, env)
     -- 情况 A: Shift 按下 (KeyDown)
     if not key:release() then
         -- 既然 Shift 刚按下，重置组合键标记
-        env.has_combo = false 
+        env.has_combo = false
         return 2 -- 放行，让系统知道 Shift 按下了
     end
 
     -- 情况 B: Shift 松开 (Release/KeyUp)
     if key:release() then
-
         -- 【关键判断】如果刚才有过组合键行为（如输出了大写），则不切换模式
         if env.has_combo then
             env.has_combo = false -- 重置状态
