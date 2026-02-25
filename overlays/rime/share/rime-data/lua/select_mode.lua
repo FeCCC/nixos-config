@@ -8,7 +8,7 @@ local function processor(key, env)
     local engine = env.engine
     local context = engine.context
     local k = key.keycode
-    
+
     -- === 1. 侦测组合键行为 ===
     -- 如果按下的键【不是】左右Shift
     if k ~= 0xffe1 and k ~= 0xffe2 then
@@ -21,7 +21,7 @@ local function processor(key, env)
     end
 
     -- === 2. 处理 Shift 键本身 (0xffe1, 0xffe2) ===
-    
+
     -- 情况 A: Shift 按下 (KeyDown)
     if not key:release() then
         -- 既然 Shift 刚按下，重置组合键标记
@@ -31,33 +31,28 @@ local function processor(key, env)
 
     -- 情况 B: Shift 松开 (Release/KeyUp)
     if key:release() then
-        
+
         -- 【关键判断】如果刚才有过组合键行为（如输出了大写），则不切换模式
         if env.has_combo then
             env.has_combo = false -- 重置状态
             return 2 -- 放行，什么都不做
         end
 
+        -- 上屏 raw input
+        if context:is_composing() then
+            local raw_input = context.input
+            engine:commit_text(raw_input) -- 上屏字母
+            context:clear() -- 清除缓冲
+        end
         -- 没有组合键，说明是“单击 Shift”，执行切换逻辑
         if k == 0xffe1 then
-            -----------------------------------------
-            -- 左 Shift -> 变英文 + 上屏 raw input
-            -----------------------------------------
-            if context:is_composing() then
-                local raw_input = context.input
-                engine:commit_text(raw_input) -- 上屏字母
-                context:clear() -- 清除缓冲
-            end
+            -- 左 Shift -> 变英文
             context:set_option("ascii_mode", true)
-
         else
-            -----------------------------------------
-            -- 右 Shift -> 变中文 + 清除缓冲
-            -----------------------------------------
+            -- 右 Shift -> 变中文
             context:set_option("ascii_mode", false)
-            context:clear() 
         end
-        
+
         return 1 -- 拦截这次 Shift 松开事件，避免 Rime 原生逻辑干扰
     end
 
