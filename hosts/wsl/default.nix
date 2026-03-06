@@ -19,6 +19,10 @@
   my_config.desktop.enable = false;
   my_config.netdata.enable = false;
 
+  environment.extraInit = ''
+    export NIX_LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH:/usr/lib/wsl/lib/"
+  '';
+
   services.openssh.ports = [ 8822 ];
   services.syncthing.guiAddress = "127.0.0.1:8385";
   services.xrdp.port = 3390;
