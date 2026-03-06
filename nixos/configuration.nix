@@ -121,6 +121,13 @@
     };
   };
 
+  boot.kernel.sysctl = {
+    # 开启 BBR 拥塞控制算法
+    "net.ipv4.tcp_congestion_control" = "bbr";
+    # 配合 BBR 一起使用的队列规则 (Fair Queueing)
+    "net.core.default_qdisc" = "fq";
+  };
+
   networking.networkmanager.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
