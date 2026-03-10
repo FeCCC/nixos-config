@@ -9,6 +9,28 @@
     ./hardware-configuration.nix
   ];
 
+  home-manager.users.miku = {
+    home.packages = with pkgs; [
+      nodejs
+      pnpm
+      yarn
+      gnumake
+      cmake
+      gcc
+      libgcc
+    ];
+    programs.zsh.initContent = ''
+      export PATH=$PATH:$(npm config get prefix)/bin
+      export PATH=$PATH:$(yarn global bin)
+      export PATH=$PATH:$(pnpm bin -g)
+    '';
+    programs.bash.bashrcExtra = ''
+      export PATH=$PATH:$(npm config get prefix)/bin
+      export PATH=$PATH:$(yarn global bin)
+      export PATH=$PATH:$(pnpm bin -g)
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     google-chrome
     baidupcs-go
