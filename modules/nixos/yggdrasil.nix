@@ -5,10 +5,15 @@
   ...
 }:
 {
+  networking.firewall.interfaces."Yggdrasil" = {
+    allowedTCPPorts = [ 22 ];
+  };
+
   services.yggdrasil = {
     enable = true;
     persistentKeys = true;
     group = "wheel";
+    openMulticastPort = true;
     settings = {
       # List of connection strings for outbound peer connections in URI format,
       # e.g. tls://a.b.c.d:e or socks://a.b.c.d:e/f.g.h.i:j. These connections
