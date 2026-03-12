@@ -45,18 +45,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    # superpowers for opencode
-    superpowers = {
-      url = "github:obra/superpowers";
-      flake = false;
-    };
-
-    # pua for opencode
-    pua = {
-      url = "github:tanweai/pua";
-      flake = false;
-    };
-
     # opencode development version
     opencode = {
       url = "github:anomalyco/opencode";

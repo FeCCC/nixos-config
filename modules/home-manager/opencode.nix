@@ -150,11 +150,25 @@ in
   # skills 集成
   xdg.configFile = {
     "opencode/skill" = {
-      source = inputs.superpowers + "/skills";
+      source =
+        pkgs.fetchFromGitHub {
+          owner = "obra";
+          repo = "superpowers";
+          rev = "v5.0.2";
+          hash = "sha256-AyRGXwWI9xHGeHw9vD64cnV19txR/lOtxudcHnbV75I=";
+        }
+        + "/skills";
       recursive = true;
     };
     "opencode/skill/pua" = {
-      source = inputs.pua + "/skills/pua";
+      source =
+        pkgs.fetchFromGitHub {
+          owner = "tanweai";
+          repo = "pua";
+          rev = "v1.2.0";
+          hash = "sha256-9VdYSTFGGPQit13cA/evqxBW4J9k5VLouC4PCdrkpF8=";
+        }
+        + "/skills/pua";
       recursive = true;
     };
   };
