@@ -149,14 +149,7 @@ in
 
   # superpowers skills 集成
   xdg.configFile."opencode/skill" = {
-    source =
-      pkgs.fetchFromGitHub {
-        owner = "obra";
-        repo = "superpowers";
-        rev = "main";
-        hash = "sha256-AyRGXwWI9xHGeHw9vD64cnV19txR/lOtxudcHnbV75I=";
-      }
-      + "/skills";
+    source = inputs.superpowers + "/skills";
     recursive = true;
   };
 }
