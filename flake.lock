@@ -276,6 +276,22 @@
         "type": "github"
       }
     },
+    "pua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773383466,
+        "narHash": "sha256-G28STG+cGJYnff5ThIK0tY4Pv3QYHmmxS8zFGcVjr10=",
+        "owner": "tanweai",
+        "repo": "pua",
+        "rev": "53ccdc22a576d75085d0f79879b554a1653939db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tanweai",
+        "repo": "pua",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -287,6 +303,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
         "opencode": "opencode",
+        "pua": "pua",
         "sops-nix": "sops-nix",
         "superpowers": "superpowers"
       }

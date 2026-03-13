@@ -147,9 +147,15 @@ in
     '';
   };
 
-  # superpowers skills 集成
-  xdg.configFile."opencode/skill" = {
-    source = inputs.superpowers + "/skills";
-    recursive = true;
+  # skills 集成
+  xdg.configFile = {
+    "opencode/skill" = {
+      source = inputs.superpowers + "/skills";
+      recursive = true;
+    };
+    "opencode/skill/pua" = {
+      source = inputs.pua + "/skills/pua";
+      recursive = true;
+    };
   };
 }
