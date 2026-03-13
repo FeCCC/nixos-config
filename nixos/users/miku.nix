@@ -16,8 +16,6 @@
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [
         "wheel"
-        "docker"
-        "i2pd"
       ];
       hashedPasswordFile = config.sops.secrets.miku_password.path;
       shell = pkgs.zsh;
