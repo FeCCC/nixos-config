@@ -51,6 +51,12 @@
       flake = false;
     };
 
+    # pua for opencode
+    pua = {
+      url = "github:tanweai/pua";
+      flake = false;
+    };
+
     # opencode development version
     opencode = {
       url = "github:anomalyco/opencode";
