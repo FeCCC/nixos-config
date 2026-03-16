@@ -37,9 +37,9 @@
 
     # nixvim
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
       # If using a unstable channel you can use `url = "github:nix-community/nixvim`
       # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>`
+      url = "github:nix-community/nixvim/nixos-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
