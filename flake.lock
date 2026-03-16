@@ -276,6 +276,22 @@
         "type": "github"
       }
     },
+    "pua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773383466,
+        "narHash": "sha256-G28STG+cGJYnff5ThIK0tY4Pv3QYHmmxS8zFGcVjr10=",
+        "owner": "tanweai",
+        "repo": "pua",
+        "rev": "53ccdc22a576d75085d0f79879b554a1653939db",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tanweai",
+        "repo": "pua",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "disko": "disko",
@@ -287,7 +303,9 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
         "opencode": "opencode",
-        "sops-nix": "sops-nix"
+        "pua": "pua",
+        "sops-nix": "sops-nix",
+        "superpowers": "superpowers"
       }
     },
     "sops-nix": {
@@ -307,6 +325,22 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "superpowers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773290824,
+        "narHash": "sha256-AyRGXwWI9xHGeHw9vD64cnV19txR/lOtxudcHnbV75I=",
+        "owner": "obra",
+        "repo": "superpowers",
+        "rev": "363923f74aa9cd7b470c0aaa73dee629a8bfdc90",
+        "type": "github"
+      },
+      "original": {
+        "owner": "obra",
+        "repo": "superpowers",
         "type": "github"
       }
     },
