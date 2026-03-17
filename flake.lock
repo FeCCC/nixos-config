@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "cc-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772827583,
+        "narHash": "sha256-GzNpraXV85qUwyGs5XDe0zHYr2AazqFppWtH9JvO3QE=",
+        "owner": "anthropics",
+        "repo": "skills",
+        "rev": "b0cbd3df1533b396d281a6886d5132f623393a9c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anthropics",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -121,6 +137,22 @@
         "owner": "NuschtOS",
         "ref": "v0.1.1",
         "repo": "ixx",
+        "type": "github"
+      }
+    },
+    "multi-agent": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773714288,
+        "narHash": "sha256-fODoWu5mxn5s5jJBerx1tZBDtTRJKKrxo5SWT4EfArI=",
+        "owner": "FeCCC",
+        "repo": "multi-agent",
+        "rev": "9eb3adfce746c7761cd4d9645f9a2ec2c1f41585",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FeCCC",
+        "repo": "multi-agent",
         "type": "github"
       }
     },
@@ -294,8 +326,10 @@
     },
     "root": {
       "inputs": {
+        "cc-skills": "cc-skills",
         "disko": "disko",
         "home-manager": "home-manager",
+        "multi-agent": "multi-agent",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
