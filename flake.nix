@@ -45,15 +45,21 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    # superpowers for opencode
+    # skills
+    cc-skills = {
+      url = "github:anthropics/skills";
+      flake = false;
+    };
     superpowers = {
       url = "github:obra/superpowers";
       flake = false;
     };
-
-    # pua for opencode
     pua = {
       url = "github:tanweai/pua";
+      flake = false;
+    };
+    multi-agent = {
+      url = "github:FeCCC/multi-agent";
       flake = false;
     };
 

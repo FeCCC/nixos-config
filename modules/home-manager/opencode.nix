@@ -150,11 +150,15 @@ in
   # skills 集成
   xdg.configFile = {
     "opencode/skill" = {
-      source = inputs.superpowers + "/skills";
-      recursive = true;
-    };
-    "opencode/skill/pua" = {
-      source = inputs.pua + "/skills/pua";
+      source = pkgs.symlinkJoin {
+        name = "opencode-skills-merged";
+        paths = [
+          (inputs.superpowers + "/skills")
+          (inputs.cc-skills + "/skills")
+          (inputs.pua + "/skills")
+          (inputs.multi-agent + "/skills")
+        ];
+      };
       recursive = true;
     };
   };
