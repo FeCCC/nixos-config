@@ -34,6 +34,7 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     baidupcs-go
+    python3
   ];
 
   networking.hostName = "nixos-ThinkPad-E470";
