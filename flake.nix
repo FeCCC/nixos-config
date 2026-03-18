@@ -62,6 +62,11 @@
       url = "github:FeCCC/multi-agent";
       flake = false;
     };
+    # agents
+    agency-agents = {
+      url = "github:msitarzewski/agency-agents";
+      flake = false;
+    };
 
     # opencode development version
     opencode = {

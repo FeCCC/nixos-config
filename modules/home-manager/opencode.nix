@@ -16,6 +16,24 @@ let
     # 执行真正的 opencode 程序
      exec "${inputs.opencode.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/opencode" "$@"
   '';
+
+  # 构建 agency-agents 的 opencode 版本
+  opencode-agency-agents = pkgs.stdenv.mkDerivation {
+    name = "opencode-agency-agents";
+    src = inputs.agency-agents;
+
+    buildInputs = [ pkgs.bash ];
+
+    buildPhase = ''
+      patchShebangs scripts/
+      bash scripts/convert.sh --tool opencode
+    '';
+
+    installPhase = ''
+      mkdir -p $out
+      cp -r integrations/opencode/agents/* $out/
+    '';
+  };
 in
 {
   programs.opencode = {
@@ -120,25 +138,25 @@ in
         "permission": {
           "edit": "ask",
           "bash": {
-            "ls": "allow",
-            "nl": "allow",
-            "tr": "allow",
-            "echo": "allow",
-            "grep": "allow",
-            "find": "allow",
-            "cut": "allow",
-            "cat": "allow",
-            "head": "allow",
-            "tail": "allow",
-            "awk": "allow",
-            "awk -i": "ask",
-            "wc": "allow",
-            "sort": "allow",
-            "uniq": "allow",
-            "rg": "allow",
+            "ls *": "allow",
+            "nl *": "allow",
+            "tr *": "allow",
+            "echo *": "allow",
+            "grep *": "allow",
+            "find *": "allow",
+            "cut *": "allow",
+            "cat *": "allow",
+            "head *": "allow",
+            "tail *": "allow",
+            "awk *": "allow",
+            "awk -i*": "ask",
+            "wc *": "allow",
+            "sort *": "allow",
+            "uniq *": "allow",
+            "rg *": "allow",
             "git status": "allow",
             "git log": "allow",
-            "git show": "allow",
+            "git show *": "allow",
             "git diff": "allow",
             "*": "ask"
           }
@@ -159,6 +177,11 @@ in
           (inputs.multi-agent + "/skills")
         ];
       };
+      recursive = true;
+    };
+
+    "opencode/agents" = {
+      source = opencode-agency-agents;
       recursive = true;
     };
   };
