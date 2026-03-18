@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "agency-agents": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773610655,
+        "narHash": "sha256-kjpQZo3S8E0bYOhkMqOzOr1V133yTZzAMC/eQqwA84Y=",
+        "owner": "msitarzewski",
+        "repo": "agency-agents",
+        "rev": "6254154899f510eb4a4de10561fecfc1f32ff17f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "msitarzewski",
+        "repo": "agency-agents",
+        "type": "github"
+      }
+    },
     "cc-skills": {
       "flake": false,
       "locked": {
@@ -143,11 +159,11 @@
     "multi-agent": {
       "flake": false,
       "locked": {
-        "lastModified": 1773714288,
-        "narHash": "sha256-fODoWu5mxn5s5jJBerx1tZBDtTRJKKrxo5SWT4EfArI=",
+        "lastModified": 1773811404,
+        "narHash": "sha256-rXQlzPLgHWAjY7Ngorm2na6Fpx6c2Gr55pYbA+2ttfY=",
         "owner": "FeCCC",
         "repo": "multi-agent",
-        "rev": "9eb3adfce746c7761cd4d9645f9a2ec2c1f41585",
+        "rev": "b3db0828fa232d96c70a5f2e1ea5f17f99f75d1a",
         "type": "github"
       },
       "original": {
@@ -326,6 +342,7 @@
     },
     "root": {
       "inputs": {
+        "agency-agents": "agency-agents",
         "cc-skills": "cc-skills",
         "disko": "disko",
         "home-manager": "home-manager",
