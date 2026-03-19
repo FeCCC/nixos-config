@@ -162,6 +162,10 @@ in
       };
       recursive = true;
     };
+    "opencode/skill/novel-control-station" = {
+      source = inputs.novel-control-station;
+      recursive = true;
+    };
 
     "opencode/agents" = {
       source = opencode-agency-agents;
