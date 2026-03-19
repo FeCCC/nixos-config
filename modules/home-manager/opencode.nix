@@ -136,29 +136,12 @@ in
           }
         },
         "permission": {
-          "edit": "ask",
+          "edit": "allow",
           "bash": {
-            "ls *": "allow",
-            "nl *": "allow",
-            "tr *": "allow",
-            "echo *": "allow",
-            "grep *": "allow",
-            "find *": "allow",
-            "cut *": "allow",
-            "cat *": "allow",
-            "head *": "allow",
-            "tail *": "allow",
-            "awk *": "allow",
-            "awk -i*": "ask",
-            "wc *": "allow",
-            "sort *": "allow",
-            "uniq *": "allow",
-            "rg *": "allow",
-            "git status": "allow",
-            "git log": "allow",
-            "git show *": "allow",
-            "git diff": "allow",
-            "*": "ask"
+            "rm": "ask",
+            "rm*": "ask",
+            "rm *": "ask",
+            "*": "allow"
           }
         }
       }
