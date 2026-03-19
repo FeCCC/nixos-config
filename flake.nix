@@ -62,6 +62,10 @@
       url = "github:FeCCC/multi-agent";
       flake = false;
     };
+    novel-control-station = {
+      url = "github:jingtai123/Novel-Control-Station-Skill";
+      flake = false;
+    };
     # agents
     agency-agents = {
       url = "github:msitarzewski/agency-agents";

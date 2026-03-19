@@ -281,6 +281,22 @@
         "type": "github"
       }
     },
+    "novel-control-station": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773909271,
+        "narHash": "sha256-IB381Y/2ruTHLPXo5ON54kV0DHIkwzoBG4ngQ+gCUwk=",
+        "owner": "jingtai123",
+        "repo": "Novel-Control-Station-Skill",
+        "rev": "46715affd645244da945643c7e177bc798d5fb9f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jingtai123",
+        "repo": "Novel-Control-Station-Skill",
+        "type": "github"
+      }
+    },
     "nuschtosSearch": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -353,6 +369,7 @@
         "nixpkgs-2305": "nixpkgs-2305",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
+        "novel-control-station": "novel-control-station",
         "opencode": "opencode",
         "pua": "pua",
         "sops-nix": "sops-nix",
