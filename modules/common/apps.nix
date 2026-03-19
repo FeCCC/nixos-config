@@ -45,6 +45,7 @@ let
     "dysk"
     "inxi"
     "dust"
+    "python3"
   ];
 in
 {
