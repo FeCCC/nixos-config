@@ -159,11 +159,11 @@
     "multi-agent": {
       "flake": false,
       "locked": {
-        "lastModified": 1773811404,
-        "narHash": "sha256-rXQlzPLgHWAjY7Ngorm2na6Fpx6c2Gr55pYbA+2ttfY=",
+        "lastModified": 1773996999,
+        "narHash": "sha256-9dW2rNHEiJKF/JfLGjEARv/vFzK+tCYVDYPRNCpakYc=",
         "owner": "FeCCC",
         "repo": "multi-agent",
-        "rev": "b3db0828fa232d96c70a5f2e1ea5f17f99f75d1a",
+        "rev": "6c46bf36785451d7fcdafd0509e1fa06b25e356f",
         "type": "github"
       },
       "original": {
