@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "context-engineering": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774200268,
+        "narHash": "sha256-BsFxyWmLXjS8QaOVgvm6MFpxxqWp7vk35+YcpFCDgUk=",
+        "owner": "muratcankoylan",
+        "repo": "Agent-Skills-for-Context-Engineering",
+        "rev": "3ab8c948898908e4acc083c32f0390f0caafe3e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "muratcankoylan",
+        "repo": "Agent-Skills-for-Context-Engineering",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -360,6 +376,7 @@
       "inputs": {
         "agency-agents": "agency-agents",
         "cc-skills": "cc-skills",
+        "context-engineering": "context-engineering",
         "disko": "disko",
         "home-manager": "home-manager",
         "multi-agent": "multi-agent",

@@ -66,6 +66,10 @@
       url = "github:jingtai123/Novel-Control-Station-Skill";
       flake = false;
     };
+    context-engineering = {
+      url = "github:muratcankoylan/Agent-Skills-for-Context-Engineering";
+      flake = false;
+    };
     # agents
     agency-agents = {
       url = "github:msitarzewski/agency-agents";
