@@ -158,6 +158,7 @@ in
           (inputs.cc-skills + "/skills")
           (inputs.pua + "/skills")
           (inputs.multi-agent + "/skills")
+          (inputs.context-engineering + "/skills")
         ];
       };
       recursive = true;
