@@ -404,7 +404,8 @@
         "opencode": "opencode",
         "pua": "pua",
         "sops-nix": "sops-nix",
-        "superpowers": "superpowers"
+        "superpowers": "superpowers",
+        "unsloth-buddy": "unsloth-buddy"
       }
     },
     "sops-nix": {
@@ -470,6 +471,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "unsloth-buddy": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1774315278,
+        "narHash": "sha256-V7P43dOR4zbbfMhHqbOGW1nON9wTOZ8zQ2ctok+ub0A=",
+        "owner": "TYH-labs",
+        "repo": "unsloth-buddy",
+        "rev": "5f017b0270bfef081020779c416dd821cec0125f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TYH-labs",
+        "repo": "unsloth-buddy",
         "type": "github"
       }
     }

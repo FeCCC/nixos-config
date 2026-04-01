@@ -70,6 +70,10 @@
       url = "github:muratcankoylan/Agent-Skills-for-Context-Engineering";
       flake = false;
     };
+    unsloth-buddy = {
+      url = "github:TYH-labs/unsloth-buddy";
+      flake = false;
+    };
     # agents
     agency-agents = {
       url = "github:msitarzewski/agency-agents";
