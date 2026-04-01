@@ -167,6 +167,10 @@ in
       source = inputs.novel-control-station;
       recursive = true;
     };
+    "opencode/skill/unsloth-buddy" = {
+      source = inputs.unsloth-buddy;
+      recursive = true;
+    };
 
     "opencode/agents" = {
       source = opencode-agency-agents;
