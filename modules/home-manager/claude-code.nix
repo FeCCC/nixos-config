@@ -20,7 +20,7 @@ let
 in
 {
   programs.claude-code = {
-    enable = true;
+    enable = false;
     # 将默认的 claude-code 包替换为安全包裹脚本
     package = claude-code-wrapped;
   };
