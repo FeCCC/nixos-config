@@ -85,6 +85,10 @@
       url = "github:anomalyco/opencode";
       # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    hermes-agent = {
+      url = "github:NousResearch/hermes-agent";
+    };
   };
 
   outputs =
