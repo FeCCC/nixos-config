@@ -12,6 +12,7 @@
     ./i2pd.nix
     ./tor.nix
     ./netdata.nix
+    ./hermes-agent.nix
   ];
 
   environment.shellAliases = {
