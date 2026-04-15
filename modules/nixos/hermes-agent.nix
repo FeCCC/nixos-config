@@ -16,6 +16,22 @@
 
   config = lib.mkIf config.my_config.hermes-agent.enable {
 
+    sops.secrets.telegram_bot_token = { };
+    sops.secrets.telegram_user_id = { };
+    sops.secrets.qq_bot_app_id = { };
+    sops.secrets.qq_bot_client_secret = { };
+    sops.secrets.qq_bot_allowed_user = { };
+
+    sops.templates."hermes-env" = {
+      content = ''
+        TELEGRAM_BOT_TOKEN=${config.sops.placeholder.telegram_bot_token}
+        TELEGRAM_ALLOWED_USERS=${config.sops.placeholder.telegram_user_id}
+        QQ_APP_ID=${config.sops.placeholder.qq_bot_app_id}
+        QQ_CLIENT_SECRET=${config.sops.placeholder.qq_bot_client_secret}
+        QQ_ALLOWED_USERS=${config.sops.placeholder.qq_bot_allowed_user}
+      '';
+    };
+
     sops.secrets.new_api_key = { };
     sops.secrets.new_api_base_url_for_openai = { };
 
@@ -51,6 +67,8 @@
 
       # 使用容器模式
       container.enable = true;
+
+      environmentFiles = [ config.sops.templates."hermes-env".path ];
 
       # 通过 configFile 指定 sops 模板生成的配置文件
       # 这样 base_url 不会以明文形式出现在 /nix/store
