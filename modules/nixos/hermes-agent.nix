@@ -52,6 +52,14 @@
           provider: custom
           model: Pro/deepseek-ai/DeepSeek-V3.2
           context_length: 163840
+
+        custom_providers:
+          - name: "new-api"
+            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
+            api_key: ${config.sops.placeholder.new_api_key}
+            models:
+              gemini-3.1-pro-preview:
+                context_length: 1048576
       '';
     };
 
