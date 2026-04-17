@@ -80,6 +80,37 @@
       addToSystemPackages = true;
     };
 
+    sops.secrets.hermes-agent-password = { };
+    # restic 备份
+    services.restic.backups = {
+      hermes-agent-bak = {
+        initialize = true;
+        passwordFile = config.sops.secrets.hermes-agent-password.path;
+        paths = [
+          config.services.hermes-agent.stateDir
+        ];
+        exclude = [
+          "current-entrypoint"
+          "current-package"
+          ".env"
+          ".gc-root"
+          ".gc-root-entrypoint"
+        ];
+        repository = "sftp:miku@truenas.local:/mnt/NAS/share/Documents/Backup/hermes-agent";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+          RandomizedDelaySec = "5h";
+        };
+        pruneOpts = [
+          "--keep-daily 7"
+          "--keep-weekly 5"
+          "--keep-monthly 12"
+          "--keep-yearly 5"
+        ];
+      };
+    };
+
     users.users.miku.extraGroups = [ "hermes" ];
   };
 }
