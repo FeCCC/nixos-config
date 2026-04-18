@@ -96,7 +96,7 @@
           ".gc-root"
           ".gc-root-entrypoint"
         ];
-        repository = "sftp:miku@truenas.local:/mnt/NAS/share/Documents/Backup/hermes-agent";
+        repository = "sftp:miku@truenas.local:/mnt/NAS/share/Documents/Backup/hermes-agent/${config.networking.hostName}";
         timerConfig = {
           OnCalendar = "daily";
           Persistent = true;
