@@ -109,6 +109,7 @@
           "--keep-weekly 5"
           "--keep-monthly 12"
           "--keep-yearly 5"
+          "--max-unused 10%"
         ];
       };
     };
