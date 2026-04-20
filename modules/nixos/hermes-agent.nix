@@ -26,6 +26,7 @@
       content = ''
         TELEGRAM_BOT_TOKEN=${config.sops.placeholder.telegram_bot_token}
         TELEGRAM_ALLOWED_USERS=${config.sops.placeholder.telegram_user_id}
+        TELEGRAM_HOME_CHANNEL=${config.sops.placeholder.telegram_user_id}
         QQ_APP_ID=${config.sops.placeholder.qq_bot_app_id}
         QQ_CLIENT_SECRET=${config.sops.placeholder.qq_bot_client_secret}
         QQ_ALLOWED_USERS=${config.sops.placeholder.qq_bot_allowed_user}
@@ -39,6 +40,7 @@
     # 避免在 settings 中写入 base_url，防止明文存储
     sops.templates."hermes-agent-config" = {
       content = ''
+        timezone: "Asia/Shanghai"
         model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
           api_key: ${config.sops.placeholder.new_api_key}
