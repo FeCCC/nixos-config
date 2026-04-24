@@ -62,6 +62,20 @@ in
               "apiKey": "{env:OPENCODE_API_KEY}"
             },
             "models": {
+              "deepseek-v4-pro": {
+                "name": "deepseek-v4-pro",
+                "limit": {
+                    "context": 1048576,
+                    "output": 384000
+                }
+              },
+              "deepseek-v4-flash": {
+                "name": "deepseek-v4-flash",
+                "limit": {
+                    "context": 1048576,
+                    "output": 384000
+                }
+              },
               "deepseek/deepseek-v3.2": {
                 "name": "deepseek/deepseek-v3.2",
                 "limit": {
