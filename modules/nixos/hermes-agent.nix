@@ -24,6 +24,7 @@
 
     sops.templates."hermes-env" = {
       content = ''
+        OPENAI_API_KEY=${config.sops.placeholder.new_api_key}
         TELEGRAM_BOT_TOKEN=${config.sops.placeholder.telegram_bot_token}
         TELEGRAM_ALLOWED_USERS=${config.sops.placeholder.telegram_user_id}
         TELEGRAM_HOME_CHANNEL=${config.sops.placeholder.telegram_user_id}
@@ -43,22 +44,30 @@
         timezone: "Asia/Shanghai"
         model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-          api_key: ${config.sops.placeholder.new_api_key}
           provider: custom
-          default: "gemini-3.1-pro-preview"
+          default: "deepseek-v4-flash"
           context_length: 1048576
+          max_tokens: 384000
 
         fallback_model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-          api_key: ${config.sops.placeholder.new_api_key}
           provider: custom
           model: Pro/deepseek-ai/DeepSeek-V3.2
           context_length: 163840
 
+        auxiliary:
+          compression:
+            model: "deepseek-v4-flash"
+            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
+            context_length: 1048576
+            max_tokens: 384000
+          vision:
+            model: "Qwen/Qwen3.6-27B"
+            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
+
         custom_providers:
           - name: "new-api"
             base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-            api_key: ${config.sops.placeholder.new_api_key}
             models:
               gemini-3.1-pro-preview:
                 context_length: 1048576
