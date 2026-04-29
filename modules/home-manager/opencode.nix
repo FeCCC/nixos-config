@@ -83,6 +83,13 @@ in
                     "output": 384000
                 }
               },
+              "deepseek/deepseek-v4-pro": {
+                "name": "deepseek/deepseek-v4-pro",
+                "limit": {
+                    "context": 1048576,
+                    "output": 384000
+                }
+              },
               "deepseek/deepseek-v4-flash": {
                 "name": "deepseek/deepseek-v4-flash",
                 "limit": {
