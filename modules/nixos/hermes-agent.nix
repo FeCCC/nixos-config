@@ -70,8 +70,9 @@
         fallback_model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
           provider: custom
-          model: Pro/deepseek-ai/DeepSeek-V3.2
-          context_length: 163840
+          model: deepseek/deepseek-v4-flash
+          context_length: 1048576
+          max_tokens: 384000
 
         auxiliary:
           compression:
