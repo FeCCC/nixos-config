@@ -13,6 +13,7 @@
     ./tor.nix
     ./netdata.nix
     ./hermes-agent.nix
+    ./mihomo.nix
   ];
 
   environment.shellAliases = {
