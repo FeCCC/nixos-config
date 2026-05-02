@@ -44,4 +44,5 @@
   my_config.desktop.enable = true;
   my_config.netdata.enable = true;
   my_config.hermes-agent.enable = true;
+  my_config.mihomo.enable = true;
 }

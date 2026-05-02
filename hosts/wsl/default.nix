@@ -18,6 +18,7 @@
   networking.hostName = "nixos-wsl";
   my_config.desktop.enable = false;
   my_config.netdata.enable = false;
+  my_config.mihomo.enable = true;
 
   environment.extraInit = ''
     export NIX_LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH:/usr/lib/wsl/lib/"
