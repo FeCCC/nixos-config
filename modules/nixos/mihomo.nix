@@ -12,6 +12,7 @@
       enable = true;
       package = pkgs.unstable.mihomo;
       tunMode = true;
+      webui = pkgs.zashboard;
       configFile = config.sops.templates."mihomo-config".path;
 
     };
@@ -26,8 +27,12 @@
           <<: *SubsParam
           path: "./proxy_provider/fib.yaml"
 
+      port: 7890
+      socks-port: 7891
+      mixed-port: 7892
       allow-lan: true
       bind-address: "*"
+      external-controller: 0.0.0.0:9090
       mode: rule
       log-level: info
       unified-delay: true
@@ -119,7 +124,7 @@
           - "+.push.apple.com"
       tun:
         enable: true
-        stack: mixed
+        stack: system
 
       # 节点筛选
       # 按地区筛选
