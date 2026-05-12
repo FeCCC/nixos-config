@@ -13,14 +13,6 @@
     services.displayManager.cosmic-greeter.enable = true;
     services.desktopManager.cosmic.enable = true;
 
-    services.xrdp = {
-      enable = true;
-      # defaultWindowManager = "${pkgs.kdePackages.plasma-workspace}/bin/startplasma-x11";
-      defaultWindowManager = "${pkgs.cosmic-session}/bin/start-cosmic";
-      audio.enable = true;
-      openFirewall = true;
-    };
-
     services.flatpak.enable = true;
 
     i18n.inputMethod = {

@@ -13,16 +13,9 @@ lib.mkMerge [
     nixpkgs.hostPlatform = "x86_64-linux";
   }
   (lib.mkIf config.my_config.desktop.enable {
-    services.xserver.videoDrivers = [
-      "nvidia"
-      "modesetting"
-      "intel"
-      "fbdev"
-    ];
-    hardware.graphics.enable = true;
-    hardware.nvidia = {
-      open = true;
-      modesetting.enable = true;
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
     };
   })
 ]
