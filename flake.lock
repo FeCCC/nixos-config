@@ -541,6 +541,22 @@
         "type": "github"
       }
     },
+    "rime-data": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1778639882,
+        "narHash": "sha256-p3DbTa7olUgLOxq5zFiSVGSagfLT/OYVATOUcr4btIo=",
+        "owner": "FeCCC",
+        "repo": "rime-data",
+        "rev": "1f4b5993cd07b9ae9a5974075f6de2d424ffac8e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FeCCC",
+        "repo": "rime-data",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agency-agents": "agency-agents",
@@ -559,6 +575,7 @@
         "novel-control-station": "novel-control-station",
         "opencode": "opencode",
         "pua": "pua",
+        "rime-data": "rime-data",
         "sops-nix": "sops-nix",
         "superpowers": "superpowers",
         "unsloth-buddy": "unsloth-buddy"
