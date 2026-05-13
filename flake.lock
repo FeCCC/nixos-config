@@ -544,11 +544,11 @@
     "rime-data": {
       "flake": false,
       "locked": {
-        "lastModified": 1778639882,
-        "narHash": "sha256-p3DbTa7olUgLOxq5zFiSVGSagfLT/OYVATOUcr4btIo=",
+        "lastModified": 1778654292,
+        "narHash": "sha256-VYsRznFbwc9vlh+/V7fC9+YLdD/l7wj0k7d2f74vafs=",
         "owner": "FeCCC",
         "repo": "rime-data",
-        "rev": "1f4b5993cd07b9ae9a5974075f6de2d424ffac8e",
+        "rev": "60755fce1d5dd2f4d8964ac6fee9c161fe2de2a8",
         "type": "github"
       },
       "original": {

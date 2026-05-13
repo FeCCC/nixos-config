@@ -11,8 +11,20 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-    rime-data = inputs.rime-data.src;
-    fcitx5-rime = prev.fcitx5-rime.override { rimeDataPkgs = [ inputs.rime-data ]; };
+    # 包装一层：把根目录文件放到 share/rime-data/ 下
+    rime-data-custom =
+      final.runCommandLocal "rime-data-custom"
+        {
+          src = inputs.rime-data;
+        }
+        ''
+          mkdir -p $out/share/rime-data
+          cp -r $src/* $out/share/rime-data/
+        '';
+
+    fcitx5-rime = prev.fcitx5-rime.override {
+      rimeDataPkgs = [ final.rime-data-custom ];
+    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
