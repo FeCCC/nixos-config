@@ -12,7 +12,7 @@
     # ...
     # });
     rime-data = inputs.rime-data.src;
-    fcitx5-rime = prev.fcitx5-rime.override { rimeDataPkgs = [ inputs.rime-data.src ]; };
+    fcitx5-rime = prev.fcitx5-rime.override { rimeDataPkgs = [ inputs.rime-data ]; };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
