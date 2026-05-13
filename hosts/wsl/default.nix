@@ -30,8 +30,6 @@
 
   services.openssh.ports = [ 8822 ];
   services.syncthing.guiAddress = "127.0.0.1:8385";
-  services.xrdp.port = 3390;
-
   # BEGIN: Docker Desktop WSL Integration
   wsl.extraBin = with pkgs; [
     { src = "${uutils-coreutils-noprefix}/bin/cat"; }

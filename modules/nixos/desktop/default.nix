@@ -6,6 +6,7 @@
     ./desktop.nix
     ./simple.nix
     ./fonts.nix
+    ./niri.nix
   ];
 
   options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
