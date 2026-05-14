@@ -9,6 +9,12 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    # DankMaterialShell
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
 
     # Home manager
@@ -103,6 +109,7 @@
       nixpkgs,
       nixpkgs-2305,
       nixpkgs-unstable,
+      dms,
       home-manager,
       nixos-wsl,
       sops-nix,
