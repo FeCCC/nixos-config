@@ -1,15 +1,13 @@
-# Add your reusable home-manager modules to this directory, on their own file (https://nixos.wiki/wiki/Module).
-# These should be stuff you would like to share with others, not your personal configurations.
+let
+  scanPacks = import ../common/packs.nix;
+in
 {
-  # List your module files here
-  # my-module = import ./my-module.nix;
   imports = [
     ./common.nix
     ./sops.nix
     ./helix.nix
     ./zsh.nix
     ./ssh.nix
-    ./desktop
     ./neovim
     ./yazi.nix
     ./simple.nix
@@ -18,5 +16,6 @@
     ./gemini-cli.nix
     ./opencode.nix
     ./nh.nix
-  ];
+  ]
+  ++ scanPacks ../packs "home";
 }
