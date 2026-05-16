@@ -6,7 +6,7 @@
 }:
 {
   options.my_config.netdata = {
-    enable = lib.mkEnableOption "use docker";
+    enable = lib.mkEnableOption "use netdata";
   };
   config = lib.mkIf config.my_config.netdata.enable {
     networking.firewall.allowedTCPPorts = [ 19999 ];
