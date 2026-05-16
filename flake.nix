@@ -9,12 +9,6 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
-    # DankMaterialShell
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
 
     # Home manager
@@ -53,6 +47,24 @@
     rime-data = {
       url = "github:FeCCC/rime-data";
       flake = false;
+    };
+
+    # Catppuccin theme for DMS
+    catppuccin-dms = {
+      url = "github:catppuccin/dankmaterialshell";
+      flake = false;
+    };
+
+    # niri (required by DMS niri home-manager module)
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # DankMaterialShell
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
