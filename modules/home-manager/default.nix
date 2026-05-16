@@ -9,7 +9,7 @@
     ./helix.nix
     ./zsh.nix
     ./ssh.nix
-    ./desktop.nix
+    ./desktop
     ./neovim
     ./yazi.nix
     ./simple.nix
