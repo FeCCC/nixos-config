@@ -22,7 +22,18 @@
 
   programs.wezterm = {
     enable = true;
-    extraConfig = ''return { front_end = "WebGpu" }'';
+    extraConfig = ''
+      return {
+        front_end = "WebGpu",
+        mouse_bindings = {
+          {
+            event = { Down = { streak = 1, button = "Right" } },
+            mods = "NONE",
+            action = wezterm.action.PasteFrom("Clipboard"),
+          },
+        },
+      }
+    '';
     enableZshIntegration = false;
     enableBashIntegration = false;
   };
