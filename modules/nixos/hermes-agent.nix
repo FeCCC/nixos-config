@@ -59,11 +59,11 @@
     # 避免在 settings 中写入 base_url，防止明文存储
     sops.templates."hermes-agent-config" = {
       content = ''
-        timezone: "Asia/Shanghai"
+        timezone: Asia/Shanghai
         model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
           provider: custom
-          default: "deepseek-v4-flash"
+          default: deepseek-v4-pro
           context_length: 1048576
           max_tokens: 384000
 
@@ -76,16 +76,16 @@
 
         auxiliary:
           compression:
-            model: "deepseek-v4-flash"
+            model: deepseek-v4-flash
             base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
             context_length: 1048576
             max_tokens: 384000
           vision:
-            model: "Qwen/Qwen3.6-27B"
+            model: Qwen/Qwen3.6-27B
             base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
 
         custom_providers:
-          - name: "new-api"
+          - name: new-api
             base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
             models:
               gemini-3.1-pro-preview:
