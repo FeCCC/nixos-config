@@ -63,7 +63,7 @@
         model:
           base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
           provider: custom
-          default: deepseek-v4-pro
+          default: deepseek-v4-flash
           context_length: 1048576
           max_tokens: 384000
 
