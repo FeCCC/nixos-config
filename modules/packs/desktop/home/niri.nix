@@ -11,6 +11,8 @@
       };
     };
 
+    hotkey-overlay.skip-at-startup = true;
+
     prefer-no-csd = true;
 
     layout.default-column-width.proportion = 0.5;
