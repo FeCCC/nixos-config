@@ -104,11 +104,6 @@
       flake = false;
     };
 
-    # opencode development version
-    opencode = {
-      url = "github:anomalyco/opencode";
-    };
-
     hermes-agent = {
       url = "github:NousResearch/hermes-agent";
       inputs.nixpkgs.follows = "nixpkgs";
