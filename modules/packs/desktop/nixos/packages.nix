@@ -18,6 +18,7 @@
     lutris
     signal-desktop
     hmcl
+    unstable.kazumi
   ];
 
   programs.steam.enable = true;
