@@ -14,7 +14,7 @@ in
     ./codex.nix
     ./claude-code.nix
     ./gemini-cli.nix
-    ./opencode.nix
+    ./opencode
     ./nh.nix
   ]
   ++ scanPacks ../packs "home";
