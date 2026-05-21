@@ -57,41 +57,52 @@
 
     # 使用 sops template 生成配置文件，通过 configFile 注入
     # 避免在 settings 中写入 base_url，防止明文存储
-    sops.templates."hermes-agent-config" = {
-      content = ''
-        timezone: Asia/Shanghai
-        model:
-          base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-          provider: custom
-          default: deepseek-v4-flash
-          context_length: 1048576
-          max_tokens: 384000
-
-        fallback_model:
-          base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-          provider: custom
-          model: deepseek/deepseek-v4-flash
-          context_length: 1048576
-          max_tokens: 384000
-
-        auxiliary:
-          compression:
-            model: deepseek-v4-flash
-            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-            context_length: 1048576
-            max_tokens: 384000
-          vision:
-            model: Qwen/Qwen3.6-27B
-            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-
-        custom_providers:
-          - name: new-api
-            base_url: ${config.sops.placeholder.new_api_base_url_for_openai}
-            models:
-              gemini-3.1-pro-preview:
-                context_length: 1048576
-      '';
-    };
+    sops.templates."hermes-agent-config" =
+      let
+        hermes-config = {
+          timezone = "Asia/Shanghai";
+          model = {
+            base_url = config.sops.placeholder.new_api_base_url_for_openai;
+            provider = "custom";
+            default = "deepseek-v4-flash";
+            context_length = 1048576;
+            max_tokens = 384000;
+          };
+          fallback_model = {
+            base_url = config.sops.placeholder.new_api_base_url_for_openai;
+            provider = "custom";
+            model = "deepseek/deepseek-v4-flash";
+            context_length = 1048576;
+            max_tokens = 384000;
+          };
+          auxiliary = {
+            compression = {
+              model = "deepseek-v4-flash";
+              base_url = config.sops.placeholder.new_api_base_url_for_openai;
+              context_length = 1048576;
+              max_tokens = 384000;
+            };
+            vision = {
+              model = "Qwen/Qwen3.6-27B";
+              base_url = config.sops.placeholder.new_api_base_url_for_openai;
+            };
+          };
+          custom_providers = [
+            {
+              name = "new-api";
+              base_url = config.sops.placeholder.new_api_base_url_for_openai;
+              models = {
+                "gemini-3.1-pro-preview" = {
+                  context_length = 1048576;
+                };
+              };
+            }
+          ];
+        };
+      in
+      {
+        content = builtins.readFile ((pkgs.formats.yaml { }).generate "hermes-config.yaml" hermes-config);
+      };
 
     # Hermes Agent 服务配置
     services.hermes-agent = {

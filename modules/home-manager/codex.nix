@@ -13,6 +13,25 @@ let
     # 执行真正的 codex 程序, 并传递所有参数
     exec "${pkgs.unstable.codex}/bin/codex" "$@"
   '';
+
+  # Codex 配置, 使用 Nix attrset 定义, pkgs.formats.toml 生成 TOML
+  codex-config = {
+    model = "deepseek/deepseek-v3.2";
+    model_provider = "new-api";
+    model_context_window = 163840;
+    approval_policy = "on-request";
+    model_providers = {
+      "new-api" = {
+        name = "New Api";
+        base_url = config.sops.placeholder.new_api_base_url_for_openai;
+        env_key = "NEWAPI_API_KEY";
+        wire_api = "chat";
+      };
+    };
+    features = {
+      web_search_request = true;
+    };
+  };
 in
 {
   programs.codex = {
@@ -30,20 +49,6 @@ in
   # 这个模板仍然是必需的, 它告诉 codex 从哪个环境变量读取密钥
   sops.templates.codex_config = {
     path = "${config.xdg.configHome}/codex/config.toml";
-    content = ''
-      model = "deepseek/deepseek-v3.2"
-      model_provider = "new-api"
-      model_context_window = 163840
-      approval_policy = "on-request"
-
-      [model_providers.new-api]
-      name = "New Api"
-      base_url = "${config.sops.placeholder.new_api_base_url_for_openai}"
-      env_key = "NEWAPI_API_KEY"
-      wire_api = "chat"
-
-      [features]
-      web_search_request = true
-    '';
+    content = builtins.readFile ((pkgs.formats.toml { }).generate "codex-config.toml" codex-config);
   };
 }
