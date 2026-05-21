@@ -53,6 +53,7 @@ in
     content = ''
       {
         "$schema": "https://opencode.ai/config.json",
+        "autoupdate": false,
         "provider": {
           "new-api": {
             "npm": "@ai-sdk/openai-compatible",
