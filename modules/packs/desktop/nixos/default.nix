@@ -12,6 +12,7 @@ let
     ./niri.nix
     ./fonts.nix
     ./packages.nix
+    ./aagl.nix
   ];
   load = file: import file { inherit pkgs inputs; };
 in
@@ -21,6 +22,7 @@ in
   imports = [
     inputs.dms.nixosModules.dank-material-shell
     inputs.dms.nixosModules.greeter
+    inputs.aagl.nixosModules.default
   ];
 
   config = lib.mkMerge [

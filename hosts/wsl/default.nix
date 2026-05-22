@@ -13,7 +13,15 @@
   wsl = {
     enable = true;
     defaultUser = "miku";
+    wslConf.network.generateHosts = false;
   };
+
+  networking.extraHosts = ''
+    fe00::0 ip6-localnet
+    ff00::0 ip6-mcastprefix
+    ff02::1 ip6-allnodes
+    ff02::2 ip6-allrouters
+  '';
 
   networking.hostName = "nixos-wsl";
   my_config.desktop.enable = true;

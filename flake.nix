@@ -108,6 +108,13 @@
       url = "github:NousResearch/hermes-agent";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    aagl = {
+      url = "github:ezKEa/aagl-gtk-on-nix";
+      # Or, if you follow Nixkgs release 25.11:
+      # url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
+      # inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =

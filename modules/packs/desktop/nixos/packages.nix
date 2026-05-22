@@ -19,6 +19,7 @@
     signal-desktop
     hmcl
     unstable.kazumi
+    unstable.heroic
   ];
 
   programs.steam.enable = true;
