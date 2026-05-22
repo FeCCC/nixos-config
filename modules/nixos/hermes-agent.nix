@@ -25,32 +25,40 @@
     sops.secrets.hermes-email-password = { };
     sops.secrets.hermes-email-home-address = { };
 
-    sops.templates."hermes-env" = {
-      content = ''
-        OPENAI_API_KEY=${config.sops.placeholder.new_api_key}
+    sops.templates."hermes-env" =
+      let
+        hermes-env = {
+          OPENAI_API_KEY = config.sops.placeholder.new_api_key;
 
-        TELEGRAM_BOT_TOKEN=${config.sops.placeholder.telegram_bot_token}
-        TELEGRAM_ALLOWED_USERS=${config.sops.placeholder.telegram_user_id}
-        TELEGRAM_HOME_CHANNEL=${config.sops.placeholder.telegram_user_id}
+          # Telegram
+          TELEGRAM_BOT_TOKEN = config.sops.placeholder.telegram_bot_token;
+          TELEGRAM_ALLOWED_USERS = config.sops.placeholder.telegram_user_id;
+          TELEGRAM_HOME_CHANNEL = config.sops.placeholder.telegram_user_id;
 
-        QQ_APP_ID=${config.sops.placeholder.qq_bot_app_id}
-        QQ_CLIENT_SECRET=${config.sops.placeholder.qq_bot_client_secret}
-        QQ_ALLOWED_USERS=${config.sops.placeholder.qq_bot_allowed_user}
+          # QQ
+          QQ_APP_ID = config.sops.placeholder.qq_bot_app_id;
+          QQ_CLIENT_SECRET = config.sops.placeholder.qq_bot_client_secret;
+          QQ_ALLOWED_USERS = config.sops.placeholder.qq_bot_allowed_user;
 
-        # Required
-        EMAIL_ADDRESS=${config.sops.placeholder.hermes-email-address}
-        EMAIL_PASSWORD=${config.sops.placeholder.hermes-email-password}
-        EMAIL_IMAP_HOST=imap.feccc.site
-        EMAIL_SMTP_HOST=smtp.feccc.site
-        # Security (recommended)
-        EMAIL_ALLOWED_USERS=${config.sops.placeholder.hermes-email-home-address}
-        # Optional
-        EMAIL_IMAP_PORT=993
-        EMAIL_SMTP_PORT=587
-        EMAIL_POLL_INTERVAL=15 # Seconds between inbox checks (default: 15)
-        EMAIL_HOME_ADDRESS=${config.sops.placeholder.hermes-email-home-address}
-      '';
-    };
+          # Required
+          EMAIL_ADDRESS = config.sops.placeholder.hermes-email-address;
+          EMAIL_PASSWORD = config.sops.placeholder.hermes-email-password;
+          EMAIL_IMAP_HOST = "imap.feccc.site";
+          EMAIL_SMTP_HOST = "smtp.feccc.site";
+
+          # Security (recommended)
+          EMAIL_ALLOWED_USERS = config.sops.placeholder.hermes-email-home-address;
+
+          # Optional — Seconds between inbox checks (default: 15)
+          EMAIL_IMAP_PORT = 993;
+          EMAIL_SMTP_PORT = 587;
+          EMAIL_POLL_INTERVAL = 15;
+          EMAIL_HOME_ADDRESS = config.sops.placeholder.hermes-email-home-address;
+        };
+      in
+      {
+        content = lib.generators.toKeyValue { } hermes-env;
+      };
 
     sops.secrets.new_api_key = { };
     sops.secrets.new_api_base_url_for_openai = { };
