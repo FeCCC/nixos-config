@@ -58,6 +58,8 @@
 
           # Image gen
           FAL_KEY = config.sops.placeholder.fal_api_key;
+
+          HERMES_MEDIA_ALLOW_DIRS = "/data:/home/hermes:/tmp";
         };
       in
       {
@@ -73,6 +75,7 @@
       let
         hermes-config = {
           timezone = "Asia/Shanghai";
+          display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
             default = "deepseek-v4-pro";
