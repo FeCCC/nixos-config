@@ -71,7 +71,8 @@
           timezone = "Asia/Shanghai";
           model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
-            provider = "custom";
+            provider = "new-api";
+            key_env = "OPENAI_API_KEY";
             default = "deepseek-v4-pro";
             context_length = 1048576;
             max_tokens = 384000;
@@ -79,6 +80,7 @@
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "custom";
+            key_env = "OPENAI_API_KEY";
             model = "deepseek/deepseek-v4-flash";
             context_length = 1048576;
             max_tokens = 384000;
@@ -99,9 +101,18 @@
             {
               name = "new-api";
               base_url = config.sops.placeholder.new_api_base_url_for_openai;
+              key_env = "OPENAI_API_KEY";
               models = {
                 "gemini-3.1-pro-preview" = {
                   context_length = 1048576;
+                };
+                "deepseek-v4-pro" = {
+                  context_length = 1048576;
+                  max_tokens = 384000;
+                };
+                "deepseek-v4-flash" = {
+                  context_length = 1048576;
+                  max_tokens = 384000;
                 };
               };
             }
