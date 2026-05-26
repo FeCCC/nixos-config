@@ -26,6 +26,9 @@ in
   ];
 
   config = lib.mkMerge [
+    {
+      aagl.enableNixpkgsReleaseBranchCheck = false;
+    }
     (lib.mkIf cfg.enable {
       home-manager.sharedModules = [
         { my_config.desktop.enable = true; }
