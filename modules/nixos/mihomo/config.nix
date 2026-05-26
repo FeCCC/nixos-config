@@ -828,6 +828,7 @@ in
         "DOMAIN-SUFFIX,curseforge.com"
         "DOMAIN-SUFFIX,nostr.com"
         "DOMAIN-SUFFIX,openrouter.ai"
+        "DOMAIN-SUFFIX,fal.media"
       ];
     };
     japan = {
