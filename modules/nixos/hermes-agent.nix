@@ -24,6 +24,7 @@
     sops.secrets.hermes-email-address = { };
     sops.secrets.hermes-email-password = { };
     sops.secrets.hermes-email-home-address = { };
+    sops.secrets.fal_api_key = { };
 
     sops.templates."hermes-env" =
       let
@@ -54,6 +55,9 @@
           EMAIL_SMTP_PORT = 587;
           EMAIL_POLL_INTERVAL = 15;
           EMAIL_HOME_ADDRESS = config.sops.placeholder.hermes-email-home-address;
+
+          # Image gen
+          FAL_KEY = config.sops.placeholder.fal_api_key;
         };
       in
       {
@@ -70,12 +74,8 @@
         hermes-config = {
           timezone = "Asia/Shanghai";
           model = {
-            base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "new-api";
-            key_env = "OPENAI_API_KEY";
             default = "deepseek-v4-pro";
-            context_length = 1048576;
-            max_tokens = 384000;
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
@@ -87,13 +87,12 @@
           };
           auxiliary = {
             compression = {
+              provider = "new-api";
               model = "deepseek-v4-flash";
-              base_url = config.sops.placeholder.new_api_base_url_for_openai;
-              context_length = 1048576;
-              max_tokens = 384000;
             };
             vision = {
               model = "Qwen/Qwen3.6-27B";
+              provider = "new-api";
               base_url = config.sops.placeholder.new_api_base_url_for_openai;
             };
           };
@@ -117,6 +116,7 @@
               };
             }
           ];
+          image_gen.model = "fal-ai/gpt-image-2";
         };
       in
       {
@@ -138,6 +138,10 @@
 
       # 将 hermes CLI 添加到系统 PATH，并全局设置 HERMES_HOME
       addToSystemPackages = true;
+
+      extraDependencyGroups = [
+        "fal" # 图片生成
+      ];
     };
 
     sops.secrets.hermes-agent-password = { };
