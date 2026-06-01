@@ -23,6 +23,7 @@
 
   networking.hostName = "docker";
   networking.firewall.allowedTCPPorts = [ 8096 ];
+  networking.wireless.enable = lib.mkForce false;
 
   my_config.docker.enable = true;
   my_config.desktop.enable = false;
