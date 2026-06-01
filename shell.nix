@@ -75,7 +75,7 @@
         libGL
         libxkbcommon
         wayland
-        xorg.libX11
+        libx11
       ];
 
     shellHook = ''

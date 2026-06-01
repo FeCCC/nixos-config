@@ -26,7 +26,7 @@
           command = "${lib.getExe pkgs.isort}";
         };
         nixfmt = {
-          command = "${lib.getExe pkgs.nixfmt-rfc-style}";
+          command = "${lib.getExe pkgs.nixfmt}";
         };
         stylua = {
           command = "${lib.getExe pkgs.stylua}";

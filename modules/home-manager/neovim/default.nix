@@ -21,6 +21,8 @@
     withPython3 = true;
     withRuby = true;
 
+    nixpkgs.config.allowUnfree = true;
+
     globals = import ./config/global.nix;
     opts = import ./config/opts.nix;
     autoCmd = import ./config/autocmd.nix;

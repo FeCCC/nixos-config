@@ -23,6 +23,7 @@
     ff02::2 ip6-allrouters
   '';
 
+  networking.wireless.enable = lib.mkForce false;
   networking.hostName = "nixos-wsl";
   my_config.desktop.enable = true;
   my_config.netdata.enable = false;
