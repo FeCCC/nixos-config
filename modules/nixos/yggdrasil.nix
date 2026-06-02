@@ -20,12 +20,16 @@
       # will obey the operating system routing table, therefore you should
       # use this section when you may connect via different interfaces.
       Peers = [
+        "tls://192.168.0.10:7777"
         "quic://47.243.180.98:7777"
-        "tls://44.234.134.124:443"
-        "quic://185.103.109.63:65535"
-        "tls://ygg.jjolly.dev:3443"
+        "tls://ygg-tw.lxak.net:443"
+        "tls://cowgl.tech:1337"
+        "tls://ygg5.mk16.de:1338?key=0000009611ae5391dc0aceea9f3fa6a0dc1279f4306059339e84bfb8b74d2f9b"
         "tcp://pp1.ygg.sy.sa:8441"
         "tls://ygg.ace.ctrl-c.liu.se:9999?key=5636b3af4738c3998284c4805d91209cab38921159c66a6f359f3f692af1c908"
+        "tls://yg-tyo.magicum.net:32333"
+        "tls://asia.deinfra.org:15015"
+        "tls://mn.us.ygg.triplebit.org:993"
       ];
 
       # List of connection strings for outbound peer connections in URI format,
