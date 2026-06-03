@@ -78,7 +78,7 @@
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
-            default = "deepseek-v4-pro";
+            default = "deepseek-v4-pro-max";
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
@@ -108,7 +108,7 @@
                 "gemini-3.1-pro-preview" = {
                   context_length = 1048576;
                 };
-                "deepseek-v4-pro" = {
+                "deepseek-v4-pro-max" = {
                   context_length = 1048576;
                   max_tokens = 384000;
                 };
