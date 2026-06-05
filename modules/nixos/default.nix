@@ -11,6 +11,7 @@ in
     ./tor.nix
     ./netdata.nix
     ./hermes-agent.nix
+    ./easytier.nix
     ./mihomo
   ]
   ++ scanPacks ../packs "nixos";
