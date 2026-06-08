@@ -22,7 +22,16 @@
   };
 
   networking.hostName = "docker";
-  networking.firewall.allowedTCPPorts = [ 8096 ];
+  networking.firewall.allowedTCPPorts = [
+    8096 # jellyfin
+    21115 # rustdesk NAT 类型测试
+    21116 # rustdesk ID 服务器
+    21117 # rustdesk 中继服务器
+    21118 # rustdesk Web 控制台
+  ];
+  networking.firewall.allowedUDPPorts = [
+    21116 # rustdesk ID 服务器
+  ];
   networking.wireless.enable = lib.mkForce false;
 
   my_config.docker.enable = true;
