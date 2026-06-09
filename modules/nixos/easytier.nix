@@ -40,8 +40,6 @@
       extraSettings = {
         flags = {
           private_mode = true;
-          enable_kcp_proxy = true;
-          enable_quic_proxy = true;
         };
       };
       extraArgs = [ "--secure-mode" ];
