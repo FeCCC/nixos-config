@@ -120,6 +120,7 @@
             }
           ];
           image_gen.model = "fal-ai/gpt-image-2";
+          agent.gateway_timeout = 21600;
         };
       in
       {
