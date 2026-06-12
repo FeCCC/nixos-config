@@ -11,9 +11,6 @@ in
     ./neovim
     ./yazi.nix
     ./simple.nix
-    ./codex.nix
-    ./claude-code.nix
-    ./gemini-cli.nix
     ./opencode
     ./nh.nix
   ]
