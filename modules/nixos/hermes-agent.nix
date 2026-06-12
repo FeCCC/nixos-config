@@ -94,9 +94,12 @@
               model = "deepseek-v4-flash";
             };
             vision = {
-              model = "Qwen/Qwen3.6-27B";
               provider = "new-api";
-              base_url = config.sops.placeholder.new_api_base_url_for_openai;
+              model = "Qwen/Qwen3.6-27B";
+            };
+            approval = {
+              provider = "new-api";
+              model = "deepseek-v4-flash";
             };
           };
           custom_providers = [
@@ -121,6 +124,10 @@
           ];
           image_gen.model = "fal-ai/gpt-image-2";
           agent.gateway_timeout = 21600;
+          approvals = {
+            mode = "smart";
+            destructive_slash_confirm = false; # /clear, /new, /reset, /undo 不再弹出确认
+          };
         };
       in
       {
