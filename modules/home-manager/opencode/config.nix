@@ -10,7 +10,7 @@
         apiKey = "{env:OPENCODE_API_KEY}";
       };
       models = {
-        deepseek-v4-pro = {
+        deepseek-v4-pro-max = {
           name = "deepseek-v4-pro";
           limit = {
             context = 1048576;
