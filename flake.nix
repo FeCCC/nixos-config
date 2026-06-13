@@ -221,6 +221,7 @@
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
         nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
         docker = mkNixOSConfiguration { modules = [ ./hosts/docker ]; };
+        mikoto = mkNixOSConfiguration { modules = [ ./hosts/mikoto ]; };
       };
 
       homeConfigurations = {
