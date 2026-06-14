@@ -37,6 +37,7 @@
   my_config.docker.enable = true;
   my_config.desktop.enable = false;
   my_config.netdata.enable = true;
+  my_config.netdata.parentHost = "mikoto.local";
   my_config.i2pd.enable = false;
   my_config.hermes-agent.enable = true;
 

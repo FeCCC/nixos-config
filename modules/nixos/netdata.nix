@@ -6,7 +6,12 @@
 }:
 {
   options.my_config.netdata = {
-    enable = lib.mkEnableOption "use netdata";
+    enable = lib.mkEnableOption "netdata monitoring agent";
+    parentHost = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      default = null;
+      description = "Parent netdata host to stream metrics to. null = standalone or parent node.";
+    };
   };
   config = lib.mkIf config.my_config.netdata.enable {
     networking.firewall.allowedTCPPorts = [ 19999 ];
@@ -29,15 +34,29 @@
           "dbengine tier 2 retention size" = "2GiB";
         };
       };
-      configDir."stream.conf" = pkgs.writeText "stream.conf" ''
-        [stream]
-        enabled = no
-        enable compression = yes
-
-        [netdata-api]
-        type = api
-        enabled = yes
-      '';
+      configDir."stream.conf" =
+        let
+          parentHost = config.my_config.netdata.parentHost;
+        in
+        pkgs.writeText "stream.conf" ''
+          [stream]
+          enabled = ${if parentHost != null then "yes" else "no"}
+          enable compression = yes
+          ${
+            if parentHost != null then
+              ''
+                destination = ${parentHost}:19999
+                api key = netdata-api
+                reconnect delay seconds = 5
+                initial clock resync iterations = 60
+              ''
+            else
+              ""
+          }
+          [netdata-api]
+          type = api
+          enabled = yes
+        '';
     };
   };
 }
