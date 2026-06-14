@@ -39,7 +39,16 @@
     ];
   };
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/zvol/rpool/swap"; } ];
+
+  #显卡
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = false; # V100 不需要
+    open = false; # V100 是 Volta，不支持 open driver
+    nvidiaSettings = false;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580; # 580 是支持 V100 的最后一个版本
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
