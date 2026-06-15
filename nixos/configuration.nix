@@ -121,7 +121,20 @@
     };
   };
 
-  services.chrony.enable = true;
+  services.chrony = {
+    enable = true;
+    servers = [
+      "ntp.aliyun.com"
+      "ntp.tencent.com"
+      "ntp.tuna.tsinghua.edu.cn"
+      "cn.ntp.org.cn"
+    ];
+    extraConfig = ''
+      initstepslew 0.5 ntp.aliyun.com ntp.tencent.com
+      cmdallow 127.0.0.1
+      cmdallow ::1
+    '';
+  };
 
   boot.kernel.sysctl = {
     # 开启 BBR 拥塞控制算法
