@@ -121,6 +121,8 @@
     };
   };
 
+  services.chrony.enable = true;
+
   boot.kernel.sysctl = {
     # 开启 BBR 拥塞控制算法
     "net.ipv4.tcp_congestion_control" = "bbr";
