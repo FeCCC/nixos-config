@@ -11,6 +11,8 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./zfs.nix
+    ./nfs.nix
   ];
 
   boot.initrd.availableKernelModules = [
@@ -25,19 +27,33 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "rpool/local/root";
-    fsType = "zfs";
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/E301-5ED0";
-    fsType = "vfat";
-    options = [
-      "fmask=0022"
-      "dmask=0022"
-    ];
-  };
+  # # nfs
+  # boot.supportedFilesystems = [ "nfs" ];
+  # services.rpcbind.enable = true; # needed for NFS
+  #
+  # fileSystems = {
+  #   "/mnt/NAS/appdata" = {
+  #     device = "truenas.local:/mnt/NAS/appdata/mikoto";
+  #     fsType = "nfs";
+  #   };
+  #   "/mnt/NAS/docker-storage" = {
+  #     device = "truenas.local:/mnt/NAS/docker-storage";
+  #     fsType = "nfs";
+  #   };
+  #   "/mnt/NAS/share" = {
+  #     device = "truenas.local:/mnt/NAS/share";
+  #     fsType = "nfs";
+  #   };
+  # };
+  #
+  # systemd.services.docker = {
+  #   # 'requires' 表示强依赖：如果挂载失败，Docker 不会启动
+  #   requires = [
+  #     "mnt-NAS-appdata.mount"
+  #     "mnt-NAS-docker\\x2dstorage.mount"
+  #     "mnt-NAS-share.mount"
+  #   ];
+  # };
 
   swapDevices = [ { device = "/dev/zvol/rpool/swap"; } ];
 

@@ -1,24 +1,16 @@
 {
-  inputs,
-  outputs,
   lib,
-  config,
-  pkgs,
   ...
 }:
 {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware
   ];
 
   networking.hostName = "mikoto";
   networking.hostId = "ce43dac1"; # ZFS 要求
 
-  # ZFS
-  boot.supportedFilesystems = [ "zfs" ];
-  boot.zfs.forceImportRoot = true;
-
-  # systemd-boot
+    # systemd-boot
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = lib.mkForce false;

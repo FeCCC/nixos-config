@@ -2,13 +2,13 @@
   ...
 }:
 {
-
+  # nfs
   boot.supportedFilesystems = [ "nfs" ];
   services.rpcbind.enable = true; # needed for NFS
 
   fileSystems = {
     "/mnt/NAS/appdata" = {
-      device = "truenas.local:/mnt/NAS/appdata/docker";
+      device = "truenas.local:/mnt/NAS/appdata/mikoto";
       fsType = "nfs";
     };
     "/mnt/NAS/docker-storage" = {
