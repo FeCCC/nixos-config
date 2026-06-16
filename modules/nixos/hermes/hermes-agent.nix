@@ -78,7 +78,7 @@
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
-            default = "deepseek-v4-pro-max";
+            default = "deepseek-v4-pro";
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
@@ -110,6 +110,10 @@
               models = {
                 "gemini-3.1-pro-preview" = {
                   context_length = 1048576;
+                };
+                "deepseek-v4-pro" = {
+                  context_length = 1048576;
+                  max_tokens = 384000;
                 };
                 "deepseek-v4-pro-max" = {
                   context_length = 1048576;
@@ -184,7 +188,10 @@
         chown ${config.services.hermes-agent.user}:${config.services.hermes-agent.group} "$DIR/config.json"
         chmod 600 "$DIR/config.json"
       '';
-      deps = [ "setupSecrets" "hermes-agent-setup" ];
+      deps = [
+        "setupSecrets"
+        "hermes-agent-setup"
+      ];
     };
 
     sops.secrets.hermes-agent-password = { };
