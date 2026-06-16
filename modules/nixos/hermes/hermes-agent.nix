@@ -123,6 +123,11 @@
             }
           ];
           image_gen.model = "fal-ai/gpt-image-2";
+          memory = {
+            provider = "hindsight";
+            user_profile_enabled = true;
+            memory_enabled = true;
+          };
           agent.gateway_timeout = 21600;
           approvals = {
             mode = "smart";
@@ -153,7 +158,33 @@
       extraDependencyGroups = [
         "fal" # 图片生成
         "messaging"
+        "hindsight"
       ];
+    };
+
+    # hermes 所需 Hindsight 连接配置（供 activationScripts 复制到hermes目录内实文件）
+    sops.templates."hindsight-hermes-config" = {
+      content = builtins.toJSON {
+        mode = "local_external";
+        api_url = "http://${config.networking.hostName}.local:8114";
+        recall_budget = "mid";
+        memory_mode = "hybrid";
+        auto_retain = true;
+        auto_recall = true;
+      };
+      mode = "0600";
+    };
+
+    # 将 Hindsight 连接配置复制到容器内可达路径
+    system.activationScripts."hermes-hindsight-config" = {
+      text = ''
+        DIR=${config.services.hermes-agent.stateDir}/.hermes/hindsight
+        mkdir -p "$DIR"
+        cp -L ${config.sops.templates."hindsight-hermes-config".path} "$DIR/config.json"
+        chown ${config.services.hermes-agent.user}:${config.services.hermes-agent.group} "$DIR/config.json"
+        chmod 600 "$DIR/config.json"
+      '';
+      deps = [ "setupSecrets" "hermes-agent-setup" ];
     };
 
     sops.secrets.hermes-agent-password = { };
@@ -191,6 +222,6 @@
       };
     };
 
-    users.users.miku.extraGroups = [ "hermes" ];
+    users.users.miku.extraGroups = [ config.services.hermes-agent.group ];
   };
 }

@@ -10,7 +10,7 @@ in
     ./i2pd.nix
     ./tor.nix
     ./netdata.nix
-    ./hermes-agent.nix
+    ./hermes
     ./easytier.nix
     ./mihomo
   ]
