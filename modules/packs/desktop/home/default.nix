@@ -12,7 +12,7 @@ let
     ./dms.nix
     ./niri.nix
   ];
-  load = file: import file { inherit pkgs inputs; };
+  load = file: import file { inherit lib pkgs inputs; };
 in
 {
   options.my_config.desktop.enable = lib.mkEnableOption "use desktop";
