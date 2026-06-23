@@ -137,6 +137,11 @@
             mode = "smart";
             destructive_slash_confirm = false; # /clear, /new, /reset, /undo 不再弹出确认
           };
+          mcp_servers = {
+            "codebase-memory-mcp" = {
+              command = "${inputs.codebase-memory-mcp.packages.${pkgs.system}.default}/bin/codebase-memory-mcp";
+            };
+          };
         };
       in
       {
@@ -161,13 +166,8 @@
 
       # codebase-memory-mcp — 代码库知识图谱 MCP server
       extraPackages = [
-        inputs.codebase-memory-mcp.packages.x86_64-linux.default
+        inputs.codebase-memory-mcp.packages.${pkgs.system}.default
       ];
-      mcpServers = {
-        "codebase-memory-mcp" = {
-          command = "${inputs.codebase-memory-mcp.packages.x86_64-linux.default}/bin/codebase-memory-mcp";
-        };
-      };
 
       extraDependencyGroups = [
         "fal" # 图片生成
