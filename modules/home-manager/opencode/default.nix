@@ -51,7 +51,7 @@ in
   # 依赖包裹脚本在运行时注入的环境变量
   sops.templates.opencode_config = {
     path = "${config.xdg.configHome}/opencode/opencode.json";
-    content = builtins.toJSON (import ./config.nix { inherit inputs; });
+    content = builtins.toJSON (import ./config.nix { inherit pkgs inputs; });
   };
 
   # skills 集成

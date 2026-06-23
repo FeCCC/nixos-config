@@ -139,7 +139,9 @@
           };
           mcp_servers = {
             "codebase-memory-mcp" = {
-              command = "${inputs.codebase-memory-mcp.packages.${pkgs.system}.default}/bin/codebase-memory-mcp";
+              command = "${
+                inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
+              }/bin/codebase-memory-mcp";
             };
           };
         };
@@ -166,7 +168,7 @@
 
       # codebase-memory-mcp — 代码库知识图谱 MCP server
       extraPackages = [
-        inputs.codebase-memory-mcp.packages.${pkgs.system}.default
+        inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
       extraDependencyGroups = [

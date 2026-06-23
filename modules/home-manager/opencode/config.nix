@@ -1,4 +1,8 @@
-{ inputs }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   "$schema" = "https://opencode.ai/config.json";
   autoupdate = false;
@@ -134,7 +138,9 @@
       enabled = true;
       type = "local";
       command = [
-        "${inputs.codebase-memory-mcp.packages.x86_64-linux.default}/bin/codebase-memory-mcp"
+        "${
+          inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
+        }/bin/codebase-memory-mcp"
       ];
     };
   };
