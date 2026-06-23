@@ -68,6 +68,26 @@
         "type": "github"
       }
     },
+    "codebase-memory-mcp": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1782170167,
+        "narHash": "sha256-IpAn0xGfoGGPPwdCx9ZP08WbKXjL6p9mMZzt8mICmSg=",
+        "owner": "DeusData",
+        "repo": "codebase-memory-mcp",
+        "rev": "684e35b0e22929f9aa30817d8495f04f6cdaf0b3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DeusData",
+        "repo": "codebase-memory-mcp",
+        "type": "github"
+      }
+    },
     "context-engineering": {
       "flake": false,
       "locked": {
@@ -675,6 +695,7 @@
         "agency-agents": "agency-agents",
         "catppuccin-dms": "catppuccin-dms",
         "cc-skills": "cc-skills",
+        "codebase-memory-mcp": "codebase-memory-mcp",
         "context-engineering": "context-engineering",
         "disko": "disko",
         "dms": "dms",

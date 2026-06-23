@@ -108,6 +108,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    codebase-memory-mcp = {
+      url = "github:DeusData/codebase-memory-mcp";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     aagl = {
       url = "github:ezKEa/aagl-gtk-on-nix";
       # Or, if you follow Nixkgs release 25.11:

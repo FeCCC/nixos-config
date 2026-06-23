@@ -159,6 +159,16 @@
       # 将 hermes CLI 添加到系统 PATH，并全局设置 HERMES_HOME
       addToSystemPackages = true;
 
+      # codebase-memory-mcp — 代码库知识图谱 MCP server
+      extraPackages = [
+        inputs.codebase-memory-mcp.packages.x86_64-linux.default
+      ];
+      mcpServers = {
+        "codebase-memory-mcp" = {
+          command = "${inputs.codebase-memory-mcp.packages.x86_64-linux.default}/bin/codebase-memory-mcp";
+        };
+      };
+
       extraDependencyGroups = [
         "fal" # 图片生成
         "messaging"

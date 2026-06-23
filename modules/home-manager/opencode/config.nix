@@ -1,3 +1,4 @@
+{ inputs }:
 {
   "$schema" = "https://opencode.ai/config.json";
   autoupdate = false;
@@ -125,6 +126,16 @@
       "rm*" = "ask";
       "rm *" = "ask";
       "*" = "allow";
+    };
+  };
+
+  mcp = {
+    "codebase-memory-mcp" = {
+      enabled = true;
+      type = "local";
+      command = [
+        "${inputs.codebase-memory-mcp.packages.x86_64-linux.default}/bin/codebase-memory-mcp"
+      ];
     };
   };
 }
