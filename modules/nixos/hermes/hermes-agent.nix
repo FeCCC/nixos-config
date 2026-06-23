@@ -95,7 +95,7 @@
             };
             vision = {
               provider = "new-api";
-              model = "Qwen/Qwen3.6-27B";
+              model = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:latest";
             };
             approval = {
               provider = "new-api";
