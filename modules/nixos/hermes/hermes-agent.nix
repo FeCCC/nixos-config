@@ -25,6 +25,7 @@
     sops.secrets.hermes-email-password = { };
     sops.secrets.hermes-email-home-address = { };
     sops.secrets.fal_api_key = { };
+    sops.secrets.hermes_api_server_key = { };
 
     sops.templates."hermes-env" =
       let
@@ -60,11 +61,20 @@
           FAL_KEY = config.sops.placeholder.fal_api_key;
 
           HERMES_MEDIA_ALLOW_DIRS = "/data:/home/hermes:/tmp";
+
+          # API SERVER
+          API_SERVER_ENABLED = "true";
+          API_SERVER_HOST = "0.0.0.0";
+          API_SERVER_PORT = "8642";
+          API_SERVER_KEY = config.sops.placeholder.hermes_api_server_key;
         };
       in
       {
         content = lib.generators.toKeyValue { } hermes-env;
       };
+
+    # API SERVER 开放端口
+    networking.firewall.allowedTCPPorts = [ 8642 ];
 
     sops.secrets.new_api_key = { };
     sops.secrets.new_api_base_url_for_openai = { };
