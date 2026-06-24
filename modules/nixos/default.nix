@@ -3,6 +3,7 @@ let
 in
 {
   imports = [
+    ../common/nixpkgs.nix
     ./simple.nix
     ./yggdrasil.nix
     ./docker.nix
