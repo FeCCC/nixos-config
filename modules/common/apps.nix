@@ -1,12 +1,9 @@
 let
   common_programs = [
     "lazygit"
-    "bat"
   ];
   nixos_programs = [
-    "iftop"
     "nix-ld"
-    "mosh"
   ]
   ++ common_programs;
   home_programs = [
@@ -17,10 +14,8 @@ let
     "fastfetch"
     "zellij"
     "fzf"
-    "aria2"
     "zoxide" # for zsh
     "fd"
-    "bottom"
   ]
   ++ common_programs;
   pkgs = [
@@ -29,20 +24,17 @@ let
     "age"
     "ssh-to-pgp"
     "ssh-to-age"
-    "iperf"
     "wget"
     "file"
     "which"
     "unzip"
     "nixfmt"
     "ncdu"
-    "acme-sh"
     "ffmpeg-headless"
     "lrzsz"
     "rsync"
     "devenv"
     "dysk"
-    "inxi"
     "dust"
     "python3"
   ];
