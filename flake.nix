@@ -222,7 +222,8 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         nixos = mkNixOSConfiguration { modules = [ ./hosts/common.nix ]; };
-        nixos-wsl = mkNixOSConfiguration { modules = [ ./hosts/wsl ]; };
+        wsl-miku = mkNixOSConfiguration { modules = [ ./hosts/wsl/miku.nix ]; };
+        wsl-thinbook-x = mkNixOSConfiguration { modules = [ ./hosts/wsl/thinkbook-x.nix ]; };
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
         nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
         docker = mkNixOSConfiguration { modules = [ ./hosts/docker ]; };

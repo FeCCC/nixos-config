@@ -24,10 +24,8 @@
   '';
 
   networking.wireless.enable = lib.mkForce false;
-  networking.hostName = "nixos-wsl";
   my_config.desktop.enable = true;
   my_config.netdata.enable = false;
-  my_config.mihomo.enable = true;
 
   environment.extraInit = ''
     export NIX_LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH:/usr/lib/wsl/lib/"
