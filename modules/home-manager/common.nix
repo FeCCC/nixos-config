@@ -26,6 +26,7 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      cudaSupport = true;
     };
   };
 
