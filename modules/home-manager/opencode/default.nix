@@ -54,8 +54,13 @@ in
     content = builtins.toJSON (import ./config.nix { inherit pkgs inputs; });
   };
 
-  # skills 集成
+  # codebase-memory-mcp 工具
+  home.packages = [
+    inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
+  ];
+
   xdg.configFile = {
+    # skills 集成
     "opencode/skill" = {
       source = pkgs.symlinkJoin {
         name = "opencode-skills-merged";
@@ -81,6 +86,11 @@ in
     "opencode/agents" = {
       source = opencode-agency-agents;
       recursive = true;
+    };
+
+    # 全局规则：引导 OpenCode 优先使用 MCP codebase-memory 工具
+    "opencode/AGENTS.md" = {
+      source = ./AGENTS.md;
     };
   };
 }
