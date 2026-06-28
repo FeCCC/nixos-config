@@ -9,6 +9,8 @@
 
   networking.hostName = "mikoto";
   networking.hostId = "ce43dac1"; # ZFS 要求
+  # ComfyUI端口
+  networking.firewall.allowedTCPPorts = [ 8188 ];
 
   # systemd-boot
   boot.loader.systemd-boot.enable = true;
