@@ -40,6 +40,10 @@
   my_config.netdata.parentHost = "mikoto.local";
   my_config.i2pd.enable = false;
   my_config.hermes-agent.enable = true;
+  boot.kernelParams = [
+    "zswap.enabled=1"
+    "zswap.compressor=zstd"
+  ];
 
   services.syncthing.enable = lib.mkForce false;
 

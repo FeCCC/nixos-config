@@ -45,4 +45,8 @@
   my_config.netdata.enable = true;
   my_config.netdata.parentHost = "docker.local";
   my_config.mihomo.enable = true;
+  boot.kernelParams = [
+    "zswap.enabled=1"
+    "zswap.compressor=zstd"
+  ];
 }

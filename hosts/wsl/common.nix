@@ -26,6 +26,10 @@
   networking.wireless.enable = lib.mkForce false;
   my_config.desktop.enable = true;
   my_config.netdata.enable = false;
+  boot.kernelParams = [
+    "zswap.enabled=1"
+    "zswap.compressor=zstd"
+  ];
 
   environment.extraInit = ''
     export NIX_LD_LIBRARY_PATH="$NIX_LD_LIBRARY_PATH:/usr/lib/wsl/lib/"
