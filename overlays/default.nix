@@ -25,6 +25,8 @@
     fcitx5-rime = prev.fcitx5-rime.override {
       rimeDataPkgs = [ final.rime-data-custom ];
     };
+
+    btop = prev.btop.override { cudaSupport = true; };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
