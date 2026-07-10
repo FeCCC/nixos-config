@@ -68,18 +68,8 @@ in
           (inputs.superpowers + "/skills")
           (inputs.cc-skills + "/skills")
           (inputs.pua + "/skills")
-          (inputs.multi-agent + "/skills")
-          (inputs.context-engineering + "/skills")
         ];
       };
-      recursive = true;
-    };
-    "opencode/skill/novel-control-station" = {
-      source = inputs.novel-control-station;
-      recursive = true;
-    };
-    "opencode/skill/unsloth-buddy" = {
-      source = inputs.unsloth-buddy;
       recursive = true;
     };
 
