@@ -81,22 +81,6 @@
       url = "github:tanweai/pua";
       flake = false;
     };
-    multi-agent = {
-      url = "github:FeCCC/multi-agent";
-      flake = false;
-    };
-    novel-control-station = {
-      url = "github:jingtai123/Novel-Control-Station-Skill";
-      flake = false;
-    };
-    context-engineering = {
-      url = "github:muratcankoylan/Agent-Skills-for-Context-Engineering";
-      flake = false;
-    };
-    unsloth-buddy = {
-      url = "github:TYH-labs/unsloth-buddy";
-      flake = false;
-    };
     # agents
     agency-agents = {
       url = "github:msitarzewski/agency-agents";
