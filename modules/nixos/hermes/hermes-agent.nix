@@ -94,7 +94,7 @@
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "custom";
             key_env = "OPENAI_API_KEY";
-            model = "deepseek/deepseek-v4-flash";
+            model = "deepseek-ai/DeepSeek-V4-Flash";
             context_length = 1048576;
             max_tokens = 384000;
           };
