@@ -21,9 +21,14 @@
     sops.secrets.qq_bot_app_id = { };
     sops.secrets.qq_bot_client_secret = { };
     sops.secrets.qq_bot_allowed_user = { };
+    sops.secrets.qq_bot_home_channel = { };
     sops.secrets.hermes-email-address = { };
     sops.secrets.hermes-email-password = { };
     sops.secrets.hermes-email-home-address = { };
+    sops.secrets.feishu_appid = { };
+    sops.secrets.feishu_app_secret = { };
+    sops.secrets.feishu_allowed_users = { };
+    sops.secrets.feishu_home_channel = { };
     sops.secrets.fal_api_key = { };
     sops.secrets.hermes_api_server_key = { };
 
@@ -41,12 +46,21 @@
           QQ_APP_ID = config.sops.placeholder.qq_bot_app_id;
           QQ_CLIENT_SECRET = config.sops.placeholder.qq_bot_client_secret;
           QQ_ALLOWED_USERS = config.sops.placeholder.qq_bot_allowed_user;
+          QQBOT_HOME_CHANNEL = config.sops.placeholder.qq_bot_home_channel;
 
-          # Required
+          # Email
           EMAIL_ADDRESS = config.sops.placeholder.hermes-email-address;
           EMAIL_PASSWORD = config.sops.placeholder.hermes-email-password;
           EMAIL_IMAP_HOST = "imap.feccc.site";
           EMAIL_SMTP_HOST = "smtp.feccc.site";
+
+          #FeiShu
+          FEISHU_CONNECTION_MODE = "websocket";
+          FEISHU_DOMAIN = "feishu";
+          FEISHU_APP_ID = config.sops.placeholder.feishu_appid;
+          FEISHU_APP_SECRET = config.sops.placeholder.feishu_app_secret;
+          FEISHU_ALLOWED_USERS = config.sops.placeholder.feishu_allowed_users;
+          FEISHU_HOME_CHANNEL = config.sops.placeholder.feishu_home_channel;
 
           # Security (recommended)
           EMAIL_ALLOWED_USERS = config.sops.placeholder.hermes-email-home-address;
@@ -185,6 +199,7 @@
         "fal" # 图片生成
         "messaging"
         "hindsight"
+        "feishu"
       ];
     };
 
