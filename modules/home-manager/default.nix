@@ -12,6 +12,7 @@ in
     ./yazi.nix
     ./simple.nix
     ./opencode
+    ./omp
     ./nh.nix
   ]
   ++ scanPacks ../packs "home";

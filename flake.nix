@@ -103,6 +103,12 @@
       # url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
       # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    # oh-my-pi (omp) — coding agent for the terminal
+    omp-nix = {
+      url = "github:yuxqiu/omp-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -118,6 +124,7 @@
       disko,
       nixvim,
       nixos-hardware,
+      omp-nix,
       ...
     }@inputs:
     let

@@ -515,6 +515,26 @@
         "type": "github"
       }
     },
+    "omp-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784686177,
+        "narHash": "sha256-Ma45I/1I4e/fGAAIhmE9u5mxPSe3UeXtMHqABIngjnQ=",
+        "owner": "yuxqiu",
+        "repo": "omp-nix",
+        "rev": "0db9757720f3d598ec72ae5e9858eb8a3f9f4012",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yuxqiu",
+        "repo": "omp-nix",
+        "type": "github"
+      }
+    },
     "pua": {
       "flake": false,
       "locked": {
@@ -615,6 +635,7 @@
         "nixpkgs-2305": "nixpkgs-2305",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
+        "omp-nix": "omp-nix",
         "pua": "pua",
         "rime-data": "rime-data",
         "sops-nix": "sops-nix",
