@@ -16,7 +16,16 @@ what depends on it, or any structural code question:
   Only fall back to grep if codebase-memory returns an error or
   empty result after you have tried different search terms.
 
-### Index Freshness
+  IMPORTANT: Always pass format="json" to codebase-memory tools.
+  The default "toon" output format causes MCP protocol errors
+  (missing structuredContent). Example calls:
+
+    search_graph(project="X", query="keyword", format="json", limit=10)
+    trace_path(project="X", function_name="F", format="json", depth=3)
+    get_architecture(project="X", format="json")
+    query_graph(project="X", query="...", format="json")
+
+## Index Freshness
 
 The codebase-memory index does not auto-update after git commits.
 To guarantee results reflect the latest code, always run a fast
@@ -40,18 +49,18 @@ exploration to a sub-agent, include these instructions verbatim:
      codebase-memory-mcp cli list_projects
 
    Refresh the index before searching:
-     codebase-memory-mcp cli index_repository '{"project":"NAME","repo_path":"/path","mode":"fast"}'
+     codebase-memory-mcp cli index_repository --repo-path /path --project NAME --mode fast
 
    Search for symbols:
-     codebase-memory-mcp cli search_graph '{"project":"NAME","query":"keyword","limit":10}'
+     codebase-memory-mcp cli search_graph --project NAME --query keyword --limit 10
 
    Graph-augmented text search:
-     codebase-memory-mcp cli search_code '{"project":"NAME","pattern":"regex","limit":10}'
+     codebase-memory-mcp cli search_code --project NAME --pattern regex --limit 10
 
    Trace callers and callees:
-     codebase-memory-mcp cli trace_path '{"project":"NAME","function_name":"Func","direction":"both","depth":3}'
+     codebase-memory-mcp cli trace_path --project NAME --function-name Func --direction both --depth 3
 
    Read source of a symbol:
-     codebase-memory-mcp cli get_code_snippet '{"project":"NAME","qualified_name":"pkg.Func"}'
+     codebase-memory-mcp cli get_code_snippet --project NAME --qualified-name pkg.Func
 
    DO NOT use grep, rg, find, or ls for code search."
