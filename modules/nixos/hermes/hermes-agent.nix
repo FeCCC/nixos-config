@@ -126,9 +126,8 @@
               model = "deepseek-v4-flash";
             };
           };
-          custom_providers = [
-            {
-              name = "new-api";
+          providers = {
+            "new-api" = {
               base_url = config.sops.placeholder.new_api_base_url_for_openai;
               key_env = "OPENAI_API_KEY";
               models = {
@@ -139,24 +138,25 @@
                   context_length = 1048576;
                   max_tokens = 384000;
                 };
-                "deepseek-v4-pro-max" = {
-                  context_length = 1048576;
-                  max_tokens = 384000;
-                };
                 "deepseek-v4-flash" = {
                   context_length = 1048576;
                   max_tokens = 384000;
                 };
               };
-            }
-          ];
+            };
+          };
           image_gen.model = "fal-ai/gpt-image-2";
           memory = {
             provider = "hindsight";
             user_profile_enabled = true;
             memory_enabled = true;
           };
-          agent.gateway_timeout = 21600;
+          agent = {
+            gateway_timeout = 21600;
+            reasoning_overrides = {
+              "deepseek-v4-pro" = "max";
+            };
+          };
           approvals = {
             mode = "smart";
             destructive_slash_confirm = false; # /clear, /new, /reset, /undo 不再弹出确认
