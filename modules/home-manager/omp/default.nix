@@ -5,7 +5,7 @@
   ...
 }:
 let
-  omp-pkg = inputs.omp-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  omp-pkg = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.omp;
 
   omp-wrapped = pkgs.writeShellScriptBin "omp" ''
     export PI_CODING_AGENT_DIR="${config.xdg.configHome}/omp/agent"

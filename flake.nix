@@ -105,10 +105,7 @@
     };
 
     # oh-my-pi (omp) — coding agent for the terminal
-    omp-nix = {
-      url = "github:yuxqiu/omp-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    llm-agents-nix.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -124,7 +121,7 @@
       disko,
       nixvim,
       nixos-hardware,
-      omp-nix,
+      llm-agents-nix,
       ...
     }@inputs:
     let
