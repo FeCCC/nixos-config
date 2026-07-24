@@ -142,6 +142,37 @@
                   context_length = 1048576;
                   max_tokens = 384000;
                 };
+                "kimi-k3" = {
+                  context_length = 1048576;
+                };
+              };
+            };
+          };
+          moa = {
+            default_preset = "default";
+            presets = {
+              default = {
+                reference_models = [
+                  {
+                    provider = "new-api";
+                    model = "deepseek-v4-pro";
+                  }
+                  {
+                    provider = "new-api";
+                    model = "gemini-3.1-pro-preview";
+                  }
+                  {
+                    provider = "new-api";
+                    model = "kimi-k3";
+                  }
+                ];
+                aggregator = {
+                  provider = "new-api";
+                  model = "deepseek-v4-pro";
+                };
+                max_tokens = 384000;
+                fanout = "per_iteration";
+                enabled = true;
               };
             };
           };
