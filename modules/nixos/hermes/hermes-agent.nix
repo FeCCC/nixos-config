@@ -166,6 +166,9 @@
               command = "${
                 inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
               }/bin/codebase-memory-mcp";
+              env = {
+                CBM_CACHE_DIR = "/tmp/codebase-memory-mcp";
+              };
             };
           };
         };
