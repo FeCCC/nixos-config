@@ -81,6 +81,11 @@
           API_SERVER_HOST = "0.0.0.0";
           API_SERVER_PORT = "8642";
           API_SERVER_KEY = config.sops.placeholder.hermes_api_server_key;
+
+          # Signal
+          SIGNAL_HTTP_URL = "http://${config.networking.hostName}.local:8116";
+          SIGNAL_ACCOUNT = config.sops.placeholder.signal-account;
+          SIGNAL_ALLOWED_USERS = config.sops.placeholder.signal-account;
         };
       in
       {
