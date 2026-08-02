@@ -60,6 +60,12 @@
             maxTokens = 384000;
           }
           {
+            id = "kimi-k3";
+            name = "Kimi k3";
+            contextWindow = 1048576;
+            maxTokens = 384000;
+          }
+          {
             id = "deepseek/deepseek-v4-pro";
             name = "deepseek/deepseek-v4-pro";
             contextWindow = 1048576;
@@ -103,13 +109,13 @@
           }
           {
             id = "google/gemini-3-pro-preview";
-            name = "Gemini 3 Pro";
+            name = "Gemini 3 Pro Preview";
             contextWindow = 1048576;
             maxTokens = 1048576;
           }
           {
-            id = "gemini-3-pro-preview";
-            name = "Gemini 3 Pro (short)";
+            id = "gemini-3.1-pro-preview";
+            name = "Gemini 3.1 Pro Preview";
             contextWindow = 1048576;
             maxTokens = 1048576;
           }

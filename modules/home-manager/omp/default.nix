@@ -83,8 +83,8 @@ in
     '';
   };
 
-  sops.templates."omp-models" = {
-    path = "${config.xdg.configHome}/omp/agent/models.json";
-    content = builtins.toJSON ompCfg.modelsConfig;
+  sops.templates."omp-models-yml" = {
+    path = "${config.xdg.configHome}/omp/agent/models.yml";
+    content = builtins.readFile (yamlFormat.generate "omp-models.yml" ompCfg.modelsConfig);
   };
 }
