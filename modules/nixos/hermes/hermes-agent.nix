@@ -86,6 +86,7 @@
           SIGNAL_HTTP_URL = "http://${config.networking.hostName}.local:8116";
           SIGNAL_ACCOUNT = config.sops.placeholder.signal-account;
           SIGNAL_ALLOWED_USERS = config.sops.placeholder.signal-account;
+          SIGNAL_HOME_CHANNEL = config.sops.placeholder.signal-account;
         };
       in
       {
