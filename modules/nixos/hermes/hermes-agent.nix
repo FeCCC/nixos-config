@@ -107,13 +107,13 @@
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
-            default = "deepseek-v4-pro";
+            default = "deepseek-v4-flash";
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "custom";
             key_env = "OPENAI_API_KEY";
-            model = "deepseek-ai/DeepSeek-V4-Flash";
+            model = "deepseek-ai/DeepSeek-V4-Pro";
             context_length = 1048576;
             max_tokens = 384000;
           };
@@ -190,6 +190,7 @@
           agent = {
             gateway_timeout = 21600;
             reasoning_overrides = {
+              "deepseek-v4-flash" = "max";
               "deepseek-v4-pro" = "max";
             };
           };
