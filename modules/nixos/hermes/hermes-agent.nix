@@ -189,7 +189,6 @@
             memory_enabled = true;
           };
           agent = {
-            gateway_timeout = 21600;
             reasoning_overrides = {
               "deepseek-v4-flash" = "max";
               "deepseek-v4-pro" = "max";
