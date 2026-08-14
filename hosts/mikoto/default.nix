@@ -5,6 +5,7 @@
 {
   imports = [
     ./hardware
+    ./hush.nix
   ];
 
   networking.hostName = "mikoto";
