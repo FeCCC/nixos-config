@@ -219,7 +219,14 @@
       enable = true;
 
       # 使用容器模式
-      container.enable = true;
+      container = {
+        enable = true;
+        # /tmp 用 tmpfs
+        extraOptions = [
+          "--tmpfs"
+          "/tmp:rw,size=1g"
+        ];
+      };
 
       environmentFiles = [ config.sops.templates."hermes-env".path ];
 
