@@ -198,6 +198,7 @@
             mode = "smart";
             destructive_slash_confirm = false; # /clear, /new, /reset, /undo 不再弹出确认
           };
+          terminal.cwd = "/data/workspace";
           mcp_servers = {
             "codebase-memory-mcp" = {
               command = "${
