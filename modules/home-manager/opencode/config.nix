@@ -29,6 +29,21 @@
             output = 384000;
           };
         };
+        "deepseek-v4-flash-vision-exp" = {
+          name = "deepseek-v4-flash-vision-exp";
+          limit = {
+            context = 1048576;
+            output = 384000;
+          };
+          attachment = true; # 视觉模型：支持图片附件
+          modalities = {
+            input = [
+              "text"
+              "image"
+            ];
+            output = [ "text" ];
+          };
+        };
         "deepseek-ai/DeepSeek-V4-Flash" = {
           name = "deepseek-ai/DeepSeek-V4-Flash";
           limit = {

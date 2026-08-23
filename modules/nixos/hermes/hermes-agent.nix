@@ -108,7 +108,7 @@
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
-            default = "deepseek-v4-flash";
+            default = "deepseek-v4-flash-vision-exp";
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
@@ -147,6 +147,11 @@
                 "deepseek-v4-flash" = {
                   context_length = 1048576;
                   max_tokens = 384000;
+                };
+                "deepseek-v4-flash-vision-exp" = {
+                  context_length = 1048576;
+                  max_tokens = 384000;
+                  supports_vision = true;
                 };
                 "kimi-k3" = {
                   context_length = 1048576;
@@ -191,6 +196,7 @@
           agent = {
             reasoning_overrides = {
               "deepseek-v4-flash" = "max";
+              "deepseek-v4-flash-vision-exp" = "max";
               "deepseek-v4-pro" = "max";
             };
           };

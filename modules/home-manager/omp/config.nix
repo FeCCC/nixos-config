@@ -60,6 +60,16 @@
             maxTokens = 384000;
           }
           {
+            id = "deepseek-v4-flash-vision-exp";
+            name = "DeepSeek V4 Flash Vision";
+            contextWindow = 1048576;
+            maxTokens = 384000;
+            input = [
+              "text"
+              "image"
+            ];
+          }
+          {
             id = "kimi-k3";
             name = "Kimi k3";
             contextWindow = 1048576;
