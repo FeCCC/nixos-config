@@ -18,10 +18,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.enable = lib.mkForce false;
 
-  # Headless server
   my_config.desktop.enable = false;
   my_config.docker.enable = true;
   my_config.netdata.enable = true;
+  my_config.hermes-agent.enable = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
 }

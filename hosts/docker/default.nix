@@ -39,7 +39,6 @@
   my_config.netdata.enable = true;
   my_config.netdata.parentHost = "mikoto.local";
   my_config.i2pd.enable = false;
-  my_config.hermes-agent.enable = true;
 
   services.syncthing.enable = lib.mkForce false;
 
