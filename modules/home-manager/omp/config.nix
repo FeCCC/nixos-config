@@ -10,7 +10,11 @@
       webSearch = "public";
     };
     symbolPreset = "unicode";
-    setupVersion = 1;
+    setupVersion = 2;
+    composer = {
+      # Rounded Box (Default)：状态栏嵌入顶部边框的紧凑布局
+      shape = "box";
+    };
     theme = {
       dark = "titanium";
       light = "light";
