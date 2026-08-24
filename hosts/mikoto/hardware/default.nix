@@ -25,8 +25,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  swapDevices = [ { device = "/dev/zvol/rpool/swap"; } ];
-
   #显卡
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
