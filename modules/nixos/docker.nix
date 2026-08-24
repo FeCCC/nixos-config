@@ -14,5 +14,9 @@
       enable = true;
       liveRestore = false;
     };
+    networking.firewall.extraInputRules = ''
+      # v6 容器端口可达：Docker v4 靠 DNAT→FORWARD 自动放行，v6 无 DNAT 需在 INPUT 放行 ULA 内网
+      ip6 saddr fd00::/8 accept
+    '';
   };
 }
