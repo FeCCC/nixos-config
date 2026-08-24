@@ -798,6 +798,8 @@ in
         "DOMAIN-SUFFIX,m-i.im"
         "DOMAIN-SUFFIX,social.datalabour.com"
         "DOMAIN-SUFFIX,bird.makeup"
+        # manhuagui
+        "DOMAIN-SUFFIX,hamreus.com"
         # common
         "DOMAIN-SUFFIX,cangku.moe"
         "DOMAIN-SUFFIX,bewildcard.com"
