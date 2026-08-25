@@ -8,6 +8,7 @@
 {
   imports = [
     inputs.hermes-agent.nixosModules.default
+    ./cua-driver.nix
   ];
 
   options.my_config.hermes-agent = {
