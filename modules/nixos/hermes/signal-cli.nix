@@ -35,14 +35,18 @@ in
     virtualisation.oci-containers = {
       backend = "docker";
       containers.signal-cli = {
-        image = "ghcr.io/asamk/signal-cli:latest-native";
+        image = "ghcr.io/asamk/signal-cli:latest";
         autoStart = true;
         ports = [ "8116:8080" ];
         environmentFiles = [
           config.sops.templates."signal-cli-env".path
         ];
         volumes = [
+          # 数据目录：signal-cli 自身配置/数据
           "${stateDir}/signal-cli:/var/lib/signal-cli"
+          # 与 hermes-agent 容器的 /data/signal-cli 共享同一宿主目录，
+          # 让网关真实路径 /data/signal-cli 在容器内也可读（发图附件用）
+          "${stateDir}/signal-cli:/data/signal-cli"
         ];
         cmd = [
           "daemon"
