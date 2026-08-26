@@ -19,6 +19,12 @@
       dark = "titanium";
       light = "light";
     };
+    statusLine = {
+      # 默认 embedded 把上下文百分比/窗口嵌进盒子左右组之间的 gauge 线；
+      # 会话标题（右侧段）一出现就挤压 gauge，空间不足时嵌入式标签不渲染，
+      # 表现为「上下文大小被隐藏」。改回独立段显示。
+      contextLine = "annotated";
+    };
     modelRoles = {
       default = "new-api/deepseek-v4-pro";
       smol = "new-api/deepseek-v4-flash";
