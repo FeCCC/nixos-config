@@ -47,6 +47,9 @@
     debug = {
       enabled = true;
     };
+    compaction = {
+      thresholdPercent = 50;
+    };
   };
 
   # ── Model/Provider Definitions (models.json) ──
