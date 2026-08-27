@@ -109,7 +109,7 @@
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";
-            default = "deepseek-v4-flash-vision-exp";
+            default = "glm-5.3-flash";
           };
           fallback_model = {
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
@@ -156,6 +156,11 @@
                 };
                 "kimi-k3" = {
                   context_length = 1048576;
+                };
+                "glm-5.3-flash" = {
+                  context_length = 1000000;
+                  max_tokens = 131071;
+                  supports_vision = true;
                 };
               };
             };

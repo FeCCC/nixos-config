@@ -135,6 +135,21 @@
             output = 1048576;
           };
         };
+        "glm-5.3-flash" = {
+          name = "glm-5.3-flash";
+          limit = {
+            context = 1000000;
+            output = 131076;
+          };
+          attachment = true; # 视觉模型：支持图片附件
+          modalities = {
+            input = [
+              "text"
+              "image"
+            ];
+            output = [ "text" ];
+          };
+        };
       };
     };
   };

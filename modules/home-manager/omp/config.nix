@@ -26,8 +26,8 @@
       contextLine = "annotated";
     };
     modelRoles = {
-      default = "new-api/deepseek-v4-pro";
-      smol = "new-api/deepseek-v4-flash";
+      default = "new-api/glm-5.3-flash";
+      smol = "new-api/glm-5.3-flash";
     };
     tools = {
       approvalMode = "write";
@@ -150,6 +150,16 @@
             name = "Gemini 2.5 Pro";
             contextWindow = 1048576;
             maxTokens = 1048576;
+          }
+          {
+            id = "glm-5.3-flash";
+            name = "GLM 5.3 Flash";
+            contextWindow = 1000000;
+            maxTokens = 131076;
+            input = [
+              "text"
+              "image"
+            ];
           }
         ];
       };
