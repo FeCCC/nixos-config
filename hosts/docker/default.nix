@@ -32,6 +32,7 @@
   networking.firewall.allowedUDPPorts = [
     21116 # rustdesk ID 服务器
   ];
+  networking.firewall.trustedInterfaces = [ "eth0" ];
   networking.wireless.enable = lib.mkForce false;
 
   my_config.docker.enable = true;
