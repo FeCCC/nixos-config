@@ -164,6 +164,16 @@
               "image"
             ];
           }
+          {
+            id = "orcarouter/Qwen3.8-27B-Uncensored:q4_K_M-262k";
+            name = "Qwen3.8-27b local";
+            contextWindow = 262000;
+            maxTokens = 131076;
+            input = [
+              "text"
+              "image"
+            ];
+          }
         ];
       };
     };
