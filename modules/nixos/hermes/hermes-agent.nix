@@ -126,7 +126,7 @@
             };
             vision = {
               provider = "new-api";
-              model = "fredrezones55/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive:latest";
+              model = "orcarouter/Qwen3.8-27B-Uncensored:q4_K_M";
             };
             approval = {
               provider = "new-api";
