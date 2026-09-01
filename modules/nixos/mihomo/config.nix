@@ -831,6 +831,8 @@ in
         "DOMAIN-SUFFIX,nostr.com"
         "DOMAIN-SUFFIX,openrouter.ai"
         "DOMAIN-SUFFIX,fal.media"
+        "DOMAIN-SUFFIX,models.dev"
+        "DOMAIN-SUFFIX,acgndog.com"
       ];
     };
     japan = {
