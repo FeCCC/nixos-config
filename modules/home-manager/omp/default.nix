@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   config,
   inputs,
   ...
@@ -34,8 +35,17 @@ in
   sops.secrets.new_api_key = { };
   sops.secrets.new_api_base_url_for_openai = { };
 
+  # config.yml 必须是真实可写文件：omp 在 spawn 子代理时会在 config.yml
+  # 同目录写 `omp-config.yml.<pid>.<uuid>.tmp` 临时配置。xdg.configFile 的
+  # source 是 /nix/store 符号链接，omp 解析后在只读 store 目录创建临时文件
+  # → EROFS → 所有 task 子代理 preflight 失败。
+  # 改用 activation 复制为真实文件。
+  home.activation.ompWritableConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p ${config.xdg.configHome}/omp/agent
+    install -m 600 ${yamlFormat.generate "omp-config.yml" ompCfg.appConfig} ${config.xdg.configHome}/omp/agent/config.yml
+  '';
+
   xdg.configFile = {
-    "omp/agent/config.yml".source = yamlFormat.generate "omp-config.yml" ompCfg.appConfig;
     "omp/agent/mcp.json".text = builtins.toJSON {
       mcpServers.codebase-memory-mcp = {
         type = "stdio";
