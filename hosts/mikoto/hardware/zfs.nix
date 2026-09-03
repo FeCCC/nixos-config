@@ -87,7 +87,10 @@
     commands."appdata-to-truenas" = {
       source = "rpool/appdata";
       target = "miku@truenas.local:NAS/appdata/mikoto";
-      extraArgs = [ "--no-sync-snap" ]; # 不额外创建同步快照，用 sanoid 已有的
+      extraArgs = [
+        "--no-sync-snap" # 不额外创建同步快照，用 sanoid 已有的
+        "--delete-target-snapshots" # 清理远端过期快照
+      ];
     };
   };
 }
