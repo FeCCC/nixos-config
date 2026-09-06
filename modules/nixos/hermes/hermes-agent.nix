@@ -115,9 +115,10 @@
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "custom";
             key_env = "OPENAI_API_KEY";
-            model = "deepseek-ai/DeepSeek-V4-Pro";
+            model = "deepseek-v4-flash-vision-exp";
             context_length = 1048576;
             max_tokens = 384000;
+            supports_vision = true;
           };
           auxiliary = {
             compression = {
