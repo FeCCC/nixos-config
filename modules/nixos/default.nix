@@ -14,6 +14,7 @@ in
     ./hermes
     ./easytier.nix
     ./mihomo
+    ./windows-vm.nix
   ]
   ++ scanPacks ../packs "nixos";
 
