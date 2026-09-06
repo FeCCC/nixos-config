@@ -34,6 +34,7 @@
       approval = {
         bash = "allow"; # cat/ls/cargo 自动；rm -rf / 等危险操作强制弹窗
         eval = "allow"; # python
+        hub = "allow";
         task = "allow"; # 子代理自动
         browser = "allow"; # 浏览器测试自动
         debug = "allow"; # 调试自动
