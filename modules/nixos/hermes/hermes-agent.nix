@@ -88,7 +88,7 @@
           # A2A (Agent-to-Agent)
           # 安全机制：配了 token 才真正绑定 0.0.0.0，否则插件自动回落 127.0.0.1
           A2A_PORT = "9900";
-          A2A_AGENT_NAME = config.networking.hostName;
+          A2A_AGENT_NAME = "Kaguya";
           A2A_HOST = "0.0.0.0";
           A2A_PEER_TOKENS = config.sops.placeholder.hermes_a2a_peer_tokens;
 
