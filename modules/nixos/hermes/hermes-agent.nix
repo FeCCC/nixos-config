@@ -33,7 +33,8 @@
     sops.secrets.fal_api_key = { };
     sops.secrets.hermes_api_server_key = { };
     sops.secrets.hermes_a2a_peer_tokens = { };
-    sops.secrets.gn_agent_a2a_tokens = { };
+    sops.secrets.gn_a2a_tokens = { };
+    sops.secrets.miku_a2a_tokens = { };
 
     sops.templates."hermes-env" =
       let
@@ -135,10 +136,6 @@
             compression = {
               provider = "new-api";
               model = "deepseek-v4-flash";
-            };
-            vision = {
-              provider = "new-api";
-              model = "orcarouter/Qwen3.8-27B-Uncensored:q4_K_M";
             };
             approval = {
               provider = "new-api";
@@ -261,18 +258,20 @@
               "a2a"
             ];
           };
-          # A2A 出站对端；有对端 agent 时按以下格式添加（token 走 sops placeholder）：
-          # a2a_agents.researcher = {
-          #   url = "http://192.168.x.x:9900";
-          #   auth.type = "bearer";
-          #   auth.token = "...";
-          # };
+          # A2A 出站对端
           a2a_agents = {
             gn-agent = {
               url = "http://[201:397a:cb96:f2a5:df5f:2a23:6ab7:ad52]:9900";
               auth = {
                 type = "bearer";
-                token = config.sops.placeholder.gn_agent_a2a_tokens;
+                token = config.sops.placeholder.gn_a2a_tokens;
+              };
+            };
+            miku-agent = {
+              url = "http://miku.local:9900";
+              auth = {
+                type = "bearer";
+                token = config.sops.placeholder.miku_a2a_tokens;
               };
             };
           };
