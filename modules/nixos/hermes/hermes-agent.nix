@@ -293,6 +293,22 @@
         content = builtins.readFile ((pkgs.formats.yaml { }).generate "hermes-config.yaml" hermes-config);
       };
 
+    # A2A 入站 IPv6 代理：a2a 插件（ThreadingHTTPServer）只绑 IPv4，
+    # 用 v6-only 监听转发，使 Yggdrasil 等 IPv6 对端可达（与容器内 0.0.0.0:9900 同端口共存，v4/v6 地址族不冲突）
+    systemd.services.a2a-ipv6-proxy = {
+      description = "A2A IPv6 to IPv4 forward";
+      after = [
+        "network.target"
+        "hermes-agent.service"
+      ];
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.socat}/bin/socat TCP6-LISTEN:9900,ipv6only=1,fork,reuseaddr TCP4:127.0.0.1:9900";
+        Restart = "always";
+        RestartSec = "5";
+      };
+    };
+
     # Hermes Agent 服务配置
     services.hermes-agent = {
       enable = true;
