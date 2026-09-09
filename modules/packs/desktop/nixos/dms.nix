@@ -10,11 +10,8 @@
       restartIfChanged = true;
     };
 
-    # dgop 不在 nixpkgs stable 里，用 unstable 版
-    dgop.package = pkgs.unstable.dgop;
-
     # 功能开关
-    enableSystemMonitoring = true; # dgop 系统监控
+    enableSystemMonitoring = true; # system monitoring
     enableVPN = true; # VPN 管理控件
     enableDynamicTheming = true; # matugen 动态配色
     enableAudioWavelength = true; # cava 音频可视化
@@ -23,7 +20,7 @@
   };
 
   # ── DMS Greeter ──
-  programs.dank-material-shell.greeter = {
+  programs.dms-greeter = {
     enable = true;
     compositor.name = "niri";
   };

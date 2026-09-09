@@ -21,7 +21,7 @@ in
 
   imports = [
     inputs.dms.nixosModules.dank-material-shell
-    inputs.dms.nixosModules.greeter
+    inputs.dank-greeter.nixosModules.default
     inputs.aagl.nixosModules.default
   ];
 

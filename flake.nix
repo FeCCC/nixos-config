@@ -66,6 +66,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # DMS Greeter (moved out of DMS repo)
+    dank-greeter = {
+      url = "github:AvengeMedia/dank-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # skills
@@ -116,6 +122,7 @@
       nixpkgs-2305,
       nixpkgs-unstable,
       dms,
+      dank-greeter,
       home-manager,
       nixos-wsl,
       sops-nix,

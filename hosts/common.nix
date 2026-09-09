@@ -15,7 +15,7 @@
     {
       name = "bbr";
       patch = null;
-      extraStructuredConfig = with pkgs.lib.kernel; {
+      structuredExtraConfig = with pkgs.lib.kernel; {
         TCP_CONG_BBR = yes; # enable BBR
         DEFAULT_BBR = yes; # use it by default
       };

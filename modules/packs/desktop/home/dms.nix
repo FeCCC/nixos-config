@@ -8,8 +8,6 @@
   programs.dank-material-shell = {
     enable = true;
 
-    dgop.package = pkgs.unstable.dgop;
-
     settings = {
       currentThemeName = "custom";
       currentThemeCategory = "registry";
