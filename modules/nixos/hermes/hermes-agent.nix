@@ -32,6 +32,8 @@
     sops.secrets.feishu_home_channel = { };
     sops.secrets.fal_api_key = { };
     sops.secrets.hermes_api_server_key = { };
+    sops.secrets.hermes_a2a_peer_tokens = { };
+    sops.secrets.gn_agent_a2a_tokens = { };
 
     sops.templates."hermes-env" =
       let
@@ -83,6 +85,13 @@
           API_SERVER_PORT = "8642";
           API_SERVER_KEY = config.sops.placeholder.hermes_api_server_key;
 
+          # A2A (Agent-to-Agent)
+          # 安全机制：配了 token 才真正绑定 0.0.0.0，否则插件自动回落 127.0.0.1
+          A2A_PORT = "9900";
+          A2A_AGENT_NAME = config.networking.hostName;
+          A2A_HOST = "0.0.0.0";
+          A2A_PEER_TOKENS = config.sops.placeholder.hermes_a2a_peer_tokens;
+
           # Signal
           SIGNAL_HTTP_URL = "http://${config.networking.hostName}.local:8116";
           SIGNAL_ACCOUNT = config.sops.placeholder.signal-account;
@@ -94,8 +103,10 @@
         content = lib.generators.toKeyValue { } hermes-env;
       };
 
-    # API SERVER 开放端口
-    networking.firewall.allowedTCPPorts = [ 8642 ];
+    networking.firewall.allowedTCPPorts = [
+      8642 # API SERVER
+      9900 # A2A 开放端口
+    ];
 
     sops.secrets.new_api_key = { };
     sops.secrets.new_api_base_url_for_openai = { };
@@ -210,6 +221,60 @@
           approvals = {
             mode = "smart";
             destructive_slash_confirm = false; # /clear, /new, /reset, /undo 不再弹出确认
+          };
+          # A2A 出站工具：a2a 在默认关闭清单中，需按平台显式启用
+          platform_toolsets = {
+            cli = [
+              "hermes-cli"
+              "a2a"
+            ];
+            qqbot = [
+              "hermes-qqbot"
+              "a2a"
+            ];
+            telegram = [
+              "hermes-telegram"
+              "a2a"
+            ];
+            feishu = [
+              "hermes-feishu"
+              "a2a"
+            ];
+            email = [
+              "hermes-email"
+              "a2a"
+            ];
+            signal = [
+              "hermes-signal"
+              "a2a"
+            ];
+            webhook = [
+              "hermes-webhook"
+              "a2a"
+            ];
+            api_server = [
+              "hermes-api-server"
+              "a2a"
+            ];
+            cron = [
+              "hermes-cron"
+              "a2a"
+            ];
+          };
+          # A2A 出站对端；有对端 agent 时按以下格式添加（token 走 sops placeholder）：
+          # a2a_agents.researcher = {
+          #   url = "http://192.168.x.x:9900";
+          #   auth.type = "bearer";
+          #   auth.token = "...";
+          # };
+          a2a_agents = {
+            gn-agent = {
+              url = "http://[201:397a:cb96:f2a5:df5f:2a23:6ab7:ad52]:9900";
+              auth = {
+                type = "bearer";
+                token = config.sops.placeholder.gn_agent_a2a_tokens;
+              };
+            };
           };
           terminal.cwd = "/data/workspace";
           mcp_servers = {
