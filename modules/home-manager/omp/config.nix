@@ -26,7 +26,7 @@
       contextLine = "annotated";
     };
     modelRoles = {
-      default = "new-api/glm-5.3-flash";
+      default = "new-api/deepseek-flash";
       smol = "new-api/glm-5.3-flash";
     };
     tools = {
@@ -63,20 +63,8 @@
         api = "openai-completions";
         models = [
           {
-            id = "deepseek-v4-pro";
-            name = "DeepSeek V4 Pro";
-            contextWindow = 1048576;
-            maxTokens = 384000;
-          }
-          {
-            id = "deepseek-v4-flash";
-            name = "DeepSeek V4 Flash";
-            contextWindow = 1048576;
-            maxTokens = 384000;
-          }
-          {
-            id = "deepseek-v4-flash-vision-exp";
-            name = "DeepSeek V4 Flash Vision";
+            id = "deepseek-flash";
+            name = "deepseek-flash";
             contextWindow = 1048576;
             maxTokens = 384000;
             input = [
@@ -89,72 +77,6 @@
             name = "Kimi k3";
             contextWindow = 1048576;
             maxTokens = 384000;
-          }
-          {
-            id = "deepseek/deepseek-v4-pro";
-            name = "deepseek/deepseek-v4-pro";
-            contextWindow = 1048576;
-            maxTokens = 384000;
-          }
-          {
-            id = "deepseek/deepseek-v4-flash";
-            name = "deepseek/deepseek-v4-flash";
-            contextWindow = 1048576;
-            maxTokens = 384000;
-          }
-          {
-            id = "deepseek/deepseek-v3.2";
-            name = "DeepSeek V3.2";
-            contextWindow = 163840;
-            maxTokens = 163840;
-          }
-          {
-            id = "deepseek-ai/DeepSeek-V4-Flash";
-            name = "deepseek-ai/DeepSeek-V4-Flash";
-            contextWindow = 1048576;
-            maxTokens = 384000;
-          }
-          {
-            id = "minimax/minimax-m2.1";
-            name = "MiniMax M2.1";
-            contextWindow = 204800;
-            maxTokens = 204800;
-          }
-          {
-            id = "x-ai/grok-4.1-fast";
-            name = "Grok 4.1 Fast";
-            contextWindow = 2000000;
-            maxTokens = 2000000;
-          }
-          {
-            id = "google/gemini-3-flash-preview";
-            name = "Gemini 3 Flash";
-            contextWindow = 1048576;
-            maxTokens = 1048576;
-          }
-          {
-            id = "google/gemini-3-pro-preview";
-            name = "Gemini 3 Pro Preview";
-            contextWindow = 1048576;
-            maxTokens = 1048576;
-          }
-          {
-            id = "gemini-3.1-pro-preview";
-            name = "Gemini 3.1 Pro Preview";
-            contextWindow = 1048576;
-            maxTokens = 1048576;
-          }
-          {
-            id = "google/gemini-2.5-flash";
-            name = "Gemini 2.5 Flash";
-            contextWindow = 1048576;
-            maxTokens = 1048576;
-          }
-          {
-            id = "google/gemini-2.5-pro";
-            name = "Gemini 2.5 Pro";
-            contextWindow = 1048576;
-            maxTokens = 1048576;
           }
           {
             id = "glm-5.3-flash";

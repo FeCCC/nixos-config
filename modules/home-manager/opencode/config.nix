@@ -15,22 +15,8 @@
         apiKey = "{env:OPENCODE_API_KEY}";
       };
       models = {
-        deepseek-v4-pro-max = {
-          name = "deepseek-v4-pro";
-          limit = {
-            context = 1048576;
-            output = 384000;
-          };
-        };
-        deepseek-v4-flash = {
-          name = "deepseek-v4-flash";
-          limit = {
-            context = 1048576;
-            output = 384000;
-          };
-        };
-        "deepseek-v4-flash-vision-exp" = {
-          name = "deepseek-v4-flash-vision-exp";
+        "deepseek-flash" = {
+          name = "deepseek-flash";
           limit = {
             context = 1048576;
             output = 384000;
@@ -42,27 +28,6 @@
               "image"
             ];
             output = [ "text" ];
-          };
-        };
-        "deepseek-ai/DeepSeek-V4-Flash" = {
-          name = "deepseek-ai/DeepSeek-V4-Flash";
-          limit = {
-            context = 1048576;
-            output = 384000;
-          };
-        };
-        "deepseek/deepseek-v4-pro" = {
-          name = "deepseek/deepseek-v4-pro";
-          limit = {
-            context = 1048576;
-            output = 384000;
-          };
-        };
-        "deepseek/deepseek-v4-flash" = {
-          name = "deepseek/deepseek-v4-flash";
-          limit = {
-            context = 1048576;
-            output = 384000;
           };
         };
         "deepseek/deepseek-v3.2" = {

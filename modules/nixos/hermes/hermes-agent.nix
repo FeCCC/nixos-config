@@ -127,7 +127,7 @@
             base_url = config.sops.placeholder.new_api_base_url_for_openai;
             provider = "custom";
             key_env = "OPENAI_API_KEY";
-            model = "deepseek-v4-flash-vision-exp";
+            model = "deepseek-flash";
             context_length = 1048576;
             max_tokens = 384000;
             supports_vision = true;
@@ -135,11 +135,11 @@
           auxiliary = {
             compression = {
               provider = "new-api";
-              model = "deepseek-v4-flash";
+              model = "deepseek-flash";
             };
             approval = {
               provider = "new-api";
-              model = "deepseek-v4-flash";
+              model = "deepseek-flash";
             };
           };
           providers = {
@@ -150,15 +150,7 @@
                 "gemini-3.1-pro-preview" = {
                   context_length = 1048576;
                 };
-                "deepseek-v4-pro" = {
-                  context_length = 1048576;
-                  max_tokens = 384000;
-                };
-                "deepseek-v4-flash" = {
-                  context_length = 1048576;
-                  max_tokens = 384000;
-                };
-                "deepseek-v4-flash-vision-exp" = {
+                "deepseek-flash" = {
                   context_length = 1048576;
                   max_tokens = 384000;
                   supports_vision = true;
@@ -181,7 +173,7 @@
                 reference_models = [
                   {
                     provider = "new-api";
-                    model = "deepseek-v4-pro";
+                    model = "deepseek-flash";
                   }
                   {
                     provider = "new-api";
@@ -194,7 +186,7 @@
                 ];
                 aggregator = {
                   provider = "new-api";
-                  model = "deepseek-v4-pro";
+                  model = "deepseek-flash";
                 };
                 max_tokens = 384000;
                 fanout = "per_iteration";
@@ -210,9 +202,7 @@
           };
           agent = {
             reasoning_overrides = {
-              "deepseek-v4-flash" = "max";
-              "deepseek-v4-flash-vision-exp" = "max";
-              "deepseek-v4-pro" = "max";
+              "deepseek-flash" = "max";
             };
           };
           approvals = {

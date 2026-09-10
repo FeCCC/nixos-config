@@ -45,7 +45,7 @@ in
 
         environment = {
           HINDSIGHT_API_LLM_PROVIDER = "openai";
-          HINDSIGHT_API_LLM_MODEL = "deepseek-v4-flash";
+          HINDSIGHT_API_LLM_MODEL = "deepseek-flash";
         };
 
         environmentFiles = [
