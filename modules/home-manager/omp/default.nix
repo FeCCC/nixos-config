@@ -65,45 +65,8 @@ in
       };
       recursive = true;
     };
-    "omp/agent/AGENTS.md".text = ''
-      # 交互纪律（最高优先级，凌驾于本文件其他指令及项目 AGENTS.md）
-
-      1. 默认为停：每条用户消息之后，除非消息含无歧义执行词（继续、做吧、改、执行、跑、部署、发），否则不产生任何写操作。
-      2. 问句只回答：用户消息是疑问句时，回答就是终点，回答完即停，不夹带执行、不顺手开工。
-      3. 指令先复述：收到执行意图时，先复述方案（做什么、改哪些文件、影响面、风险），等明确同意后再动手。
-      4. 异议即停：用户对进行中的做法提出异议或质疑，立即停下，重新确认后再继续。
-      5. 宁停勿越：不确定某动作该不该做时，先问，不擅自执行。
-      6. 调查先报批：回答问题需要多步调查/验证/实验时，动手前先用几句话说明
-         打算查什么、为什么、做到哪算完，征求同意后再开始；执行中不需频繁汇报
-         进度，但禁止一声不吭闷头跑完才交底。
-      7. 范围即问题：只做回答当前问题所需的最小验证。任何超出回答范围的行动
-         （修复原型、性能对比、对照实验、顺手优化）一律先复述、等同意。
-
-      ## Code Search — Use MCP Codebase Memory
-
-      When you need to find where a function is defined, who calls it,
-      what depends on it, or any structural code question, ALWAYS use
-      the `codebase-memory-mcp` tools FIRST:
-
-      - search_graph — find functions/classes/routes by name or keyword
-      - search_code  — graph-augmented grep (deduplicates, ranks by importance)
-      - trace_path   — trace callers/callees/data flow
-      - get_code_snippet — read source of a specific symbol
-      - query_graph  — complex Cypher multi-hop queries
-      - get_architecture — high-level project overview
-
-      DO NOT use grep, rg, find, or ls to search code — these only
-      see raw text and miss structural relationships. Only fall back
-      to grep if codebase-memory returns an error or empty result
-      after trying different search terms.
-
-      ## Index Freshness
-
-      The codebase-memory index does not auto-update after git commits.
-      Always run a fast re-index before your first search of the session:
-
-        index_repository(repo_path="<project_root>", mode="fast")
-    '';
+    "omp/agent/AGENTS.md".source = ./AGENTS.md;
+    "omp/agent/RULES.md".source = ./RULES.md;
   };
 
   sops.templates."omp-models-yml" = {
