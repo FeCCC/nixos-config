@@ -220,6 +220,7 @@
         nixos = mkNixOSConfiguration { modules = [ ./hosts/common.nix ]; };
         wsl-miku = mkNixOSConfiguration { modules = [ ./hosts/wsl/miku.nix ]; };
         wsl-thinkbook-x = mkNixOSConfiguration { modules = [ ./hosts/wsl/thinkbook-x.nix ]; };
+        wsl-gn = mkNixOSConfiguration { modules = [ ./hosts/wsl/gn.nix ]; };
         nixos-server = mkNixOSConfiguration { modules = [ ./hosts/server.nix ]; };
         nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
         docker = mkNixOSConfiguration { modules = [ ./hosts/docker ]; };
