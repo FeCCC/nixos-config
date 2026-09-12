@@ -4,6 +4,20 @@
   inputs,
   ...
 }:
+let
+  # DMS 生成的 niri 片段（~/.config/niri/dms/*.kdl）；内容归 DMS 写，这里只挑哪些被 include
+  niriIncludes = [
+    "alttab"
+    "binds"
+    "colors"
+    "input"
+    "layout"
+    "outputs"
+    "wpblur"
+    "cursor"
+    "windowrules"
+  ];
+in
 {
   programs.dank-material-shell = {
     enable = true;
@@ -40,23 +54,14 @@
       enable = true;
       override = true;
       originalFileName = "hm";
-      filesToInclude = [
-        "alttab"
-        "binds"
-        "colors"
-        "layout"
-        "outputs"
-        "wpblur"
-        "cursor"
-        "windowrules"
-      ];
+      filesToInclude = niriIncludes;
     };
   };
 
-  # 新环境没有 dms/*.kdl 时生成空文件，避免 niri 因 include 缺失而 panic
+  # 片段不存在时先建空文件，避免 include 缺失警告；已存在的不要动（内容归 DMS）
   home.activation.dmsNiriIncludes = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     mkdir -p ~/.config/niri/dms
-    for f in alttab binds colors layout outputs wpblur cursor windowrules; do
+    for f in ${lib.concatStringsSep " " niriIncludes}; do
       if [ ! -f ~/.config/niri/dms/$f.kdl ]; then
         touch ~/.config/niri/dms/$f.kdl
       fi
