@@ -3,7 +3,7 @@
   environment.systemPackages = with pkgs; [
     keepassxc
     unstable.zed-editor
-    qq
+    unstable.qq
     vscode
     libreoffice
     telegram-desktop
