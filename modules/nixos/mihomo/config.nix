@@ -833,6 +833,8 @@ in
         "DOMAIN-SUFFIX,fal.media"
         "DOMAIN-SUFFIX,models.dev"
         "DOMAIN-SUFFIX,acgndog.com"
+        "DOMAIN-SUFFIX,alicesw.com"
+        "DOMAIN-SUFFIX,cache.numtide.com"
       ];
     };
     japan = {
