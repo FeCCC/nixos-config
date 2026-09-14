@@ -9,4 +9,6 @@
 
   my_config.desktop.enable = lib.mkForce false;
   my_config.mihomo.enable = false;
+  my_config.tor.enable = false;
+  my_config.i2pd.enable = false;
 }

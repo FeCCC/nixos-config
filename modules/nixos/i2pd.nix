@@ -1,4 +1,8 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
 {
   options.my_config.i2pd = {
     enable = lib.mkEnableOption "use i2pd" // {
