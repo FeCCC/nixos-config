@@ -266,6 +266,11 @@
             };
           };
           terminal.cwd = "/data/workspace";
+          # vault 登录项后端
+          vault.bitwarden = {
+            enabled = true;
+            binary_path = "${pkgs.bitwarden-cli}/bin/bw";
+          };
           mcp_servers = {
             "codebase-memory-mcp" = {
               command = "${
@@ -322,8 +327,10 @@
       addToSystemPackages = true;
 
       # codebase-memory-mcp — 代码库知识图谱 MCP server
+      # bitwarden-cli (bw) — Hermes vault 的 Bitwarden 登录项后端
       extraPackages = [
         inputs.codebase-memory-mcp.packages.${pkgs.stdenv.hostPlatform.system}.default
+        pkgs.bitwarden-cli
       ];
 
       extraDependencyGroups = [
@@ -360,6 +367,16 @@
         "setupSecrets"
         "hermes-agent-setup"
       ];
+    };
+
+    # bw CLI：Hermes 走 config.yaml 的 vault.bitwarden.binary_path 绝对路径；
+    # /data/bin/bw 软链给用户 docker exec 手动登录用（bw 数据默认写 ~/.config，home 卷已持久化）
+    system.activationScripts."hermes-bitwarden-cli-dir" = {
+      text = ''
+        mkdir -p ${config.services.hermes-agent.stateDir}/bin
+        ln -sfn ${pkgs.bitwarden-cli}/bin/bw ${config.services.hermes-agent.stateDir}/bin/bw
+      '';
+      deps = [ "hermes-agent-setup" ];
     };
 
     sops.secrets.hermes-agent-password = { };
