@@ -28,6 +28,8 @@ let
 
   ompCfg = import ./config.nix { inherit config; };
   yamlFormat = pkgs.formats.yaml { };
+
+  agencyPersonas = inputs.agency-personas.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   home.packages = [ omp-wrapped ];
@@ -61,6 +63,7 @@ in
         paths = [
           (inputs.superpowers + "/skills")
           (inputs.cc-skills + "/skills")
+          agencyPersonas
         ];
       };
       recursive = true;

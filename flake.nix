@@ -88,9 +88,9 @@
       flake = false;
     };
     # agents
-    agency-agents = {
-      url = "github:msitarzewski/agency-agents";
-      flake = false;
+    agency-personas = {
+      url = "github:FeCCC/agency-personas";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hermes-agent = {

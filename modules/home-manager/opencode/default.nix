@@ -17,24 +17,7 @@ let
      exec "${pkgs.unstable.opencode}/bin/opencode" "$@"
   '';
 
-  # 构建 agency-agents 的 opencode 版本
-  opencode-agency-agents = pkgs.stdenv.mkDerivation {
-    name = "opencode-agency-agents";
-    src = inputs.agency-agents;
-
-    buildInputs = [ pkgs.bash ];
-
-    buildPhase = ''
-      patchShebangs scripts/
-      bash scripts/convert.sh --tool opencode
-    '';
-
-    installPhase = ''
-      mkdir -p $out
-      cp -r integrations/opencode/agents/* $out/
-    '';
-  };
-
+  agencyPersonas = inputs.agency-personas.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in
 {
   programs.opencode = {
@@ -68,13 +51,9 @@ in
           (inputs.superpowers + "/skills")
           (inputs.cc-skills + "/skills")
           (inputs.pua + "/skills")
+          agencyPersonas
         ];
       };
-      recursive = true;
-    };
-
-    "opencode/agents" = {
-      source = opencode-agency-agents;
       recursive = true;
     };
 

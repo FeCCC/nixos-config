@@ -23,16 +23,37 @@
     "agency-agents": {
       "flake": false,
       "locked": {
-        "lastModified": 1788912622,
-        "narHash": "sha256-YilS7t+TEWuWG3V8haopW0QgE5+Eog8PL0fpfnitZtY=",
+        "lastModified": 1789232240,
+        "narHash": "sha256-f6n/Wvx5uzYDtN0zNqRbMUWvOPyPGEtJDQm1iQIXcXs=",
         "owner": "msitarzewski",
         "repo": "agency-agents",
-        "rev": "6d29a9b08785a0e49ffc9818bbdd381164c2df5f",
+        "rev": "ad9264e309bd5e5422c04784372d7841b1e5d604",
         "type": "github"
       },
       "original": {
         "owner": "msitarzewski",
         "repo": "agency-agents",
+        "type": "github"
+      }
+    },
+    "agency-personas": {
+      "inputs": {
+        "agency-agents": "agency-agents",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1789716202,
+        "narHash": "sha256-pu1CcLMWf7OSO+SDrA2RSI84nxPPIQUfLCLOmVjYYjk=",
+        "owner": "FeCCC",
+        "repo": "agency-personas",
+        "rev": "127f6ddd91c5d3a5e0ba3c0f827b538542af5b45",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FeCCC",
+        "repo": "agency-personas",
         "type": "github"
       }
     },
@@ -750,7 +771,7 @@
     "root": {
       "inputs": {
         "aagl": "aagl",
-        "agency-agents": "agency-agents",
+        "agency-personas": "agency-personas",
         "catppuccin-dms": "catppuccin-dms",
         "cc-skills": "cc-skills",
         "codebase-memory-mcp": "codebase-memory-mcp",
