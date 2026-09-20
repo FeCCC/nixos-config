@@ -783,6 +783,26 @@ in
         "DOMAIN-SUFFIX,reseed.memcpy.io"
         "DOMAIN-SUFFIX,i2pseed.creativecowpat.net"
         "DOMAIN-SUFFIX,reseed2.i2p.net"
+        "DOMAIN-SUFFIX,reseed.sahil.world"
+        "DOMAIN-SUFFIX,i2p-projekt.de"
+        "DOMAIN-SUFFIX,mooo.com"
+        "DOMAIN-SUFFIX,stormycloud.org"
+        # tor
+        "IP-CIDR,128.31.0.39/32" # moria1
+        "IP-CIDR,217.196.147.77/32" # tor26
+        "IP-CIDR,45.66.35.11/32" # dizum
+        "IP-CIDR,66.111.2.131/32" # Serge(bridge authority)
+        "IP-CIDR,131.188.40.189/32" # gabelmoo
+        "IP-CIDR,193.23.244.244/32" # dannenberg
+        "IP-CIDR,171.25.193.9/32" # maatuska
+        "IP-CIDR,199.58.81.140/32" # longclaw
+        "IP-CIDR,204.13.164.118/32" # bastet
+        "IP-CIDR,216.218.219.41/32" # faravahar
+        "IP-CIDR6,2a02:16a8:662:2203::1/128" # tor26 v6
+        "IP-CIDR6,2001:638:a000:4140::ffff:189/128" # gabelmoo v6
+        "IP-CIDR6,2001:678:558:1000::244/128" # dannenberg v6
+        "IP-CIDR6,2001:67c:289c::9/128" # maatuska v6
+        "IP-CIDR6,2620:13:4000:6000::1000:118/128" # bastet v6
         # osu
         "DOMAIN-SUFFIX,ppy.sh"
         # code
