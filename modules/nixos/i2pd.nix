@@ -7,7 +7,7 @@
 {
   options.my_config.i2pd = {
     enable = lib.mkEnableOption "use i2pd" // {
-      default = true;
+      default = false;
     };
   };
 
