@@ -71,7 +71,7 @@
 
           # Optional — Seconds between inbox checks (default: 15)
           EMAIL_IMAP_PORT = 993;
-          EMAIL_SMTP_PORT = 587;
+          EMAIL_SMTP_PORT = 465;
           EMAIL_POLL_INTERVAL = 15;
           EMAIL_HOME_ADDRESS = config.sops.placeholder.hermes-email-home-address;
 
