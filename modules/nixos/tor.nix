@@ -7,7 +7,7 @@
 {
   options.my_config.tor = {
     enable = lib.mkEnableOption "use tor" // {
-      default = true;
+      default = false;
     };
   };
 
