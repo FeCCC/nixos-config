@@ -9,6 +9,7 @@
   imports = [
     (modulesPath + "/virtualisation/proxmox-lxc.nix")
     ./hardware-configuration.nix
+    ./lan-proxy.nix
   ];
 
   nix.settings = {
