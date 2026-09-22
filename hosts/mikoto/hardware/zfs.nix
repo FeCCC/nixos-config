@@ -26,6 +26,15 @@
     device = "rpool/appdata";
     fsType = "zfs";
   };
+
+  fileSystems."/tmp" = {
+    device = "rpool/local/scratch/tmp";
+    fsType = "zfs";
+  };
+  fileSystems."/var/tmp" = {
+    device = "rpool/local/scratch/vartmp";
+    fsType = "zfs";
+  };
   environment.systemPackages = [ pkgs.efibootmgr ];
 
   boot.loader.systemd-boot.extraInstallCommands = ''
@@ -57,14 +66,19 @@
     interval = "*:0/10"; # 每 10 分钟触发
     templates."default" = {
       frequent_period = 10; # 每10分钟
-      frequently = 12; # 保留12个 = 2h
-      hourly = 48; # 保留48个 = 2d
-      daily = 14; # 保留14个 = 2w
-      weekly = 4; # 保留4个 = 1m
-      monthly = 12; # 保留12个 = 1y
+      frequently = 6; # 保留6个 = 1小时
+      hourly = 24; # 保留24个 = 1天
+      daily = 31; # 保留31个 = 1个月
+      weekly = 7; # 保留7个，约为2个月
+      monthly = 12; # 保留12个 = 1年
       autoprune = true;
     };
-    datasets."rpool" = {
+    # 白名单式：只快照列出的数据集，未列出的不拍
+    datasets."rpool/local/root" = {
+      useTemplate = [ "default" ];
+      recursive = true;
+    };
+    datasets."rpool/appdata" = {
       useTemplate = [ "default" ];
       recursive = true;
     };
