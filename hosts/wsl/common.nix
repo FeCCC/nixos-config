@@ -24,7 +24,8 @@
   '';
 
   networking.wireless.enable = lib.mkForce false;
-  my_config.desktop.enable = true;
+  # WSL2: system 栈(BPF)抓不到 TUN 流量, 用 gvisor userspace 栈; 其他主机保持默认 system
+  my_config.mihomo.tunStack = "gvisor";
   my_config.netdata.enable = false;
 
   environment.extraInit = ''
