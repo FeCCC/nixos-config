@@ -98,6 +98,26 @@
               "image"
             ];
           }
+          {
+            id = "mimo-v2.6-pro";
+            name = "MiMo V2.6 Pro";
+            contextWindow = 1048576;
+            maxTokens = 131072;
+            input = [
+              "text"
+              "image"
+            ];
+          }
+          {
+            id = "mimo-v2.6-flash";
+            name = "MiMo V2.6 Flash";
+            contextWindow = 1048576;
+            maxTokens = 131072;
+            input = [
+              "text"
+              "image"
+            ];
+          }
         ];
       };
     };

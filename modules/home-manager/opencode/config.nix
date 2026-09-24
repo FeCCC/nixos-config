@@ -54,6 +54,36 @@
             output = [ "text" ];
           };
         };
+        "mimo-v2.6-pro" = {
+          name = "mimo-v2.6-pro";
+          limit = {
+            context = 1048576;
+            output = 131072;
+          };
+          attachment = true; # 视觉模型：支持图片附件
+          modalities = {
+            input = [
+              "text"
+              "image"
+            ];
+            output = [ "text" ];
+          };
+        };
+        "mimo-v2.6-flash" = {
+          name = "mimo-v2.6-flash";
+          limit = {
+            context = 1048576;
+            output = 131072;
+          };
+          attachment = true; # 视觉模型：支持图片附件
+          modalities = {
+            input = [
+              "text"
+              "image"
+            ];
+            output = [ "text" ];
+          };
+        };
       };
     };
   };

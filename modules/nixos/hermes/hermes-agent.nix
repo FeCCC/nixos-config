@@ -163,6 +163,16 @@
                   max_tokens = 131071;
                   supports_vision = true;
                 };
+                "mimo-v2.6-pro" = {
+                  context_length = 1048576;
+                  max_tokens = 131072;
+                  supports_vision = true;
+                };
+                "mimo-v2.6-flash" = {
+                  context_length = 1048576;
+                  max_tokens = 131072;
+                  supports_vision = true;
+                };
               };
             };
           };
