@@ -117,7 +117,6 @@ in
   dns = {
     enable = true;
     ipv6 = true;
-    prefer-h3 = true;
     respect-rules = true;
     cache-algorithm = "arc";
     default-nameserver = [
@@ -126,8 +125,6 @@ in
       "system"
     ];
     proxy-server-nameserver = [
-      "https://1.1.1.1/dns-query"
-      "https://dns.google/dns-query"
       "https://223.5.5.5/dns-query"
       "119.29.29.29"
     ];
@@ -137,6 +134,13 @@ in
       "https://223.5.5.5/dns-query"
       "https://223.6.6.6/dns-query"
     ];
+    "nameserver-policy" = {
+      "geosite:gfw" = [
+        "https://8.8.8.8/dns-query#🚀 节点选择&ecs=1.1.1.1/24&ecs-override=true"
+        "tls://8.8.4.4#🚀 节点选择"
+        "tls://1.1.1.1#🚀 节点选择"
+      ];
+    };
     nameserver = [
       "https://dns.cloudflare.com/dns-query"
       "https://doh.opendns.com/dns-query"
@@ -144,14 +148,13 @@ in
       "https://dns.alidns.com/dns-query"
     ];
     fallback = [
-      "https://8.8.8.8/dns-query#proxy&ecs=1.1.1.1/24&ecs-override=true"
-      "tls://8.8.4.4"
-      "tls://1.1.1.1"
+      "https://8.8.8.8/dns-query#🚀 节点选择&ecs=1.1.1.1/24&ecs-override=true"
+      "tls://8.8.4.4#🚀 节点选择"
+      "tls://1.1.1.1#🚀 节点选择"
     ];
     fallback-filter = {
       geoip = true;
       geoip-code = "CN";
-      geosite = [ "gfw" ];
       ipcidr = [ "240.0.0.0/4" ];
       domain = [
         "+.google.com"
