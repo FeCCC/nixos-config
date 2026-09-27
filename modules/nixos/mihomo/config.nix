@@ -858,6 +858,8 @@ in
         "DOMAIN-SUFFIX,acgndog.com"
         "DOMAIN-SUFFIX,alicesw.com"
         "DOMAIN-SUFFIX,cache.numtide.com"
+        "DOMAIN-SUFFIX,paypal.com"
+        "DOMAIN-SUFFIX,paypalobjects.com"
       ];
     };
     japan = {
