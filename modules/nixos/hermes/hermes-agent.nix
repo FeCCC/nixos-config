@@ -346,7 +346,6 @@
       extraDependencyGroups = [
         "fal" # 图片生成
         "messaging"
-        "hindsight"
         "feishu"
       ];
     };
