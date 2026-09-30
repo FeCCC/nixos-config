@@ -1,6 +1,6 @@
 {
   pkgs,
-  pkgs-2305,
+  pkgs-2405,
   ...
 }:
 {
@@ -83,10 +83,10 @@
     '';
   };
 
-  gcc48 = pkgs-2305.mkShellNoCC {
+  gcc48 = pkgs-2405.mkShellNoCC {
     hardeningDisable = [ "all" ];
 
-    packages = with pkgs-2305; [
+    packages = with pkgs-2405; [
       gnumake
       automake
       autoconf
@@ -113,13 +113,13 @@
     ];
 
     LD_LIBRARY_PATH =
-      with pkgs-2305;
+      with pkgs-2405;
       lib.makeLibraryPath [
         ncurses
         elfutils
         krb5
         e2fsprogs
-        # pkgs-2305.gcc48.cc.lib
+        # pkgs-2405.gcc48.cc.lib
       ];
 
     shellHook = ''

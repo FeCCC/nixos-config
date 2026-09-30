@@ -9,7 +9,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
-    nixpkgs-2305.url = "github:nixos/nixpkgs/nixos-23.05";
+    # 只为 gcc48（4.8.5）保留的旧 nixpkgs；24.05 是最后一个仍带 gcc48 的 release
+    nixpkgs-2405.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # Home manager
     home-manager = {
@@ -119,7 +120,7 @@
     {
       self,
       nixpkgs,
-      nixpkgs-2305,
+      nixpkgs-2405,
       nixpkgs-unstable,
       dms,
       dank-greeter,
@@ -196,7 +197,7 @@
         pkgs:
         import ./shell.nix {
           inherit pkgs;
-          pkgs-2305 = import nixpkgs-2305 {
+          pkgs-2405 = import nixpkgs-2405 {
             system = pkgs.stdenv.hostPlatform.system;
             config.permittedInsecurePackages = [
               "openssl-1.1.1w"
