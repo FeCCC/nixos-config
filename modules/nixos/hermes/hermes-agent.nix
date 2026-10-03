@@ -13,6 +13,9 @@
 
   options.my_config.hermes-agent = {
     enable = lib.mkEnableOption "hermes-agent";
+    restic.enable = lib.mkEnableOption "hermes-agent restic 备份" // {
+      default = true;
+    };
   };
 
   config = lib.mkIf config.my_config.hermes-agent.enable {
@@ -390,7 +393,7 @@
 
     sops.secrets.hermes-agent-password = { };
     # restic 备份
-    services.restic.backups = {
+    services.restic.backups = lib.mkIf config.my_config.hermes-agent.restic.enable {
       hermes-agent-bak = {
         initialize = true;
         passwordFile = config.sops.secrets.hermes-agent-password.path;

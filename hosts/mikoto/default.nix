@@ -26,6 +26,7 @@
   my_config.docker.enable = true;
   my_config.netdata.enable = true;
   my_config.hermes-agent.enable = true;
+  my_config.hermes-agent.restic.enable = false;
   my_config.windows-vm.enable = false; # dockur/windows
 
   nixpkgs.hostPlatform = "x86_64-linux";
