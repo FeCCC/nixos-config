@@ -31,6 +31,7 @@ let
   filterAll = ''^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|公告|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'';
   filterSpecial = ''^(?=.*(.))(?!.*((?i)Steam解锁|Steam跨区|特殊|群|邀请|返利|循环|官网|客服|公告|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|\d{4}-\d{2}-\d{2}|\d+G)|((?<![\d.])((([1-9]\d+|[2-9])(\.\d+)?)|1\.\d*[1-9]\d*)倍|(?<![a-zA-Z])[xX]((([1-9]\d+|[2-9])(\.\d+)?)|1\.\d*[1-9]\d*)))).*$'';
   filterNetflix = ''^(?=.*((?i)流媒体|原生解锁(\d+)?\b|([\u4e00-\u9fa5]{2,4}|\b[A-Z]{2}\b)[- ]?\d+))(?!.*((?i)回国|校园|网站|地址|剩余|过期|时间|有效|网址|禁止|邮箱|发布|客服|公告|订阅|节点)).*$'';
+  filterPremium = ''^(?=.*((?<![0-9])(2(\.\d+)?|3)倍|(?<![0-9A-Za-z])[xX](2(\.\d+)?|3)(?![0-9A-Za-z])))(?!.*((?i)群|邀请|返利|循环|官网|客服|公告|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|\d{4}-\d{2}-\d{2}|\d+G))).*$'';
 
   # 常用代理列表
   allProxies = [
@@ -314,6 +315,7 @@ in
       include-all = true;
       filter = filterNetflix;
     })
+    (mkUrlTest "💎 优选节点" filterPremium)
     (mkSelect "EHGallery" allProxies)
     (mkSelect "Gemini" [
       "💬 Ai平台"
@@ -893,6 +895,15 @@ in
         "DOMAIN-SUFFIX,zodgame.xyz"
       ];
     };
+    my_premium = {
+      type = "inline";
+      behavior = "classical";
+      path = "./rule_provider/my_premium.yaml";
+      payload = [
+        "DOMAIN-SUFFIX,girigirilove.com"
+        "DOMAIN-SUFFIX,girigirilove.icu"
+      ];
+    };
     Gemini = {
       type = "http";
       behavior = "classical";
@@ -962,8 +973,9 @@ in
     "RULE-SET,国外常用网站合集(By lhie1),🚀 节点选择"
     "RULE-SET,proxy,🚀 节点选择"
     "GEOSITE,pixiv,🚀 节点选择"
-    "RULE-SET,my_proxy,🚀 节点选择"
     "RULE-SET,my_direct,🎯 全球直连"
+    "RULE-SET,my_premium,💎 优选节点"
+    "RULE-SET,my_proxy,🚀 节点选择"
     "RULE-SET,zodgame,香港节点"
     "RULE-SET,放行规则-lhie1,DIRECT"
     "RULE-SET,放行规则-ACL4SSR,DIRECT"
