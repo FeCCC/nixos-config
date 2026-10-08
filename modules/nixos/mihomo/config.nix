@@ -336,27 +336,6 @@ in
       path = "./ruleset/reject.yaml";
       interval = 86400;
     };
-    icloud = {
-      type = "http";
-      behavior = "domain";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt";
-      path = "./ruleset/icloud.yaml";
-      interval = 86400;
-    };
-    apple = {
-      type = "http";
-      behavior = "domain";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt";
-      path = "./ruleset/apple.yaml";
-      interval = 86400;
-    };
-    google = {
-      type = "http";
-      behavior = "domain";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt";
-      path = "./ruleset/google.yaml";
-      interval = 86400;
-    };
     proxy = {
       type = "http";
       behavior = "domain";
@@ -376,20 +355,6 @@ in
       behavior = "domain";
       url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt";
       path = "./ruleset/private.yaml";
-      interval = 86400;
-    };
-    gfw = {
-      type = "http";
-      behavior = "domain";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt";
-      path = "./ruleset/gfw.yaml";
-      interval = 86400;
-    };
-    tld-not-cn = {
-      type = "http";
-      behavior = "domain";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt";
-      path = "./ruleset/tld-not-cn.yaml";
       interval = 86400;
     };
     telegramcidr = {
@@ -427,13 +392,6 @@ in
       url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/EHGallery.yaml";
       interval = 86400;
     };
-    "微软服务" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Microsoft.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Microsoft.yaml";
-      interval = 86400;
-    };
     LocalAreaNetwork = {
       type = "http";
       behavior = "classical";
@@ -441,39 +399,11 @@ in
       path = "./rule_provider/LocalAreaNetwork.yaml";
       interval = 86400;
     };
-    UnBan = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvVW5CYW4ubGlzdA";
-      path = "./rule_provider/UnBan.yaml";
-      interval = 86400;
-    };
-    BanAD = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuQUQubGlzdA";
-      path = "./rule_provider/BanAD.yaml";
-      interval = 86400;
-    };
     BanProgramAD = {
       type = "http";
       behavior = "classical";
       url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQmFuUHJvZ3JhbUFELmxpc3Q";
       path = "./rule_provider/BanProgramAD.yaml";
-      interval = 86400;
-    };
-    GoogleFCM = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Hb29nbGVGQ00ubGlzdA";
-      path = "./rule_provider/GoogleFCM.yaml";
-      interval = 86400;
-    };
-    GoogleCN = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvR29vZ2xlQ04ubGlzdA";
-      path = "./rule_provider/GoogleCN.yaml";
       interval = 86400;
     };
     SteamCN = {
@@ -490,25 +420,11 @@ in
       path = "./rule_provider/Bing.yaml";
       interval = 86400;
     };
-    OneDrive = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvT25lRHJpdmUubGlzdA";
-      path = "./rule_provider/OneDrive.yaml";
-      interval = 86400;
-    };
     Microsoft = {
       type = "http";
       behavior = "classical";
       url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvTWljcm9zb2Z0Lmxpc3Q";
       path = "./rule_provider/Microsoft.yaml";
-      interval = 86400;
-    };
-    Apple = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQXBwbGUubGlzdA";
-      path = "./rule_provider/Apple.yaml";
       interval = 86400;
     };
     Telegram = {
@@ -581,13 +497,6 @@ in
       path = "./rule_provider/Nintendo.yaml";
       interval = 86400;
     };
-    YouTube = {
-      type = "http";
-      behavior = "classical";
-      url = "https://api.dler.io/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Zb3VUdWJlLmxpc3Q";
-      path = "./rule_provider/YouTube.yaml";
-      interval = 86400;
-    };
     Bahamut = {
       type = "http";
       behavior = "classical";
@@ -651,67 +560,11 @@ in
       path = "./rule_provider/Download.yaml";
       interval = 86400;
     };
-    "国内IP白名单(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Domestic IPs.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Domestic IPs.yaml";
-      interval = 86400;
-    };
-    "放行规则-lhie1" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Special.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Special.yaml";
-      interval = 86400;
-    };
     "放行规则-ACL4SSR" = {
       type = "http";
       behavior = "classical";
       path = "./rule_provider/UnBan-ACL4SSR.yaml";
       url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml";
-      interval = 86400;
-    };
-    "ChinaIp(By ACL4SSR)" = {
-      type = "http";
-      behavior = "ipcidr";
-      path = "./rule_provider/ChinaIp-ACL4SSR.yaml";
-      url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml";
-      interval = 86400;
-    };
-    "国内域名白名单(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Domestic.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Domestic.yaml";
-      interval = 86400;
-    };
-    "OneDrive(By ACL4SSR)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/OneDrive-ACL4SSR.yaml";
-      url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml";
-      interval = 86400;
-    };
-    "广告规则(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/AdBlock.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/AdBlock.yaml";
-      interval = 86400;
-    };
-    "Bilibili(By ACL4SSR)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Bilibili-ACL4SSR.yaml";
-      url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bilibili.yaml";
-      interval = 86400;
-    };
-    "YouTube Music" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/YouTube Music.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Media/YouTube Music.yaml";
       interval = 86400;
     };
     "YouTube(By ACL4SSR)" = {
@@ -721,27 +574,6 @@ in
       url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml";
       interval = 86400;
     };
-    "YouTube(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/YouTube-lhie1.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Media/YouTube.yaml";
-      interval = 86400;
-    };
-    "Netflix(By ACL4SSR)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Netflix-ACL4SSR.yaml";
-      url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml";
-      interval = 86400;
-    };
-    "Netflix(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Netflix-lhie1.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Media/Netflix.yaml";
-      interval = 86400;
-    };
     Netflix = {
       type = "http";
       behavior = "classical";
@@ -749,32 +581,11 @@ in
       url = "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Netflix/Netflix_Classical.yaml";
       interval = 86400;
     };
-    "国外常用网站合集(By lhie1)" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/Proxy.yaml";
-      url = "https://raw.githubusercontent.com/dler-io/Rules/master/Clash/Provider/Proxy.yaml";
-      interval = 86400;
-    };
-    "direct-applications" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/direct-applications.yaml";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt";
-      interval = 86400;
-    };
     "Osu!" = {
       type = "http";
       behavior = "ipcidr";
       url = "https://raw.githubusercontent.com/FQrabbit/SSTap-Rule/refs/heads/master/rules/Osu!.rules";
       path = "./game_rules/Osu!.rules";
-      interval = 86400;
-    };
-    ads = {
-      type = "http";
-      behavior = "domain";
-      path = "./rule_provider/ads.yaml";
-      url = "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt";
       interval = 86400;
     };
     my_proxy = {
@@ -913,80 +724,92 @@ in
     };
   };
 
-  rules = [
-    "RULE-SET,applications,DIRECT"
-    "DOMAIN,clash.razord.top,DIRECT"
-    "DOMAIN,yacd.haishan.me,DIRECT"
-    "RULE-SET,private,DIRECT"
-    "GEOSITE,private,DIRECT"
-    "RULE-SET,reject,REJECT"
-    "RULE-SET,广告规则(By lhie1),REJECT"
-    "GEOSITE,category-ads-all,REJECT"
-    "RULE-SET,google,🚀 节点选择"
-    "RULE-SET,japan,日本节点"
-    "RULE-SET,EHGallery,EHGallery"
-    "RULE-SET,微软服务,Ⓜ️ 微软服务"
-    "RULE-SET,Microsoft,Ⓜ️ 微软服务"
-    "RULE-SET,Bing,Ⓜ️ 微软Bing"
-    "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
-    "RULE-SET,OneDrive(By ACL4SSR),Ⓜ️ 微软服务"
-    "GEOSITE,onedrive,Ⓜ️ 微软服务"
-    "RULE-SET,direct-applications,🎯 全球直连"
-    "RULE-SET,LocalAreaNetwork,🎯 全球直连"
-    "RULE-SET,UnBan,🎯 全球直连"
-    "RULE-SET,ads,🛑 广告拦截"
-    "RULE-SET,BanAD,🛑 广告拦截"
-    "RULE-SET,BanProgramAD,🍃 应用净化"
-    "RULE-SET,GoogleFCM,📢 谷歌FCM"
-    "RULE-SET,GoogleCN,🎯 全球直连"
-    "RULE-SET,Apple,🍎 苹果服务"
-    "RULE-SET,icloud,🍎 苹果服务"
-    "RULE-SET,apple,🍎 苹果服务"
-    "RULE-SET,Telegram,📲 电报消息"
-    "RULE-SET,telegramcidr,📲 电报消息"
-    "RULE-SET,AI,💬 Ai平台"
-    "RULE-SET,OpenAi,💬 Ai平台"
-    "RULE-SET,Gemini,Gemini"
-    "RULE-SET,NetEaseMusic,🎶 网易音乐"
-    "GEOSITE,category-games@cn,🎯 全球直连"
-    "RULE-SET,SteamCN,🎯 全球直连"
-    "RULE-SET,Epic,🎮 游戏平台"
-    "RULE-SET,Origin,🎮 游戏平台"
-    "RULE-SET,Sony,🎮 游戏平台"
-    "RULE-SET,Steam,🎮 游戏平台"
-    "RULE-SET,Steam-社区(Beta),🚀 节点选择"
-    "RULE-SET,Nintendo,🎮 游戏平台"
-    "RULE-SET,Osu!,🚀 节点选择"
-    "RULE-SET,YouTube Music,📹 油管视频"
-    "RULE-SET,YouTube(By ACL4SSR),📹 油管视频"
-    "RULE-SET,YouTube(By lhie1),📹 油管视频"
-    "RULE-SET,Netflix(By ACL4SSR),🎥 奈飞视频"
-    "RULE-SET,Netflix(By lhie1),🎥 奈飞视频"
-    "RULE-SET,Netflix,🎥 奈飞视频"
-    "RULE-SET,Bahamut,📺 巴哈姆特"
-    "RULE-SET,Bilibili(By ACL4SSR),📺 哔哩哔哩"
-    "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
-    "RULE-SET,Bilibili,📺 哔哩哔哩"
-    "RULE-SET,ChinaMedia,🌏 国内媒体"
-    "RULE-SET,ProxyMedia,🌍 国外媒体"
-    "RULE-SET,ProxyGFWlist,🚀 节点选择"
-    "RULE-SET,国外常用网站合集(By lhie1),🚀 节点选择"
-    "RULE-SET,proxy,🚀 节点选择"
-    "GEOSITE,pixiv,🚀 节点选择"
-    "RULE-SET,my_direct,🎯 全球直连"
-    "RULE-SET,my_premium,💎 优选节点"
-    "RULE-SET,my_proxy,🚀 节点选择"
-    "RULE-SET,zodgame,香港节点"
-    "RULE-SET,放行规则-lhie1,DIRECT"
-    "RULE-SET,放行规则-ACL4SSR,DIRECT"
-    "RULE-SET,ChinaDomain,🎯 全球直连"
-    "RULE-SET,ChinaCompanyIp,🎯 全球直连"
-    "RULE-SET,Download,🎯 全球直连"
-    "RULE-SET,direct,DIRECT"
-    "RULE-SET,lancidr,DIRECT"
-    "RULE-SET,cncidr,DIRECT"
-    "GEOIP,LAN,DIRECT"
-    "GEOIP,CN,DIRECT"
-    "MATCH,🐟 漏网之鱼"
-  ];
+  rules =
+    # 1. 局域网与面板控制（不可代理）
+    [
+      "RULE-SET,applications,DIRECT"
+      "DOMAIN,clash.razord.top,DIRECT"
+      "DOMAIN,yacd.haishan.me,DIRECT"
+      "RULE-SET,private,DIRECT"
+      "GEOSITE,private,DIRECT"
+      "RULE-SET,LocalAreaNetwork,DIRECT"
+      "RULE-SET,lancidr,DIRECT"
+      "GEOIP,LAN,DIRECT"
+    ]
+    # 2. 广告拦截与应用净化
+    ++ [
+      "GEOSITE,category-ads-all,🛑 广告拦截"
+      "RULE-SET,reject,🛑 广告拦截"
+      "RULE-SET,BanProgramAD,🍃 应用净化"
+    ]
+    # 3. 用户专属自定义规则（高优先级，防止被后续大规则集误伤）
+    ++ [
+      "RULE-SET,my_direct,🎯 全球直连"
+      "RULE-SET,my_premium,💎 优选节点"
+      "RULE-SET,zodgame,香港节点"
+      "RULE-SET,japan,日本节点"
+      "RULE-SET,my_proxy,🚀 节点选择"
+    ]
+    # 4. 特殊服务放行与穿透直连（下载、FCM、官方白名单）
+    ++ [
+      "RULE-SET,放行规则-ACL4SSR,🎯 全球直连"
+      "RULE-SET,Download,🎯 全球直连"
+      "GEOSITE,googlefcm,📢 谷歌FCM"
+      "GEOSITE,google-cn,🎯 全球直连"
+      "RULE-SET,NetEaseMusic,🎶 网易音乐"
+    ]
+    # 5. 垂直专线平台（AI / 微软 / 苹果 / 电报）
+    ++ [
+      "RULE-SET,AI,💬 Ai平台"
+      "RULE-SET,OpenAi,💬 Ai平台"
+      "RULE-SET,Gemini,Gemini"
+      "RULE-SET,Telegram,📲 电报消息"
+      "RULE-SET,telegramcidr,📲 电报消息"
+      "GEOSITE,apple,🍎 苹果服务"
+      "RULE-SET,Bing,Ⓜ️ 微软Bing"
+      "GEOSITE,onedrive,Ⓜ️ 微软云盘"
+      "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+    ]
+    # 6. 游戏平台
+    ++ [
+      "GEOSITE,category-games@cn,🎯 全球直连"
+      "RULE-SET,SteamCN,🎯 全球直连"
+      "RULE-SET,Epic,🎮 游戏平台"
+      "RULE-SET,Origin,🎮 游戏平台"
+      "RULE-SET,Sony,🎮 游戏平台"
+      "RULE-SET,Steam,🎮 游戏平台"
+      "RULE-SET,Steam-社区(Beta),🚀 节点选择"
+      "RULE-SET,Nintendo,🎮 游戏平台"
+      "RULE-SET,Osu!,🚀 节点选择"
+    ]
+    # 7. 流媒体与常用媒体
+    ++ [
+      "RULE-SET,YouTube(By ACL4SSR),📹 油管视频"
+      "RULE-SET,Netflix,🎥 奈飞视频"
+      "RULE-SET,Bahamut,📺 巴哈姆特"
+      "RULE-SET,Bilibili,📺 哔哩哔哩"
+      "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
+      "RULE-SET,EHGallery,EHGallery"
+      "GEOSITE,pixiv,🚀 节点选择"
+      "RULE-SET,ChinaMedia,🌏 国内媒体"
+      "RULE-SET,ProxyMedia,🌍 国外媒体"
+    ]
+    # 8. 通用国外代理列表（GFWList / 通用海外网站）
+    ++ [
+      "GEOSITE,google,🚀 节点选择"
+      "RULE-SET,ProxyGFWlist,🚀 节点选择"
+      "RULE-SET,proxy,🚀 节点选择"
+    ]
+    # 9. 国内域名与国内 IP 绕过
+    ++ [
+      "RULE-SET,ChinaDomain,🎯 全球直连"
+      "RULE-SET,direct,🎯 全球直连"
+      "RULE-SET,ChinaCompanyIp,🎯 全球直连"
+      "RULE-SET,cncidr,🎯 全球直连"
+      "GEOIP,CN,🎯 全球直连"
+    ]
+    # 10. 兜底策略
+    ++ [
+      "MATCH,🐟 漏网之鱼"
+    ];
 }
