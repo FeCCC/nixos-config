@@ -758,8 +758,10 @@ in
       "GEOSITE,google-cn,🎯 全球直连"
       "RULE-SET,NetEaseMusic,🎶 网易音乐"
     ]
-    # 5. 垂直专线平台（AI / 微软 / 苹果 / 电报）
+    # 5. 垂直专线平台（Meta / AI / 微软 / 苹果 / 电报）
     ++ [
+      "GEOSITE,meta,美国节点"
+      "GEOSITE,facebook,美国节点"
       "RULE-SET,AI,💬 Ai平台"
       "RULE-SET,OpenAi,💬 Ai平台"
       "RULE-SET,Gemini,Gemini"
