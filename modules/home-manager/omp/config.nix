@@ -61,6 +61,10 @@
         baseUrl = config.sops.placeholder.new_api_base_url_for_openai;
         apiKey = "OPENAI_API_KEY";
         api = "openai-completions";
+        # 从 new-api 的 /v1/models 自动发现全部模型（统一走 openai-completions）；
+        discovery = {
+          type = "openai-models-list";
+        };
         models = [
           {
             id = "deepseek-flash";
