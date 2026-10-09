@@ -57,6 +57,23 @@
         "type": "github"
       }
     },
+    "aiohttp-retry": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1730889105,
+        "narHash": "sha256-8S4gjeN8ktdDNd8GUsejaZdCaG/VXYPo0RJpwrrttGQ=",
+        "owner": "inyutin",
+        "repo": "aiohttp_retry",
+        "rev": "39b23915023dde0e0298b822de3d23960a5024e6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "inyutin",
+        "ref": "v2.9.1",
+        "repo": "aiohttp_retry",
+        "type": "github"
+      }
+    },
     "bun2nix": {
       "inputs": {
         "flake-parts": [
@@ -372,6 +389,22 @@
       "original": {
         "owner": "NousResearch",
         "repo": "hermes-agent",
+        "type": "github"
+      }
+    },
+    "hindsight": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791475533,
+        "narHash": "sha256-L6wvHZd1R0dwSpu9U/UnKl9T9h57hBlMFc4jftGriVo=",
+        "owner": "vectorize-io",
+        "repo": "hindsight",
+        "rev": "6d8b096786df335fc2cc1e5d6662092f0e1b8694",
+        "type": "github"
+      },
+      "original": {
+        "owner": "vectorize-io",
+        "repo": "hindsight",
         "type": "github"
       }
     },
@@ -806,6 +839,7 @@
       "inputs": {
         "aagl": "aagl",
         "agency-personas": "agency-personas",
+        "aiohttp-retry": "aiohttp-retry",
         "catppuccin-dms": "catppuccin-dms",
         "cc-skills": "cc-skills",
         "codebase-memory-mcp": "codebase-memory-mcp",
@@ -813,6 +847,7 @@
         "disko": "disko",
         "dms": "dms",
         "hermes-agent": "hermes-agent",
+        "hindsight": "hindsight",
         "home-manager": "home-manager_2",
         "llm-agents-nix": "llm-agents-nix",
         "niri": "niri",

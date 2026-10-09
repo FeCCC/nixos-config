@@ -1,11 +1,48 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }:
 let
   stateDir = config.services.hermes-agent.stateDir;
+  hp = config.services.hermes-agent.package.python.pkgs;
+  hindsightSrc = "${inputs.hindsight}/hindsight-integrations/hermes";
+  hindsightVersion =
+    dir:
+    (builtins.fromTOML (builtins.readFile "${inputs.hindsight}/${dir}/pyproject.toml")).project.version;
+
+  # 依赖在运行期由 sealed venv 提供，构建环境里没有：
+  # propagatedBuildInputs 留空（声明同名包会撞碰撞检查），并关掉运行期依赖检查
+  hindsightClient = hp.buildPythonPackage {
+    pname = "hindsight-client";
+    version = hindsightVersion "hindsight-clients/python";
+    src = "${inputs.hindsight}/hindsight-clients/python";
+    format = "pyproject";
+    build-system = [ hp.hatchling ];
+    dontCheckRuntimeDeps = true;
+  };
+  hindsightEmbed = hp.buildPythonPackage {
+    pname = "hindsight-embed";
+    version = hindsightVersion "hindsight-embed";
+    src = "${inputs.hindsight}/hindsight-embed";
+    format = "pyproject";
+    build-system = [ hp.hatchling ];
+    dontCheckRuntimeDeps = true;
+  };
+  aiohttpRetry = hp.buildPythonPackage {
+    pname = "aiohttp-retry";
+    version = "2.9.1";
+    src = "${inputs.aiohttp-retry}";
+    format = "pyproject";
+    build-system = [ hp.setuptools ];
+    dontCheckRuntimeDeps = true;
+    # setup.py 的版本串停在 2.9.0，标签已是 v2.9.1
+    postPatch = ''
+      substituteInPlace setup.py --replace-fail 'version="2.9.0"' 'version="2.9.1"'
+    '';
+  };
 in
 {
   config = lib.mkIf config.my_config.hermes-agent.enable {
@@ -56,6 +93,28 @@ in
           "${stateDir}/hindsight/data:/home/hindsight/.pg0"
         ];
       };
+    };
+
+    # hindsight 插件的 Python 依赖
+    services.hermes-agent.extraPythonPackages = [
+      hindsightClient
+      hindsightEmbed
+      aiohttpRetry
+    ];
+
+    # 插件目录：目录名必须是 hindsight —— 记忆 provider 按 <HERMES_HOME>/plugins/<name> 精确匹配
+    system.activationScripts."hermes-hindsight-plugin" = {
+      text = ''
+        DIR=${stateDir}/.hermes/plugins
+        mkdir -p "$DIR"
+        if [ -d "$DIR/hindsight" ] && [ ! -L "$DIR/hindsight" ]; then
+          echo "hermes-agent: WARNING $DIR/hindsight is a real directory; leaving it alone" >&2
+        else
+          ln -sfn ${hindsightSrc} "$DIR/hindsight"
+        fi
+        chown -h ${config.services.hermes-agent.user}:${config.services.hermes-agent.group} "$DIR/hindsight" 2>/dev/null || true
+      '';
+      deps = [ "hermes-agent-setup" ];
     };
   };
 }
