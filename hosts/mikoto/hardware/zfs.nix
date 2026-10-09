@@ -38,6 +38,20 @@
   environment.systemPackages = [ pkgs.efibootmgr ];
 
   boot.loader.systemd-boot.extraInstallCommands = ''
+    export PATH=${
+      pkgs.lib.makeBinPath (
+        with pkgs;
+        [
+          coreutils
+          util-linux
+          gnugrep
+          rsync
+          efibootmgr
+          systemd
+        ]
+      )
+    }:$PATH
+
     BOOT_DEV=$(findmnt -n -o SOURCE /boot)
     if echo "$BOOT_DEV" | grep -q sda1; then
       TARGET=/dev/sdb1
