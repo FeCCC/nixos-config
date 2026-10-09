@@ -95,6 +95,7 @@
           A2A_AGENT_NAME = "Kaguya";
           A2A_HOST = "0.0.0.0";
           A2A_PEER_TOKENS = config.sops.placeholder.hermes_a2a_peer_tokens;
+          A2A_ALLOW_ALL_USERS = "true";
 
           # Signal
           SIGNAL_HTTP_URL = "http://${config.networking.hostName}.local:8116";
