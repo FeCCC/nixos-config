@@ -379,11 +379,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1791775030,
-        "narHash": "sha256-iQV83yt6UXPdN/6D/iea79vb5w1BeSlO+8SQYjUEp84=",
+        "lastModified": 1791929223,
+        "narHash": "sha256-DwhYZdJd/owksuEY/ko1eu1TvQO7HlzlsdGfyF1/r0I=",
         "owner": "NousResearch",
         "repo": "hermes-agent",
-        "rev": "71d34bad1045610252eda02ee79549436896e784",
+        "rev": "e06df9c2eae6901f4c88f464e0ae6e753c0428b8",
         "type": "github"
       },
       "original": {
@@ -395,11 +395,11 @@
     "hindsight": {
       "flake": false,
       "locked": {
-        "lastModified": 1791475533,
-        "narHash": "sha256-L6wvHZd1R0dwSpu9U/UnKl9T9h57hBlMFc4jftGriVo=",
+        "lastModified": 1791903099,
+        "narHash": "sha256-H+pcxOvPQhQg8inRcg2uof8R9QD5MBMZQ2ZXzJRF0TY=",
         "owner": "vectorize-io",
         "repo": "hindsight",
-        "rev": "6d8b096786df335fc2cc1e5d6662092f0e1b8694",
+        "rev": "610c135b6f2d0d8b972da94146ae635943f36271",
         "type": "github"
       },
       "original": {
