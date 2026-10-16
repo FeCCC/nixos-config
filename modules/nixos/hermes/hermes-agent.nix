@@ -197,6 +197,10 @@
                     provider = "new-api";
                     model = "kimi-k3";
                   }
+                  {
+                    provider = "new-api";
+                    model = "google/gemini-4-argon";
+                  }
                 ];
                 aggregator = {
                   provider = "new-api";
