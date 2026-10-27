@@ -1,5 +1,3 @@
-# Code Search — codebase-memory-mcp
-
 - 每次调用都要带 `project`；名字先用 `list_projects` 取。
 - 参数以 `read xd://<tool>` 返回的 schema 为准，不要照描述猜字段名。
 - 结构/符号查询（函数、类、路由、调用关系）→ `search_graph`、
@@ -11,6 +9,8 @@
   断言"没有依赖"。
 - 仓库里的 Markdown（AGENTS.md 等）也会进图，检索时用 `file_pattern` /
   `label` 收窄。
+- 图查询返回空，不等于对象不存在：先 `check_index_coverage` 或看 `index_status`，
+  分清「确实没有」与「索引没收录」，不要把空结果当否定证据。
 - 分页看 `total_relation`：`eq` 是精确计数；`gte` 表示撞到引擎上限，
   用 `cursor` 继续。
 - 引用图里的路径前，用 `check_index_coverage` 校验。

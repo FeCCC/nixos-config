@@ -29,6 +29,20 @@
 - 新增 NixOS 主机：先在 flake.nix 的 nixosConfigurations 注册，再建 hosts/<主机>/ 目录放差异配置，公共部分写进 nixos/configuration.nix
 - 新增 home 用户：先在 flake.nix 的 homeConfigurations 注册，再建 home-manager/<用户>.nix
 
+### 验证
+改完至少能跑通一条，不能只靠「看上去对」：
+- 单主机构建：`nixos-rebuild build --flake .#<host>`
+- 单主机求值（不构建，秒级）：`nix eval .#nixosConfigurations.<host>.config.system.build.toplevel.drvPath`
+- home 侧：`nix build .#homeConfigurations.<user>.activationPackage`
+- 全量：`nix flake check`（会构建全部 outputs，慢；只改一台主机时别用）
+- 格式化：`nix fmt <file>`（formatter 是 nixfmt-tree，不带路径会格式化整棵树）
+
+### 配置清单
+- nixosConfigurations：`nixos` `wsl-miku` `wsl-thinkbook-x` `wsl-gn` `nixos-server` `nixos-ThinkPad-E470` `docker` `mikoto`
+- homeConfigurations：`miku` `wl` `root`
+
+以上以 `flake.nix` 为准，增减主机时同步更新本节。
+
 ### 安全性
 - 使用 SOPS 管理密钥 (见 `sops.nix`)
 - 不要硬编码凭据

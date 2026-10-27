@@ -57,9 +57,15 @@ in
       recursive = true;
     };
 
-    # 全局规则：引导 OpenCode 优先使用 MCP codebase-memory 工具
-    "opencode/AGENTS.md" = {
-      source = ./AGENTS.md;
-    };
+    # 全局规则：行为纪律 + MCP 工具说明 + opencode 专属段
+    # opencode 没有 RULES.md 这类粘性规则机制，行为纪律只能放 AGENTS.md；
+    # 前两段与 omp 共用 ../agent-prompts/ 下的源文件，避免两份拷贝漂移
+    "opencode/AGENTS.md".text =
+      "# 全局规则\n\n## 行为纪律\n\n"
+      + builtins.readFile ../agent-prompts/rules.md
+      + "\n## 工具：codebase-memory-mcp\n\n"
+      + builtins.readFile ../agent-prompts/codebase-memory-mcp.md
+      + "\n"
+      + builtins.readFile ./codebase-memory-mcp.extra.md;
   };
 }

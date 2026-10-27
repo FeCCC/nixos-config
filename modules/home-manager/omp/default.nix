@@ -68,8 +68,12 @@ in
       };
       recursive = true;
     };
-    "omp/agent/AGENTS.md".source = ./AGENTS.md;
-    "omp/agent/RULES.md".source = ./RULES.md;
+    # 正文与 opencode 共用 ../agent-prompts/ 下的源文件，此处只加标题
+    "omp/agent/AGENTS.md".text =
+      "# Code Search — codebase-memory-mcp\n\n"
+      + builtins.readFile ../agent-prompts/codebase-memory-mcp.md;
+    "omp/agent/RULES.md".text =
+      "# 交互纪律\n\n" + builtins.readFile ../agent-prompts/rules.md;
   };
 
   sops.templates."omp-models-yml" = {
