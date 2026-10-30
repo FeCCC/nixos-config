@@ -25,6 +25,9 @@
 - 自定义包在 `pkgs/`
 - 覆盖层在 `overlays/`，例如自定义rime配置就放在这里
 
+### 表达式风格
+- 一次性使用的值直接内联，禁止为它新建 let 绑定或中间变量；只有被多处引用、或提取后能消除重复时才命名。
+
 ### 新增主机/用户
 - 新增 NixOS 主机：先在 flake.nix 的 nixosConfigurations 注册，再建 hosts/<主机>/ 目录放差异配置，公共部分写进 nixos/configuration.nix
 - 新增 home 用户：先在 flake.nix 的 homeConfigurations 注册，再建 home-manager/<用户>.nix

@@ -9,6 +9,8 @@ let
   omp-pkg = inputs.llm-agents-nix.packages.${pkgs.stdenv.hostPlatform.system}.omp;
 
   omp-wrapped = pkgs.writeShellScriptBin "omp" ''
+    # PI_CONFIG_DIR 必须相对家目录，omp 会与 homedir 拼接
+    export PI_CONFIG_DIR=".config/omp"
     export PI_CODING_AGENT_DIR="${config.xdg.configHome}/omp/agent"
     export OPENAI_API_KEY=$(cat "${config.sops.secrets.new_api_key.path}")
     export JS_DEBUG_DAP_SERVER="${pkgs.vscode-js-debug}/lib/node_modules/js-debug/dist/src/dapDebugServer.js"
@@ -72,8 +74,7 @@ in
     "omp/agent/AGENTS.md".text =
       "# Code Search — codebase-memory-mcp\n\n"
       + builtins.readFile ../agent-prompts/codebase-memory-mcp.md;
-    "omp/agent/RULES.md".text =
-      "# 交互纪律\n\n" + builtins.readFile ../agent-prompts/rules.md;
+    "omp/agent/RULES.md".text = "# 交互纪律\n\n" + builtins.readFile ../agent-prompts/rules.md;
   };
 
   sops.templates."omp-models-yml" = {
