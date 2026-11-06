@@ -14,7 +14,7 @@ let
     export OPENCODE_BASE_URL=$(cat "${config.sops.secrets.new_api_base_url_for_openai.path}")
 
     # 执行真正的 opencode 程序
-     exec "${pkgs.unstable.opencode}/bin/opencode" "$@"
+     exec "${pkgs.opencode}/bin/opencode" "$@"
   '';
 
   agencyPersonas = inputs.agency-personas.packages.${pkgs.stdenv.hostPlatform.system}.default;

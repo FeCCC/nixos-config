@@ -106,12 +106,6 @@
       flake = false;
     };
 
-    # hindsight-client 的依赖
-    aiohttp-retry = {
-      url = "github:inyutin/aiohttp_retry/v2.9.1";
-      flake = false;
-    };
-
     codebase-memory-mcp = {
       url = "github:DeusData/codebase-memory-mcp";
       inputs.nixpkgs.follows = "nixpkgs";

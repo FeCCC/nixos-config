@@ -38,6 +38,8 @@
     sops.secrets.hermes_a2a_peer_tokens = { };
     sops.secrets.gn_a2a_tokens = { };
     sops.secrets.miku_a2a_tokens = { };
+    sops.secrets.hermes_dashboard_password = { };
+    sops.secrets.hermes_dashboard_secret = { };
 
     sops.templates."hermes-env" =
       let
@@ -111,6 +113,7 @@
     networking.firewall.allowedTCPPorts = [
       8642 # API SERVER
       9900 # A2A 开放端口
+      9120 # Webapp
     ];
 
     sops.secrets.new_api_key = { };
@@ -122,6 +125,27 @@
       let
         hermes-config = {
           timezone = "Asia/Shanghai";
+
+          _config_version = 52; # Hermes config schema 版本
+
+          webapp = {
+            enabled = true;
+            host = "0.0.0.0"; # 局域网访问
+            port = 9120;
+          };
+          dashboard.basic_auth = {
+            username = "miku";
+            password = config.sops.placeholder.hermes_dashboard_password;
+            secret = config.sops.placeholder.hermes_dashboard_secret;
+          };
+          compression.prepare_ahead = true;
+          sessions = {
+            auto_prune = true;
+            retention_days = 90;
+          };
+          plugins.auto_apply = true;
+          delegation.prefix_stagger_seconds = 2;
+
           display.busy_input_mode = "interrupt"; # 新传入的消息中断当前操作并立即被处理
           model = {
             provider = "new-api";

@@ -31,18 +31,6 @@ let
     build-system = [ hp.hatchling ];
     dontCheckRuntimeDeps = true;
   };
-  aiohttpRetry = hp.buildPythonPackage {
-    pname = "aiohttp-retry";
-    version = "2.9.1";
-    src = "${inputs.aiohttp-retry}";
-    format = "pyproject";
-    build-system = [ hp.setuptools ];
-    dontCheckRuntimeDeps = true;
-    # setup.py 的版本串停在 2.9.0，标签已是 v2.9.1
-    postPatch = ''
-      substituteInPlace setup.py --replace-fail 'version="2.9.0"' 'version="2.9.1"'
-    '';
-  };
 in
 {
   config = lib.mkIf config.my_config.hermes-agent.enable {
@@ -99,7 +87,6 @@ in
     services.hermes-agent.extraPythonPackages = [
       hindsightClient
       hindsightEmbed
-      aiohttpRetry
     ];
 
     # 插件目录：目录名必须是 hindsight —— 记忆 provider 按 <HERMES_HOME>/plugins/<name> 精确匹配
