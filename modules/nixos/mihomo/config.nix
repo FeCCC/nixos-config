@@ -561,13 +561,6 @@ in
       path = "./rule_provider/Download.yaml";
       interval = 86400;
     };
-    "放行规则-ACL4SSR" = {
-      type = "http";
-      behavior = "classical";
-      path = "./rule_provider/UnBan-ACL4SSR.yaml";
-      url = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml";
-      interval = 86400;
-    };
     "YouTube(By ACL4SSR)" = {
       type = "http";
       behavior = "classical";
@@ -753,10 +746,8 @@ in
     ]
     # 4. 特殊服务放行与穿透直连（下载、FCM、官方白名单）
     ++ [
-      "RULE-SET,放行规则-ACL4SSR,🎯 全球直连"
       "RULE-SET,Download,🎯 全球直连"
       "GEOSITE,googlefcm,📢 谷歌FCM"
-      "GEOSITE,google-cn,🎯 全球直连"
       "RULE-SET,NetEaseMusic,🎶 网易音乐"
     ]
     # 5. 垂直专线平台（Meta / AI / 微软 / 苹果 / 电报）
