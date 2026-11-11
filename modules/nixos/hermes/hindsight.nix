@@ -58,7 +58,6 @@ in
     };
 
     virtualisation.oci-containers = {
-      backend = "docker";
       containers.hindsight = {
         image = "ghcr.io/vectorize-io/hindsight:latest";
         autoStart = true;

@@ -33,7 +33,6 @@ in
     };
 
     virtualisation.oci-containers = {
-      backend = "docker";
       containers.signal-cli = {
         image = "ghcr.io/asamk/signal-cli:latest";
         autoStart = true;

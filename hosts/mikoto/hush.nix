@@ -19,7 +19,6 @@
   };
 
   virtualisation.oci-containers = {
-    backend = "docker";
     containers.hush = {
       image = "ghcr.io/natankeddem/hush:latest";
       autoStart = true;

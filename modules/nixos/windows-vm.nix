@@ -19,7 +19,6 @@
     };
 
     virtualisation.oci-containers = {
-      backend = "docker";
       containers.windows-vm = {
         image = "dockurr/windows";
         autoStart = true;

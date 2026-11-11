@@ -24,6 +24,7 @@
 
   my_config.desktop.enable = false;
   my_config.docker.enable = true;
+  my_config.podman.enable = true;
   my_config.netdata.enable = true;
   my_config.hermes-agent.enable = true;
   my_config.hermes-agent.restic.enable = false;

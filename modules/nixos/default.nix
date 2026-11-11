@@ -7,6 +7,7 @@ in
     ./simple.nix
     ./yggdrasil.nix
     ./docker.nix
+    ./podman.nix
     ./syncthing.nix
     ./i2pd.nix
     ./tor.nix
