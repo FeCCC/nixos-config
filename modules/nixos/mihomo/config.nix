@@ -709,6 +709,15 @@ in
         "DOMAIN-SUFFIX,girigirilove.icu"
       ];
     };
+    polymarket = {
+      type = "inline";
+      behavior = "classical";
+      path = "./rule_provider/polymarket.yaml";
+      payload = [
+        "DOMAIN-SUFFIX,polymarket.com"
+        "DOMAIN-SUFFIX,polymarket.us"
+      ];
+    };
     Gemini = {
       type = "http";
       behavior = "classical";
@@ -791,6 +800,7 @@ in
     # 8. 通用国外代理列表（GFWList / 通用海外网站）
     ++ [
       "GEOSITE,google,🚀 节点选择"
+      "RULE-SET,polymarket,香港节点"
       "RULE-SET,ProxyGFWlist,🚀 节点选择"
       "RULE-SET,proxy,🚀 节点选择"
     ]
