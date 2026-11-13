@@ -74,7 +74,11 @@ in
     "omp/agent/AGENTS.md".text =
       "# Code Search — codebase-memory-mcp\n\n"
       + builtins.readFile ../agent-prompts/codebase-memory-mcp.md;
-    "omp/agent/RULES.md".text = "# 交互纪律\n\n" + builtins.readFile ../agent-prompts/rules.md;
+    "omp/agent/RULES.md".text =
+      "# 交互纪律\n\n"
+      + builtins.readFile ./rules.extra.md
+      + "\n"
+      + builtins.readFile ../agent-prompts/rules.md;
   };
 
   sops.templates."omp-models-yml" = {
