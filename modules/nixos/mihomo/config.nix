@@ -667,6 +667,7 @@ in
         "DOMAIN-SUFFIX,cache.numtide.com"
         "DOMAIN-SUFFIX,paypal.com"
         "DOMAIN-SUFFIX,paypalobjects.com"
+        "DOMAIN-SUFFIX,huangguoai.com"
       ];
     };
     japan = {
