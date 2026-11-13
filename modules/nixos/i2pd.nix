@@ -23,17 +23,20 @@
       proto = {
         http = {
           enable = true;
+          address = "0.0.0.0";
           port = 7070;
           strictHeaders = false;
         };
         httpProxy = {
           enable = true;
+          address = "0.0.0.0";
           port = 4444;
           # outproxy = "http://exit.stormycloud.i2p";
           outproxy = "http://outproxy.acetone.i2p";
         };
         socksProxy = {
           enable = true;
+          address = "0.0.0.0";
           port = 4447;
           outproxyEnable = true;
           outproxy = "localhost";
