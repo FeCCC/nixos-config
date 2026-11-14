@@ -66,7 +66,6 @@
 
         substituters = [
           "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-          "https://cache.numtide.com"
         ];
 
         trusted-public-keys = [
