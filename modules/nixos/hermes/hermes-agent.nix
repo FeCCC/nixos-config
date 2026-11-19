@@ -38,7 +38,7 @@
     sops.secrets.hermes_a2a_peer_tokens = { };
     sops.secrets.gn_a2a_tokens = { };
     sops.secrets.miku_a2a_tokens = { };
-    sops.secrets.hermes_dashboard_password = { };
+    sops.secrets.hermes_dashboard_password_hash = { };
     sops.secrets.hermes_dashboard_secret = { };
 
     sops.templates."hermes-env" =
@@ -135,7 +135,7 @@
           };
           dashboard.basic_auth = {
             username = "miku";
-            password = config.sops.placeholder.hermes_dashboard_password;
+            password = config.sops.placeholder.hermes_dashboard_password_hash;
             secret = config.sops.placeholder.hermes_dashboard_secret;
           };
           compression.prepare_ahead = true;
