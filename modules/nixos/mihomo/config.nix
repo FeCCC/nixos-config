@@ -670,6 +670,7 @@ in
         "DOMAIN-SUFFIX,paypal.com"
         "DOMAIN-SUFFIX,paypalobjects.com"
         "DOMAIN-SUFFIX,huangguoai.com"
+        "DOMAIN-SUFFIX,kagi.com"
       ];
     };
     japan = {
