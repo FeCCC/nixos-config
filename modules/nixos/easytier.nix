@@ -40,7 +40,9 @@
       extraSettings = {
         flags = {
           private_mode = true;
-        };
+        }
+        # 避免超过 WSL 的 MTU 被静默丢弃
+        // lib.optionalAttrs (config.wsl.enable or false) { mtu = 1200; };
       };
       extraArgs = [ "--secure-mode" ];
     };
