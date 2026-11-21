@@ -33,16 +33,14 @@
         ];
         peers = [
           "udp://192.168.0.10:11010"
-          "tcp://47.243.180.98:11010"
-          "udp://47.243.180.98:11010"
+          "tcp://${config.my_config.fabric.vps}:11010"
+          "udp://${config.my_config.fabric.vps}:11010"
         ];
       };
       extraSettings = {
         flags = {
           private_mode = true;
-        }
-        # 避免超过 WSL 的 MTU 被静默丢弃
-        // lib.optionalAttrs (config.wsl.enable or false) { mtu = 1200; };
+        };
       };
       extraArgs = [ "--secure-mode" ];
     };

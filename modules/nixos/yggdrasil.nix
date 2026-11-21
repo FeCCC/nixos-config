@@ -21,7 +21,7 @@
       # use this section when you may connect via different interfaces.
       Peers = [
         "tls://192.168.0.10:7777"
-        "quic://47.243.180.98:7777"
+        "quic://${config.my_config.fabric.vps}:7777"
         "tls://ygg-tw.lxak.net:443"
         "tls://cowgl.tech:1337"
         "tls://ygg5.mk16.de:1338?key=0000009611ae5391dc0aceea9f3fa6a0dc1279f4306059339e84bfb8b74d2f9b"

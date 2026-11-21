@@ -5,6 +5,7 @@ in
   imports = [
     ../common/nixpkgs.nix
     ./simple.nix
+    ./fabric.nix
     ./yggdrasil.nix
     ./docker.nix
     ./podman.nix
@@ -12,6 +13,7 @@ in
     ./i2pd.nix
     ./tor.nix
     ./netdata.nix
+    ./fail2ban.nix
     ./hermes
     ./easytier.nix
     ./mihomo

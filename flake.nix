@@ -232,6 +232,7 @@
         nixos-ThinkPad-E470 = mkNixOSConfiguration { modules = [ ./hosts/e470 ]; };
         docker = mkNixOSConfiguration { modules = [ ./hosts/docker ]; };
         mikoto = mkNixOSConfiguration { modules = [ ./hosts/mikoto ]; };
+        router = mkNixOSConfiguration { modules = [ ./hosts/router ]; };
       };
 
       homeConfigurations = {
