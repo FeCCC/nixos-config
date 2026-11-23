@@ -135,7 +135,7 @@
           };
           dashboard.basic_auth = {
             username = "miku";
-            password = config.sops.placeholder.hermes_dashboard_password_hash;
+            password_hash = config.sops.placeholder.hermes_dashboard_password_hash;
             secret = config.sops.placeholder.hermes_dashboard_secret;
           };
           compression.prepare_ahead = true;
@@ -420,12 +420,12 @@
       deps = [ "hermes-agent-setup" ];
     };
 
-    sops.secrets.hermes-agent-password = { };
+    sops.secrets.hermes-agent-restic-backup-password = { };
     # restic 备份
     services.restic.backups = lib.mkIf config.my_config.hermes-agent.restic.enable {
       hermes-agent-bak = {
         initialize = true;
-        passwordFile = config.sops.secrets.hermes-agent-password.path;
+        passwordFile = config.sops.secrets.hermes-agent-restic-backup-password.path;
         paths = [
           config.services.hermes-agent.stateDir
         ];
