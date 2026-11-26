@@ -632,6 +632,9 @@ in
         "DOMAIN-SUFFIX,bird.makeup"
         # manhuagui
         "DOMAIN-SUFFIX,hamreus.com"
+        # creem
+        "DOMAIN-SUFFIX,creem.io"
+        "DOMAIN-SUFFIX,y.uno"
         # common
         "DOMAIN-SUFFIX,cangku.moe"
         "DOMAIN-SUFFIX,bewildcard.com"
