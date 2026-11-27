@@ -421,6 +421,20 @@
       deps = [ "hermes-agent-setup" ];
     };
 
+    # 权限取 2750：组内成员可读、可进，不能写。
+    # Hermes 只在控制目录不可被同组用户写入时才接受它。
+    # stateDir 同时是 hermes 的家目录，组可写会让 sshd StrictModes 拒绝登录。
+    # tmpfiles 对同一路径只认第一条，mkBefore 让它排在 2770 之前。
+    systemd.tmpfiles.rules = lib.mkBefore (
+      map (
+        p:
+        "d ${p} 2750 ${config.services.hermes-agent.user} ${config.services.hermes-agent.group} - -"
+      ) [
+        config.services.hermes-agent.stateDir
+        "${config.services.hermes-agent.stateDir}/.hermes"
+      ]
+    );
+
     sops.secrets.hermes-agent-restic-backup-password = { };
     # restic 备份
     services.restic.backups = lib.mkIf config.my_config.hermes-agent.restic.enable {
