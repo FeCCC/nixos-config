@@ -133,6 +133,7 @@
             host = "0.0.0.0"; # 局域网访问
             port = 9120;
           };
+          display.language = "zh";
           dashboard.basic_auth = {
             username = "miku";
             password_hash = config.sops.placeholder.hermes_dashboard_password_hash;
