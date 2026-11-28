@@ -451,7 +451,7 @@
           ".gc-root"
           ".gc-root-entrypoint"
         ];
-        repository = "sftp:miku@truenas.local:/mnt/NAS/share/Documents/Backup/hermes-agent/${config.networking.hostName}";
+        repository = "sftp:miku@truenas.local:/mnt/NAS/share/Backup/hermes-agent/${config.networking.hostName}";
         extraBackupArgs = [
           "--pack-size 128" # 最大128MB
         ];
